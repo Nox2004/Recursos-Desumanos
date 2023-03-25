@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,13 +20,13 @@ public class sprite_perspective : MonoBehaviour
         }
     }
 
-
     public Vector2 persp_c; //perspective center
     private SpriteRenderer sprite_renderer;
     private Material material;
 
     public float tan_left, tan_right, sprite_width, sprite_height, xoffleft, xoffright;
     private Vector3 localpos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,14 +66,11 @@ public class sprite_perspective : MonoBehaviour
         sprite_height = sprite_renderer.bounds.size.y * transform.lossyScale.y;
         sprite_width = sprite_renderer.bounds.size.x * transform.lossyScale.x;
 
-        Vector2 up_left, up_right, down_left, down_right;
-
         Edge edges = SetupEdges(sprite_height, sprite_width);
 
         if (transform.parent == null)
         {
             CalculateTan(edges);
-            Debug.Log("TAN" + tan_left);
 
             CalculateOffset();
         }

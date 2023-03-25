@@ -20,28 +20,29 @@ public class text_perspective : MonoBehaviour
         }
     }
 
-
-    public Vector2 persp_c; //perspective center
+    public Vector2 persp_c;
     private SpriteRenderer sprite_renderer;
     private Material material;
+    private RectTransform rect;
 
-    public float tan_left, tan_right, sprite_width, sprite_height, xoffleft, xoffright;
+    public float tan_left, tan_right, text_width, text_height, xoffleft, xoffright;
     private Vector3 localpos;
     // Start is called before the first frame update
     void Start()
     {
-        sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
-        localpos = transform.localPosition;
+        rect = gameObject.GetComponent<RectTransform>();
+        localpos = rect.localPosition;
+        material = gameObject.GetComponent<MeshRenderer>().materials[0];
     }
 
     //Gets sprite edge positions
-    Edge SetupEdges(float width, float height)
+    Edge SetupEdges(float width, float height, Vector2 pivot)
     {
         return new Edge(
-        new Vector2(transform.position.x - width / 2, transform.position.y + height / 2),
-        new Vector2(transform.position.x + width / 2, transform.position.y + height / 2),
-        new Vector2(transform.position.x - width / 2, transform.position.y - height / 2),
-        new Vector2(transform.position.x + width / 2, transform.position.y - height / 2));
+        new Vector2(rect.position.x - width * pivot.x, rect.position.y + height * (1-pivot.y)),
+        new Vector2(rect.position.x + width * (1-pivot.x), rect.position.y + height * (1-pivot.y)),
+        new Vector2(rect.position.x - width * pivot.x, rect.position.y - height * pivot.y),
+        new Vector2(rect.position.x + width * (1-pivot.x), rect.position.y - height * pivot.y));
     }
 
     void CalculateTan(Edge edges)
@@ -52,40 +53,36 @@ public class text_perspective : MonoBehaviour
 
     void CalculateOffset()
     {
-        xoffleft = sprite_height * tan_left;
-        xoffright = sprite_height * tan_right;
+        xoffleft = text_height * tan_left;
+        xoffright = text_height * tan_right;
     }
 
     // Update is called once per frame
     void Update()
     {
-        material = sprite_renderer.material;
-        Sprite sprite = sprite_renderer.sprite;
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAA");
+        Vector2 pos = new Vector2(rect.position.x, rect.position.y);
+        text_height = rect.sizeDelta.x;
+        text_width = rect.sizeDelta.y;
 
-        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-        sprite_height = sprite_renderer.bounds.size.y * transform.lossyScale.y;
-        sprite_width = sprite_renderer.bounds.size.x * transform.lossyScale.x;
-
-        Vector2 up_left, up_right, down_left, down_right;
-
-        Edge edges = SetupEdges(sprite_height, sprite_width);
+        Edge edges = SetupEdges(text_height, text_width, rect.pivot);
 
         if (transform.parent == null)
         {
-            CalculateTan(edges);
-            Debug.Log("TAN" + tan_left);
+            //CalculateTan(edges);
+            //Debug.Log("TAN" + tan_left);
 
-            CalculateOffset();
+            //CalculateOffset();
         }
         else
         {
-            var parent_script = transform.parent.gameObject.GetComponent<sprite_perspective>();
+            var parent_script = rect.parent.gameObject.GetComponent<sprite_perspective>();
             tan_left = parent_script.tan_left;
             tan_right = parent_script.tan_right;
 
             CalculateOffset();
 
-            float parent_height = transform.parent.gameObject.GetComponent<SpriteRenderer>().bounds.size.y;// * transform.parent.lossyScale.y;
+            float parent_height = rect.parent.gameObject.GetComponent<SpriteRenderer>().bounds.size.y;// * transform.parent.lossyScale.y;
             float parent_top = parent_height / 2;
 
             float mid = (tan_left + tan_right) / 2;
@@ -95,6 +92,8 @@ public class text_perspective : MonoBehaviour
 
             transform.localPosition = new Vector3(relative_x, localpos.y, localpos.z);
         }
+
+
 
         edges.downleft = new Vector2(edges.upleft.x + xoffleft, edges.downleft.y);
         material.SetFloat("left_offset", xoffleft); 
