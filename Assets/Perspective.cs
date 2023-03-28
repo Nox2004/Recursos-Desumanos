@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sprite_perspective : MonoBehaviour
+public class Perspective : MonoBehaviour
 {
     struct Edge
     {
