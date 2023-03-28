@@ -1,7 +1,7 @@
     using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class text_perspective : MonoBehaviour
 {
     private struct Edge
@@ -21,7 +21,6 @@ public class text_perspective : MonoBehaviour
     }
 
     public Vector2 persp_c;
-    private SpriteRenderer sprite_renderer;
     private Material material;
     private RectTransform rect;
 
@@ -60,7 +59,6 @@ public class text_perspective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAA");
         Vector2 pos = new Vector2(rect.position.x, rect.position.y);
         text_height = rect.sizeDelta.x;
         text_width = rect.sizeDelta.y;
@@ -109,3 +107,4 @@ public class text_perspective : MonoBehaviour
         }
     }
 }
+*/

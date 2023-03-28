@@ -173,10 +173,10 @@ SubShader {
 			float4 vert = input.position;
 			
 			float off;
-			float lerpv = (vert.x+1)/2;
+			float lerpv = vert.x+0.5;
 			off=lerp(left_offset,right_offset,lerpv);
-			off *= 1-(vert.y + 0.5);
-			vert.x+=off;
+			//off *= lerp(0,off,(vert.y+1)/2);//1-(vert.y + 0.5);
+			vert.x+=off * (1-(vert.y+0.4)/0.8);
 			
 			vert.x += _VertexOffsetX;
 			vert.y += _VertexOffsetY;
