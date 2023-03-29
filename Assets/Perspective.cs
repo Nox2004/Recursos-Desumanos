@@ -68,6 +68,11 @@ public class Perspective : MonoBehaviour
         }
     }
 
+    void adapt_collider(PolygonCollider2D collider, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
+    {
+        collider.points = new[] { p1, p2, p3, p4};
+    }
+
     private SpriteRenderer sprite_renderer;
     private Material material;
 
@@ -76,10 +81,11 @@ public class Perspective : MonoBehaviour
     
     private float tan_left, tan_right, sprite_width, sprite_height, xoffleft, xoffright;
     private Vector3 localpos;
-
+    private PolygonCollider2D polygon_col;
     // Start is called before the first frame update
     void Start()
     {
+        polygon_col = gameObject.GetComponent<PolygonCollider2D>();
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
         localpos = transform.localPosition;
 
@@ -158,6 +164,14 @@ public class Perspective : MonoBehaviour
 
             child.sprite_renderer.material.SetFloat("right_offset", xoffr);
             child.sprite_renderer.material.SetFloat("left_offset", xoffl);
+        }
+        edges.downleft.x += xoffleft;
+        edges.downright.x += xoffright;
+
+        if (polygon_col != null)
+        {
+            Vector2 _pos = new Vector2(transform.position.x, transform.position.y);
+            adapt_collider(polygon_col, edges.upleft - _pos, edges.downleft - _pos, edges.downright - _pos, edges.upright - _pos);
         }
 
         /*

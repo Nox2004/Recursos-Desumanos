@@ -1,4 +1,4 @@
-Shader "TextMeshPro/Distance Field" {
+Shader "TextMeshPro/Distance Field Perspective" {
 
 Properties {
 	_FaceTex			("Face Texture", 2D) = "white" {}
@@ -157,6 +157,8 @@ SubShader {
 		// Used by Unity internally to handle Texture Tiling and Offset.
 		float4 _FaceTex_ST;
 		float4 _OutlineTex_ST;
+		float right_offset;
+		float left_offset;
 		pixel_t VertShader(vertex_t input)
 		{
 			pixel_t output;
@@ -169,6 +171,12 @@ SubShader {
 			float bold = step(input.texcoord1.y, 0);
 
 			float4 vert = input.position;
+			
+			float off;
+			float lerpv = vert.x+0.5;
+			off=lerp(left_offset,right_offset,lerpv);
+			//off *= lerp(0,off,(vert.y+1)/2);//1-(vert.y + 0.5);
+			vert.x+=off * (1-(vert.y+0.4)/0.8);
 			
 			vert.x += _VertexOffsetX;
 			vert.y += _VertexOffsetY;
