@@ -8,8 +8,8 @@ Shader "Sector12/SpriteSkewShader"
         _Color ("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
         
-        //_HorizontalSkew ("Horizontal Skew", Float) = 0
-        //_VerticalSkew ("Vertical Skew", Float) = 0
+        left_offset ("Left Offset", Float) = 0
+        right_offset ("Right Offset", Float) = 0
     }
     SubShader
     {
@@ -39,7 +39,7 @@ Shader "Sector12/SpriteSkewShader"
                 float4 vertex   : POSITION;
                 float4 color    : COLOR;
                 float2 texcoord : TEXCOORD0;
-		uint vertexId : SV_VertexID;
+		        uint vertexId : SV_VertexID;
             };
             struct v2f
             {
@@ -52,7 +52,17 @@ Shader "Sector12/SpriteSkewShader"
             fixed4 _Color;
             float left_offset;
             float right_offset;
-	    float2 obj_pos;
+
+            bool color_overlay_on;
+            float4 color_overlay;
+
+            int outline_on = 0;
+            float outline_size;
+
+            int blend_color_on = 1;
+            float4 blend_color = float4(1,1,1,1);
+
+	        
             v2f vert(appdata_t IN)
             {
                 v2f OUT;
@@ -67,18 +77,18 @@ Shader "Sector12/SpriteSkewShader"
                     0,0,0,1);
                 
                 //float4 skewedVertex = mul(transformMatrix, IN.vertex);
-		float4 _vertex = IN.vertex;
-		if (_vertex.y < 0)
-		{
-			if (_vertex.x < 0)
-			{
-				_vertex.x+=left_offset;
-			}
-			else if (_vertex.x > 0)
-			{
-				_vertex.x+=right_offset;
-			}
-		}
+                float4 _vertex = IN.vertex;
+                if (_vertex.y < 0)
+                {
+                    if (_vertex.x < 0)
+                    {
+                        _vertex.x+=left_offset;
+                    }
+                    else if (_vertex.x > 0)
+                    {
+                        _vertex.x+=right_offset;
+                    }
+                }
                 OUT.vertex = UnityObjectToClipPos(_vertex);
                 
 
@@ -90,9 +100,17 @@ Shader "Sector12/SpriteSkewShader"
 		
             fixed4 frag(v2f IN) : SV_Target
             {	
-		fixed4 c = tex2D(_MainTex,IN.texcoord) * IN.color;
-		c.rgb *= c.a;
-		return c;
+		        fixed4 c = tex2D(_MainTex,IN.texcoord) * IN.color;
+                if (color_overlay_on == 1)
+                {
+                    c = color_overlay;
+                }
+                if (blend_color_on == 1) 
+                {
+                    c*=blend_color;
+                }
+		        c.rgb *= c.a;
+		        return c;
             }
         ENDCG
         }

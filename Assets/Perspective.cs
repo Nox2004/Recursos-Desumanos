@@ -79,7 +79,8 @@ public class Perspective : MonoBehaviour
     private List<SpriteChild> sprite_childs = new List<SpriteChild>();
     private List<TextChild> text_childs = new List<TextChild>();
     
-    private float tan_left, tan_right, sprite_width, sprite_height, xoffleft, xoffright;
+    private float tan_left, tan_right, sprite_width, sprite_height;
+    public float xoffleft, xoffright;
     private Vector3 localpos;
     private PolygonCollider2D polygon_col;
     // Start is called before the first frame update
@@ -121,6 +122,9 @@ public class Perspective : MonoBehaviour
         tan_right = CalculateTan(edges).y;
         xoffright = CalculateOffset(sprite_height,tan_left,tan_right).y;
         material.SetFloat("right_offset", xoffright);
+
+        //material.SetInteger("color_overlay_on",1);
+        //material.SetColor("color_overlay",new Color(0,0,0,0.5f));
         
         foreach (TextChild child in text_childs)
         {
@@ -148,7 +152,7 @@ public class Perspective : MonoBehaviour
         foreach (SpriteChild child in sprite_childs)
         {
             float _h = child.sprite_renderer.bounds.size.y * transform.lossyScale.y;
-            Debug.Log(_h);
+
             float xoffl = CalculateOffset(_h,tan_left,tan_right).x;
             float xoffr = CalculateOffset(_h,tan_left,tan_right).y;
 
