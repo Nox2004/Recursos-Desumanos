@@ -92,6 +92,7 @@ public class Perspective : MonoBehaviour
 
         foreach (Transform child in transform)
         {
+            if (child.gameObject.tag == "NoPerspective") continue;
             if (child.GetComponent<SpriteRenderer>() != null)
             {
                 sprite_childs.Add(new SpriteChild(child, child.localPosition, child.gameObject.GetComponent<SpriteRenderer>()));

@@ -10,7 +10,7 @@ public class Singleton : MonoBehaviour
     public Vector2 perspective_point;
 
     // Start is called before the first frame update
-     private void Awake()
+    private void Awake()
     {
         //garantee there will be only one singleton
         if (Instance != null && Instance != this)
