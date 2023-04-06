@@ -17,7 +17,7 @@ public class Document : MonoBehaviour
     
     private SpriteRenderer sprite_renderer;
     private Material material;
-    private PolygonCollider2D my_collider;
+    public PolygonCollider2D my_collider;
     private Perspective persp_script;
 
     private GameObject my_shadow;
@@ -26,6 +26,7 @@ public class Document : MonoBehaviour
     private bool isDragging = false;
 
     public int order = 0;
+    public bool selected = false;
 
     void Start()
     {
@@ -42,6 +43,9 @@ public class Document : MonoBehaviour
         my_shadow.transform.parent = transform;
 
         shadow_rend = my_shadow.AddComponent<SpriteRenderer>();
+        if (persp_script != null) my_shadow.AddComponent<Perspective>();
+
+        my_shadow.AddComponent<SpriteRenderer>();
         my_shadow.transform.localPosition = new Vector3(0,0,0);
         shadow_rend.sortingLayerName = sprite_renderer.sortingLayerName;
         shadow_rend.sortingOrder = 0;
@@ -53,8 +57,8 @@ public class Document : MonoBehaviour
 
     private void LateUpdate()
     {
-        shadow_rend.material.SetFloat("left_offset", persp_script.xoffleft);
-        shadow_rend.material.SetFloat("right_offset", persp_script.xoffright);
+        //shadow_rend.material.SetFloat("left_offset", persp_script.xoffleft);
+        //shadow_rend.material.SetFloat("right_offset", persp_script.xoffright);
         shadow_rend.material.SetInt("color_overlay_on", 1);
         shadow_rend.material.SetColor("color_overlay", new Color(0,0,0,0.3f));
     }
@@ -82,15 +86,25 @@ public class Document : MonoBehaviour
 
         material.SetInt("blend_color_on", 1);
         material.SetColor("blend_color",new Color(0.8f,0.8f,0.8f,1f));
-        if ((my_collider.OverlapPoint(new Vector2(mouse_pos.x, mouse_pos.y))) || (isDragging))
+        if (selected || isDragging)
         {
             material.SetColor("blend_color",new Color(1f,1f,1f,1f));
-        }
 
-        //if (!tablecollider.OverlapPoint(new Vector2(mouse_pos.x, mouse_pos.y)))
-        //{
-        //    isDragging = false;
-        //}
+            if (Input.GetMouseButtonDown(0))
+            {
+                start_pos = mouse_pos - pos;
+
+                isDragging = true;
+
+                DocumentManager.DocManager.get_document(this);
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+                DocumentManager.DocManager.drop_document();
+            }
+        }
 
         if (isDragging)
         {
@@ -101,31 +115,14 @@ public class Document : MonoBehaviour
         {
             y_offset = 0;
         }
-        Debug.Log(y_offset);
+        
         transform.localPosition = new Vector3(pos.x,pos.y+y_offset,pos.z);
 
         my_shadow.transform.localPosition = new Vector3(0, 0 - y_offset, 0);
     }
 
-    private void OnMouseDown()
-    {
-        start_pos = mouse_pos - pos;
-
-        isDragging = true;
-
-        DocumentManager.DocManager.put_on_top(this);
-    }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
     public void DragObject()
     {
-        Vector3 mouse_pos = Input.mousePosition;
-
-        mouse_pos = cam.ScreenToWorldPoint(mouse_pos);
         pos = new Vector3(mouse_pos.x - start_pos.x, mouse_pos.y - start_pos.y, pos.z);
     }
 }
