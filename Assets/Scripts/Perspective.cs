@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Perspective : MonoBehaviour
 {
+    //Defines a edge struct, so I won't have to create a whole lot of variables later on
     struct Edge
     {
         public Vector2 upleft;
@@ -20,7 +21,7 @@ public class Perspective : MonoBehaviour
         }
     }
 
-    //Gets sprite edge positions
+    //Gets sprite edge positions and returns a struct with all of them
     Edge SetupEdges(float width, float height, Vector2 pos, Vector2 pivot)
     {
         return new Edge(
@@ -30,6 +31,7 @@ public class Perspective : MonoBehaviour
         new Vector2(pos.x + width * (1-pivot.x), pos.y - height * pivot.y));
     }
 
+    //Calculates the tan of the upper corners and returns them as a Vector 2
     Vector2 CalculateTan(Edge edges)
     {
         Vector2 persp_c = Singleton.Instance.perspective_point;
@@ -37,12 +39,14 @@ public class Perspective : MonoBehaviour
         (edges.upright.x - persp_c.x) / Mathf.Abs(edges.upright.y - persp_c.y));
     }
 
+    //Uses the tan to calculate the expected x offset of the bottom corners
     Vector2 CalculateOffset(float height, float lefttan, float righttan)
     {
         return new Vector2(height * lefttan,
         height * righttan);
     }
 
+    //Stuff I will need to use from the sprite childs
     struct SpriteChild 
     {
         public Transform transform;
@@ -54,7 +58,8 @@ public class Perspective : MonoBehaviour
             transform = trans; localpos = pos; sprite_renderer = sprite;
         }
     }
-
+    
+    //Stuff I will need to use from the text childs
     struct TextChild 
     {
         public Transform transform;
@@ -67,112 +72,140 @@ public class Perspective : MonoBehaviour
             transform = trans; localpos = pos; material = mat; rect = rec;
         }
     }
-
+    
+    //Change polygon collider paths
     void adapt_collider(PolygonCollider2D collider, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
     {
         collider.points = new[] { p1, p2, p3, p4};
     }
 
+    //Calculates the middle of the documents and change the cursor position
+    public void set_mouse_at_middle()
+    {
+        CursorScript.cursor_pos = Singleton.Instance.cam.WorldToScreenPoint(transform.localPosition + new Vector3((xoffleft+xoffright)/2/2,0,0));
+    }
+
+    //Components
     private SpriteRenderer sprite_renderer;
     private Material material;
+    private PolygonCollider2D polygon_col;
 
+    //List of childs
     private List<SpriteChild> sprite_childs = new List<SpriteChild>();
     private List<TextChild> text_childs = new List<TextChild>();
     
+    //Tan and sprite size
     private float tan_left, tan_right, sprite_width, sprite_height;
-    public float xoffleft, xoffright;
+
+    //Offset and initial position
+    public float xoffleft, xoffright; 
     private Vector3 localpos;
-    private PolygonCollider2D polygon_col;
-    // Start is called before the first frame update
+
     void Start()
     {
+        //Sets up initial position and components
         polygon_col = gameObject.GetComponent<PolygonCollider2D>();
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
         localpos = transform.localPosition;
 
+        //Store information about the childs in 2 lists (one for sprites, another one for texts)
         foreach (Transform child in transform)
         {
-            if (child.gameObject.tag == "NoPerspective") continue;
+            if (child.gameObject.tag == "NoPerspective") continue; //Ignores childs with the No Perspective tag
+
             if (child.GetComponent<SpriteRenderer>() != null)
             {
                 sprite_childs.Add(new SpriteChild(child, child.localPosition, child.gameObject.GetComponent<SpriteRenderer>()));
             }
-            else//if (child.GetComponent<TextMesh>() != null)
+            else //if (child.GetComponent<TextMesh>() != null)
             {
                 text_childs.Add(new TextChild(child, child.localPosition, child.gameObject.GetComponent<MeshRenderer>().materials[0], child.gameObject.GetComponent<RectTransform>()));
             }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Sets up material and sprite variables
         material = sprite_renderer.material;
         Sprite sprite = sprite_renderer.sprite;
 
+        //Gets position and sprite size
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         sprite_height = sprite_renderer.bounds.size.y * transform.lossyScale.y;
         sprite_width = sprite_renderer.bounds.size.x * transform.lossyScale.x;
-
+        
+        //Store sprites edges position
         Edge edges = SetupEdges(sprite_height, sprite_width, new Vector2(transform.position.x, transform.position.y), new Vector2(0.5f,0.5f));
         
+        //Calculates tan
         tan_left = CalculateTan(edges).x;
-        xoffleft = CalculateOffset(sprite_height,tan_left,tan_right).x;
-        material.SetFloat("left_offset", xoffleft);
-
         tan_right = CalculateTan(edges).y;
-        xoffright = CalculateOffset(sprite_height,tan_left,tan_right).y;
-        material.SetFloat("right_offset", xoffright);
 
-        //material.SetInteger("color_overlay_on",1);
-        //material.SetColor("color_overlay",new Color(0,0,0,0.5f));
+        //Calculates offset
+        xoffleft = CalculateOffset(sprite_height,tan_left,tan_right).x;
+        xoffright = CalculateOffset(sprite_height,tan_left,tan_right).y;
+
+        //Applies offset to the perspective shader
+        material.SetFloat("left_offset", xoffleft);
+        material.SetFloat("right_offset", xoffright);
         
+        //Applies perspective to the object text childs
         foreach (TextChild child in text_childs)
         {
-            float _h = child.rect.sizeDelta.y * child.rect.lossyScale.y;
+            float _h = child.rect.sizeDelta.y * child.rect.lossyScale.y; //Child height
 
+            //Uses parent tangent to calculate offset
             float xoffl = CalculateOffset(_h,tan_left,tan_right).x;
             float xoffr = CalculateOffset(_h,tan_left,tan_right).y;
 
+            //Calculates parents top and the middle between left and right corners
             float parent_height = sprite_height; 
             float parent_top = parent_height / 2;
-
             float mid = (tan_left + tan_right) / 2;
 
-            float relative_x = child.localpos.x + (parent_height - (parent_top + child.localpos.y)) * mid;
+            //Calculates relative x so the further the object is from the top, the more it moves horizontally
+            float distance_from_top = parent_height - (parent_top + child.localpos.y);
+            float relative_x = child.localpos.x + distance_from_top * mid;
             relative_x -= (xoffl + xoffr) / 4;
 
-            child.transform.localPosition = new Vector3(relative_x, child.localpos.y, child.localpos.z);
-
-            //Debug.Log(_h);
-            //Debug.Log("left: " + xoffl + "       right: " + xoffr);
+            //Apllies offset
+            child.transform.localPosition = new Vector3(relative_x, child.localpos.y, child.localpos.z); 
             child.material.SetFloat("left_offset", xoffl);
             child.material.SetFloat("right_offset", xoffr);
+            child.material.SetFloat("my_height", _h);
         }
-        
+
+        //Applies perspective to the object sprite childs
         foreach (SpriteChild child in sprite_childs)
         {
-            float _h = child.sprite_renderer.bounds.size.y * transform.lossyScale.y;
+            float _h = child.sprite_renderer.bounds.size.y * transform.lossyScale.y; //Child height
 
+            //Uses parent tangent to calculate offset
             float xoffl = CalculateOffset(_h,tan_left,tan_right).x;
             float xoffr = CalculateOffset(_h,tan_left,tan_right).y;
 
+            //Calculates parents top and the middle between left and right corners
             float parent_height = sprite_height; // transform.lossyScale.y;// * transform.parent.lossyScale.y;
             float parent_top = parent_height / 2;
-
             float mid = (tan_left + tan_right) / 2;
 
-            float relative_x = child.localpos.x + (parent_height - (parent_top + child.localpos.y)) * mid;
+            //Calculates relative x so the further the object is from the top, the more it moves horizontally
+            float distance_from_top = parent_height - (parent_top + child.localpos.y);
+            float relative_x = child.localpos.x + distance_from_top * mid;
             relative_x -= (xoffl + xoffr) / 4;
 
+            //Apllies offset
             child.transform.localPosition = new Vector3(relative_x, child.localpos.y, child.localpos.z);
-
             child.sprite_renderer.material.SetFloat("right_offset", xoffr);
             child.sprite_renderer.material.SetFloat("left_offset", xoffl);
         }
+
+        //Changes edge positions in the edge data structure
         edges.downleft.x += xoffleft;
         edges.downright.x += xoffright;
 
+        //Adapt the collyder to fit the documents sprite
         if (polygon_col != null)
         {
             Vector2 _pos = new Vector2(transform.position.x, transform.position.y);
@@ -180,6 +213,7 @@ public class Perspective : MonoBehaviour
         }
 
         /*
+        Rascunho aleatorio que eu vou deixar aqui pro precaucao
         else
         {
             var parent_script = transform.parent.gameObject.GetComponent<sprite_perspective>();

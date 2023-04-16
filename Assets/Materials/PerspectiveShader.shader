@@ -1,6 +1,6 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Sector12/SpriteSkewShader"
+Shader "MyShaders/SpritePerspective"
 {
     Properties
     {
@@ -50,15 +50,23 @@ Shader "Sector12/SpriteSkewShader"
             
             sampler2D _MainTex;
             fixed4 _Color;
-            float left_offset;
-            float right_offset;
 
+            //Edges offset
+            float upright_offset = 0;
+            float upleft_offset = 0;
+            
+            float right_offset = 0;
+            float left_offset = 0;
+
+            //Color overlay settings
             bool color_overlay_on;
             float4 color_overlay;
 
+            //Outline settings
             int outline_on = 0;
             float outline_size;
-
+            
+            //Color blend settings
             int blend_color_on = 1;
             float4 blend_color = float4(1,1,1,1);
 
@@ -77,16 +85,30 @@ Shader "Sector12/SpriteSkewShader"
                     0,0,0,1);
                 
                 //float4 skewedVertex = mul(transformMatrix, IN.vertex);
+
                 float4 _vertex = IN.vertex;
+
+                //Lower edges
                 if (_vertex.y < 0)
                 {
-                    if (_vertex.x < 0)
+                    if (_vertex.x < 0) //Left
                     {
                         _vertex.x+=left_offset;
                     }
-                    else if (_vertex.x > 0)
+                    else if (_vertex.x > 0) //Right
                     {
                         _vertex.x+=right_offset;
+                    }
+                }
+                else //Upper edges
+                {
+                    if (_vertex.x < 0) //Left
+                    {
+                        _vertex.x+=upleft_offset;
+                    }
+                    else if (_vertex.x > 0) //Right
+                    {
+                        _vertex.x+=upright_offset;
                     }
                 }
                 OUT.vertex = UnityObjectToClipPos(_vertex);
@@ -101,14 +123,20 @@ Shader "Sector12/SpriteSkewShader"
             fixed4 frag(v2f IN) : SV_Target
             {	
 		        fixed4 c = tex2D(_MainTex,IN.texcoord) * IN.color;
+
+                //Applies a overlay to the pixel color
                 if (color_overlay_on == 1)
                 {
                     c = color_overlay;
                 }
+
+                //Blends the pixel color with another
                 if (blend_color_on == 1) 
                 {
                     c*=blend_color;
                 }
+
+                //Multiplies by alpha
 		        c.rgb *= c.a;
 		        return c;
             }

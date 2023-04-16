@@ -157,8 +157,16 @@ SubShader {
 		// Used by Unity internally to handle Texture Tiling and Offset.
 		float4 _FaceTex_ST;
 		float4 _OutlineTex_ST;
-		float right_offset;
-		float left_offset;
+		
+		//The edge offsets
+		float upright_offset = 0;
+		float upleft_offset = 0;
+		
+		float right_offset = 0;
+		float left_offset = 0;
+		
+		float my_height; //Text height
+
 		pixel_t VertShader(vertex_t input)
 		{
 			pixel_t output;
@@ -174,9 +182,8 @@ SubShader {
 			
 			float off;
 			float lerpv = vert.x+0.5;
-			off=lerp(left_offset,right_offset,lerpv);
-			//off *= lerp(0,off,(vert.y+1)/2);//1-(vert.y + 0.5);
-			vert.x+=off * (1-(vert.y+0.4)/0.8);
+			off=lerp(left_offset,right_offset,lerpv); //Lerp betwen left and right using the vertex x position
+			vert.x+=off * (1-(vert.y+(my_height/2))/my_height); //Goes from 0 to "off" based in the vertex y position (0 up, "off" down)
 			
 			vert.x += _VertexOffsetX;
 			vert.y += _VertexOffsetY;

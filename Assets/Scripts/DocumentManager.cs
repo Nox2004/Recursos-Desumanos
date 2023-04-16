@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class DocumentManager : MonoBehaviour
 {
+    //Static stuff
     public static DocumentManager DocManager { get; private set; }
 
+    //List of all the documents in scene
     public List<Document> document_list = new List<Document>();
 
-    public Camera cam;
+    public Camera cam; //Game camera, obviously
+    private int holding = -1; //Index of the document being selected. -1 if null
 
-    private int holding = -1;
-
+    //Puts a document above the others
     private void put_on_top(Document doc)
     {
-        var index = document_list.IndexOf(doc);
+        var index = document_list.IndexOf(doc); //Gets the document index
+
+        if (index == -1) return; //Returns if the document is not in the list
+
+        //Every document in the list goes one position up, and the document on top goes to index 0
         for (int i = index; i > 0; i--)
         {
             document_list[i] = document_list[i - 1];
@@ -24,37 +30,41 @@ public class DocumentManager : MonoBehaviour
 
     public void get_document(Document doc)
     {
-        var index = document_list.IndexOf(doc);
+        var index = document_list.IndexOf(doc); //Gets the document index
 
-        if (index == null) return;
+        if (index == -1) return; //Returns if the document is not in the list
 
+        //Puts the document above the others and sets up the "holding" property
         put_on_top(doc);
         holding = index;
     }
 
     public void drop_document()
     {
+        //Resets "holding"
         holding = -1;
     }
 
-    // Start is called before the first frame update
     void Awake()
     {
         DocManager = this;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        //Sets up mouse position in the world view
         var mouse_pos = Input.mousePosition;
         mouse_pos = cam.ScreenToWorldPoint(mouse_pos);
 
+        //Sets up a "selected" variable
         Document selected = null;
 
         for (int i = 0; i < document_list.Count; i++)
         {
-            document_list[i].order = -i*3;
+            //Sets the document layer order
+            document_list[i].order = -i*3; //*3 because the childs and shadow of the documents will have separated orders
 
+            //Selects the first (on top) document being overlaped with the mouse
             document_list[i].selected = false;
             if ((document_list[i].my_collider.OverlapPoint(new Vector2(mouse_pos.x, mouse_pos.y))) && (selected == null) && (holding == -1))
             {
@@ -62,6 +72,7 @@ public class DocumentManager : MonoBehaviour
             }
         }
 
+        //Informs the selected document that he was selected
         if (selected != null) selected.selected = true;
     }
 }
