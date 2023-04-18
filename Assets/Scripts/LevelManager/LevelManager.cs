@@ -43,10 +43,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public Dialogue create_dialogue(string[] text)
+    public Dialogue create_dialogue(DialogueStruc[] text)
     {
         var gameobj = Instantiate(dialogue_prefab);
-        return gameobj.GetComponent<Dialogue>();
+        current_dialogue = gameobj.GetComponent<Dialogue>();
+
+        current_dialogue.text = text;
+
+        return current_dialogue;
     }
 }
 

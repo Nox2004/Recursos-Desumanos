@@ -12,7 +12,7 @@ public class Document : MonoBehaviour
     private Vector3 mouse_pos;
     private Vector3 pos;
     private Camera cam; //Camera
-
+    
     //Document movement variables
     private float y_offset = 0;
     [SerializeField] private float y_offtarget = 1; private float y_offsmooth = 4.0f / 60;

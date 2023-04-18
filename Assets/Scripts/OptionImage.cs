@@ -13,14 +13,20 @@ public class OptionImage : MonoBehaviour
     private float time = 0;
 
     private Image uiImage; // Reference to the UI image
+    public string text;
+    private TMPro.TextMeshProUGUI text_obj;
 
-    private bool control = true;
+    public bool control = true;
+    public bool selected = false;
 
     void Start()
     {
         //Get image component
         uiImage = gameObject.GetComponent<Image>();
         smoothness/=60;
+
+        text_obj = transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+        text_obj.text = text;
     }
 
     void Update()
@@ -37,9 +43,13 @@ public class OptionImage : MonoBehaviour
         //Changes color and target scale
         if ((uiImage.rectTransform.rect.Contains(localMousePos)) && (control==true)) //Checks if mouse is inside image's bounds
         {
-            Debug.Log("AAAAAAAAAAAAAA");
             uiImage.color = new Color(1,1,1,1);
             starget = scale_max;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                selected = true;
+            }
         }
         else
         {
@@ -49,6 +59,8 @@ public class OptionImage : MonoBehaviour
 
         //Smooth transition from current scale to target scale
         scale += ((starget-scale)/smoothness) * Time.deltaTime;
+
+        //Debug.Log("max - " + scale_max + "     target - " + starget + "     scale -" + scale);
 
         var real_scale = scale + ((Mathf.Sin(time*wave_speed*Mathf.Deg2Rad)+1)/2) * wave_size; //Applies wavey scaling
         transform.localScale = new Vector3(real_scale,real_scale,1);
