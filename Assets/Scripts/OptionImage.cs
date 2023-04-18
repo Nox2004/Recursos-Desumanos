@@ -32,7 +32,7 @@ public class OptionImage : MonoBehaviour
         Vector2 localMousePos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(uiImage.rectTransform, Input.mousePosition, null, out localMousePos);
 
-        float starget; //Scale target
+        float starget = scale_min; //Scale target
 
         //Changes color and target scale
         if ((uiImage.rectTransform.rect.Contains(localMousePos)) && (control==true)) //Checks if mouse is inside image's bounds

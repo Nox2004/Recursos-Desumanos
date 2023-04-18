@@ -14,6 +14,12 @@ public enum Jobs
 [Serializable]
 public class Person 
 {
+    public struct individualCompetence
+    {
+        public Competence competence;
+        public bool is_true;
+    }
+
     public string name;
     public int age;
     public string id;
@@ -21,7 +27,7 @@ public class Person
     public AudioClip[] voice;
 
     public DialogueStruc[] initial_dialogue;
-    public Competence[] competences;
+    public individualCompetence[] competences;
 }
 
 [Serializable]

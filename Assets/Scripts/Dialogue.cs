@@ -7,8 +7,8 @@ using System;
 [Serializable]
 public struct DialogueStruc
 {
-    [SerializeField] private string text;
-    [SerializeField] private string name;
+    [SerializeField] public string text;
+    [SerializeField] public string name;
 }
 
 public class Dialogue : MonoBehaviour
@@ -44,7 +44,7 @@ public class Dialogue : MonoBehaviour
 
     //Dialogue and index
     private int index = 0;
-    public string[] text;
+    public DialogueStruc[] text;
     //private string currentCharacterName;
 
     private void Start()
@@ -78,7 +78,7 @@ public class Dialogue : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //Changes spd if text is not over
-            if (current_letters < text[index].Length)
+            if (current_letters < text[index].text.Length)
             {
                 letters_spd = letters_spd_max;
             }
@@ -98,7 +98,7 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        ShowDialogue("aaaaa",text[index], letters_spd);
+        ShowDialogue(text[index].name,text[index].text, letters_spd);
         
 
         //Changes box width
@@ -119,23 +119,6 @@ public class Dialogue : MonoBehaviour
 
         box_width = width_open_curve.Update(Time.deltaTime);
         box_yy = yy_enter_curve.Update(Time.deltaTime);
-
-        /*
-        Stuff chatGPT sugested me to do
-
-        currentCharacterName = characterName;
-        currentDialogueText = _dialogueText;
-        characterNameText.text = currentCharacterName;
-        dialogueText.text = "";
-        dialogueBox.SetActive(true); // Show the dialogue box
-        gameObject.SetActive(true); // Show the whole dialogue UI
-
-        // Start coroutine to display dialogue text letter by letter
-        if (displayCoroutine != null)
-        {
-            StopCoroutine(displayCoroutine);
-        }
-        displayCoroutine = StartCoroutine(DisplayDialogueText());*/
     }
 
     private void HideDialogue()
