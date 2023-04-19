@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class Option : MonoBehaviour
+[Serializable]
+public struct OptionStruc
 {
-    [Serializable]
-    public struct OptionStruc
-    {
-        public string text;
-        public DialogueStruc[] dialogue_output;
-    }
-    
+    public string text;
+    public DialogueStruc[] dialogue_output;
+}
+
+public class Option : MonoBehaviour
+{   
     [SerializeField] private GameObject question_template;
 
     //Enter and exit animation

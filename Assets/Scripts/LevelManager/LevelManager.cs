@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
     //People list
     public int person_index = 0;
     public Person current_person;
-    
+
     [SerializeField] private Person[] people_list;
 
     //Prefabs
@@ -21,7 +22,14 @@ public class LevelManager : MonoBehaviour
     //State machine stuff
     public IState currentState;
     public IState person_entering, initial_dialogue;// initial_dialogue = new InitialDialogue(this);
-    
+
+    private void Start()
+    {
+        person_entering = new PersonEntering(this); initial_dialogue = new InitialDialogue(this);
+
+        change_state(person_entering); //Enters the initial state
+    }
+
     public void change_state(IState newState)
     {
         if (currentState != null)
@@ -30,13 +38,6 @@ public class LevelManager : MonoBehaviour
         }
         currentState = newState;
         currentState.EnterState();
-    }
-
-    private void Start()
-    {
-        person_entering = new PersonEntering(this); initial_dialogue = new InitialDialogue(this);
-
-        change_state(person_entering); //Enters the initial state
     }
 
     void Update()
@@ -58,6 +59,16 @@ public class LevelManager : MonoBehaviour
 
         return current_dialogue;
     }
+    
+    public Option create_options(OptionStruc[] options)
+    {
+        var gameobj = Instantiate(option_prefab);
+        current_options = gameobj.GetComponent<Option>();
+
+        current_options.options = options;
+
+        return current_options;
+    }
 
     public PersonInRoom create_person(Sprite sprite)
     {
@@ -73,60 +84,4 @@ public interface IState //State Interface
     void EnterState();
     void UpdateState();
     void ExitState();
-}
-
-public class PersonEntering : IState
-{
-    private LevelManager me;
-
-    public PersonEntering(LevelManager level_manager)
-    {
-        this.me = level_manager;
-    }
-
-    public void EnterState()
-    {
-        me.create_person(me.current_person.sprite);
-    }
-
-    public void UpdateState()
-    {
-        if (me.current_person_obj.HasEntered())
-        {
-            me.change_state(me.initial_dialogue);
-        }
-    }
-
-    public void ExitState()
-    {
-        
-    }
-}
-
-public class InitialDialogue : IState
-{
-    private LevelManager me;
-
-    public InitialDialogue(LevelManager level_manager)
-    {
-        this.me = level_manager;
-    }
-
-    public void EnterState()
-    {
-        me.create_dialogue(me.current_person.initial_dialogue);
-    }
-
-    public void UpdateState()
-    {
-        //if (me.current_person_obj.HasEntered())
-        //{
-        //    me.change_state(me.initial_dialogue);
-        //}
-    }
-
-    public void ExitState()
-    {
-        
-    }
 }

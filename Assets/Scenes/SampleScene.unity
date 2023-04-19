@@ -629,6 +629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369528490}
   - component: {fileID: 1369528491}
+  - component: {fileID: 1369528492}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -672,18 +673,27 @@ MonoBehaviour:
     sprite: {fileID: 0}
     document_sprite: {fileID: 0}
     initial_dialogue: []
+    competences: []
   people_list:
   - name: Luizinho
     age: 18
     id: 43425-1
-    voice: []
+    voice:
+    - {fileID: 0}
     sprite: {fileID: 21300000, guid: e3c24a5f4f373524dac6aad6e93314f6, type: 3}
     document_sprite: {fileID: 21300000, guid: ea8d7387ebca7e844a0c9bbd7e0c2355, type: 3}
     initial_dialogue:
-    - text: YOOOOOOOOOOOOO
+    - text: SALVE
       name: 
     - text: BOM DIA
       name: 
+    competences:
+    - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
+      is_true: 1
+    - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
+      is_true: 1
+    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
+      is_true: 1
   dialogue_prefab: {fileID: 7425290437036527904, guid: ff485081ed9a063438a8c56967aec533, type: 3}
   option_prefab: {fileID: 5532639139266292795, guid: 8a8523a999f3872429f51472261239a0, type: 3}
   person_prefab: {fileID: 8379286322824686732, guid: 965ccc4e7c8bd5b4abd6f4290bb7f155, type: 3}
@@ -692,6 +702,18 @@ MonoBehaviour:
   current_person_obj: {fileID: 0}
   current_dialogue: {fileID: 0}
   current_options: {fileID: 0}
+--- !u!114 &1369528492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369528488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb2dd92e1c87e740933abc66c1e4074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750536973
 GameObject:
   m_ObjectHideFlags: 0

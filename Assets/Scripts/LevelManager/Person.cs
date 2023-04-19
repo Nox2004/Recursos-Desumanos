@@ -14,6 +14,7 @@ public enum Jobs
 [Serializable]
 public class Person 
 {
+    [Serializable]
     public struct individualCompetence
     {
         public Competence competence;
@@ -31,20 +32,4 @@ public class Person
 
     public DialogueStruc[] initial_dialogue;
     public individualCompetence[] competences;
-}
-
-[Serializable]
-public class Competence
-{
-    [Serializable]
-    private struct Test 
-    {
-        public DialogueStruc[] true_answer;
-        public DialogueStruc[] false_answer;
-    }
-    
-    public string resume_description;
-    public string test_question;
-
-    public int[] points = new int[(int) Jobs.Security+1]; 
-}
+} 

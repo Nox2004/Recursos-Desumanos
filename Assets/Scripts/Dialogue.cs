@@ -109,6 +109,18 @@ public class Dialogue : MonoBehaviour
         dialogue_box_obj.transform.localPosition = new Vector3(dialogue_box_obj.transform.localPosition.x,box_yy,dialogue_box_obj.transform.localPosition.z);
     }
 
+    public bool FinishedText()
+    {
+        return (current_letters < text[index].text.Length) && (index >= text.Length-1);
+    }
+
+    public void SetText(DialogueStruc[] new_text)
+    {
+        index=0;
+        current_letters=0;
+        text = new_text;
+    }
+
     private void ShowDialogue(string name, string txt, float spd)
     {
         //Adds to the letter count
