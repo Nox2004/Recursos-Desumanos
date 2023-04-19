@@ -3,7 +3,14 @@ guid: 96a415d9d6c09f348a27980f483516a4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dialogue_prefab: {fileID: 7425290437036527904, guid: ff485081ed9a063438a8c56967aec533, type: 3}
+  - option_prefab: {fileID: 5532639139266292795, guid: 8a8523a999f3872429f51472261239a0, type: 3}
+  - person_prefab: {fileID: 8379286322824686732, guid: 965ccc4e7c8bd5b4abd6f4290bb7f155, type: 3}
+  - resume_prefab: {instanceID: 0}
+  - document_prefab: {fileID: 9169260372811999910, guid: 278750e82556edb4eb9faf45aeb70045, type: 3}
+  - current_person_obj: {instanceID: 0}
+  - current_dialogue: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

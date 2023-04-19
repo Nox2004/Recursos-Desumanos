@@ -6,6 +6,7 @@ public class PersonInRoom : MonoBehaviour
 {
     public bool exiting = false;
 
+    public float start_x;
     private float xx;
     [SerializeField] private AnimCurveValue xx_enter_curve;
     [SerializeField] private AnimCurveValue xx_exit_curve;
@@ -13,6 +14,8 @@ public class PersonInRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        xx_enter_curve.val_start = start_x;
+
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
     }
@@ -40,5 +43,11 @@ public class PersonInRoom : MonoBehaviour
     void Exit()
     {
         xx = xx_exit_curve.Update(Time.deltaTime);
+    }
+
+    public bool HasEntered()
+    {
+        if ((!exiting) && (xx_enter_curve.GetRawValue()>=1)) return true;
+        return false;
     }
 }

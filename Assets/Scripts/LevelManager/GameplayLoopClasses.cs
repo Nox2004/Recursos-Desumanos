@@ -26,6 +26,9 @@ public class Person
 
     public AudioClip[] voice;
 
+    public Sprite sprite;
+    public Sprite document_sprite;
+
     public DialogueStruc[] initial_dialogue;
     public individualCompetence[] competences;
 }

@@ -85,7 +85,7 @@ public class Dialogue : MonoBehaviour
             else 
             {
                 //Changes text if dialogue is not over
-                if (index < text.Length)
+                if (index < text.Length-1)
                 {
                     index++;
                     letters_spd = letters_spd_min;
@@ -93,7 +93,7 @@ public class Dialogue : MonoBehaviour
                 }
                 else //If is over then
                 {
-
+                    
                 }
             }
         }
@@ -125,14 +125,5 @@ public class Dialogue : MonoBehaviour
     {
         box_width = width_close_curve.Update(Time.deltaTime);
         box_yy = yy_exit_curve.Update(Time.deltaTime);
-        // Stop coroutine if it's running
-        //if (displayCoroutine != null)
-        //{
-        //    StopCoroutine(displayCoroutine);
-        //}
-
-        // Hide dialogue UI
-        //dialogueBox.SetActive(false); // Hide the dialogue box
-        //gameObject.SetActive(false); // Hide the whole dialogue UI
     }
 }
