@@ -46,6 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 707846013
     locked: 0
+  - name: People
+    uniqueID: 1184033739
+    locked: 0
   - name: Table
     uniqueID: 3823825467
     locked: 0

@@ -9,6 +9,12 @@ public struct DialogueStruc
 {
     [SerializeField] public string text;
     [SerializeField] public string name;
+
+    public DialogueStruc(string txt, string char_name)
+    {
+        text = txt;
+        name = char_name;
+    }
 }
 
 public class Dialogue : MonoBehaviour
@@ -47,6 +53,8 @@ public class Dialogue : MonoBehaviour
     public DialogueStruc[] text;
     //private string currentCharacterName;
 
+    public bool hide_at_end = false;
+
     private void Start()
     {
         //Multiplies time stuff by 60, so the speed represents the letters per frame (at 60fps)
@@ -70,10 +78,14 @@ public class Dialogue : MonoBehaviour
         box_yy = box_rect.sizeDelta.y * 1.5f + 100;
         yy_enter_curve.val_start = box_yy;                                      yy_exit_curve.val_end = yy_enter_curve.val_start;
         yy_enter_curve.val_end = dialogue_box_obj.transform.localPosition.y;    yy_exit_curve.val_start = yy_enter_curve.val_end;
+        
+        dialogue_box_obj.transform.localPosition = new Vector3(dialogue_box_obj.transform.localPosition.x,box_yy,dialogue_box_obj.transform.localPosition.z);
     }
 
     private void Update()
     {
+        var entering = true;
+
         //When button pressed
         if (Input.GetMouseButtonDown(0))
         {
@@ -93,13 +105,15 @@ public class Dialogue : MonoBehaviour
                 }
                 else //If is over then
                 {
-                    
+                    if (hide_at_end) entering = false;
                 }
             }
         }
 
-        ShowDialogue(text[index].name,text[index].text, letters_spd);
+        show_dialogue(text[index].name,text[index].text, letters_spd);
         
+        if (entering) enter();
+        else hide();
 
         //Changes box width
         box_rect.sizeDelta = new Vector2(box_width,box_rect.sizeDelta.y);
@@ -109,31 +123,34 @@ public class Dialogue : MonoBehaviour
         dialogue_box_obj.transform.localPosition = new Vector3(dialogue_box_obj.transform.localPosition.x,box_yy,dialogue_box_obj.transform.localPosition.z);
     }
 
-    public bool FinishedText()
+    public bool finished_text()
     {
         return (current_letters < text[index].text.Length) && (index >= text.Length-1);
     }
 
-    public void SetText(DialogueStruc[] new_text)
+    public void set_text(DialogueStruc[] new_text)
     {
         index=0;
         current_letters=0;
         text = new_text;
     }
 
-    private void ShowDialogue(string name, string txt, float spd)
+    private void show_dialogue(string name, string txt, float spd)
     {
         //Adds to the letter count
         current_letters += spd*Time.deltaTime;
         current_letters = Mathf.Min(current_letters,txt.Length); //Clamps value so it wont surpass the text size
 
         dialogue_text.text = txt.Substring(0, (int) Mathf.Floor(current_letters)); //Gets current texts substring
+    }
 
+    private void enter()
+    {
         box_width = width_open_curve.Update(Time.deltaTime);
         box_yy = yy_enter_curve.Update(Time.deltaTime);
     }
 
-    private void HideDialogue()
+    private void hide()
     {
         box_width = width_close_curve.Update(Time.deltaTime);
         box_yy = yy_exit_curve.Update(Time.deltaTime);

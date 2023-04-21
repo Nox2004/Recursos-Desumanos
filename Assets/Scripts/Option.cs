@@ -8,7 +8,16 @@ using System;
 public struct OptionStruc
 {
     public string text;
-    public DialogueStruc[] dialogue_output;
+    public int competence_index;
+    public TestCompetence test_made;
+
+    public OptionStruc(string option, int index, TestCompetence test)
+    {
+        text = option;
+
+        competence_index = index;
+        test_made = test;
+    }
 }
 
 public class Option : MonoBehaviour
@@ -24,7 +33,10 @@ public class Option : MonoBehaviour
     //Options list
     public OptionStruc[] options;
     private OptionImage[] option_objs; //objects
-    private int choosen_option = -1;
+    public int choosen_option = -1;
+    public OptionStruc choosen_option_struc;
+
+    public bool destroy = false;
 
     void Start()
     {
@@ -46,6 +58,9 @@ public class Option : MonoBehaviour
         
         yy_exit_curve.val_start = yy_enter_curve.val_end;
         yy_exit_curve.val_end = yy_enter_curve.val_start;
+
+        transform.localPosition = new Vector3(transform.localPosition.x,yy_enter_curve.val_start,transform.localPosition.z);
+
     }
 
     void Update()
@@ -74,6 +89,7 @@ public class Option : MonoBehaviour
                     {
                         choosen_option = i;
                         animation++;
+                        choosen_option_struc = options[choosen_option];
                         break;
                     }
                 }
@@ -88,9 +104,9 @@ public class Option : MonoBehaviour
                     option_objs[i].control = false;
                 }
 
-                if (yy_enter_curve.GetRawValue() == 1)
+                if ((yy_exit_curve.GetRawValue() == 1) && (destroy))
                 {
-
+                    Destroy(gameObject);
                 }
             }
             break;

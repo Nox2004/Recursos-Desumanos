@@ -14,10 +14,10 @@ public class InitialDialogue : IState
 
     public void UpdateState()
     {
-        //if (me.current_person_obj.HasEntered())
-        //{
-        //    me.change_state(me.initial_dialogue);
-        //}
+        if (me.current_dialogue.finished_text())
+        {
+            me.change_state(me.make_questions);
+        }
     }
 
     public void ExitState()

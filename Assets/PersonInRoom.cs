@@ -14,8 +14,6 @@ public class PersonInRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        xx_enter_curve.val_start = start_x;
-
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
     }

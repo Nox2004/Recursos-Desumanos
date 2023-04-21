@@ -1,3 +1,4 @@
+
 public class PersonEntering : IState
 {
     private LevelManager me;
@@ -6,7 +7,7 @@ public class PersonEntering : IState
     {
         this.me = level_manager;
     }
-
+    
     public void EnterState()
     {
         me.create_person(me.current_person.sprite);

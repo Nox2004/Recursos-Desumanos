@@ -19,6 +19,7 @@ public class Person
     {
         public Competence competence;
         public bool is_true;
+        public bool tested;
     }
 
     public string name;

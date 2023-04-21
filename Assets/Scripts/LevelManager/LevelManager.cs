@@ -5,6 +5,8 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject canvas;
+
     //People list
     public int person_index = 0;
     public Person current_person;
@@ -19,13 +21,17 @@ public class LevelManager : MonoBehaviour
     public Dialogue current_dialogue = null;
     public Option current_options = null;
 
+    public int number_of_options;
+
     //State machine stuff
     public IState currentState;
-    public IState person_entering, initial_dialogue;// initial_dialogue = new InitialDialogue(this);
+    public IState person_entering, initial_dialogue, make_questions;// initial_dialogue = new InitialDialogue(this);
 
     private void Start()
     {
-        person_entering = new PersonEntering(this); initial_dialogue = new InitialDialogue(this);
+        current_person = people_list[person_index];
+        
+        person_entering = new PersonEntering(this); initial_dialogue = new InitialDialogue(this); make_questions = new MakeQuestion(this);
 
         change_state(person_entering); //Enters the initial state
     }
@@ -53,6 +59,8 @@ public class LevelManager : MonoBehaviour
     public Dialogue create_dialogue(DialogueStruc[] text)
     {
         var gameobj = Instantiate(dialogue_prefab);
+        gameobj.transform.SetParent(canvas.transform, false);
+
         current_dialogue = gameobj.GetComponent<Dialogue>();
 
         current_dialogue.text = text;
@@ -63,8 +71,9 @@ public class LevelManager : MonoBehaviour
     public Option create_options(OptionStruc[] options)
     {
         var gameobj = Instantiate(option_prefab);
-        current_options = gameobj.GetComponent<Option>();
+        gameobj.transform.SetParent(canvas.transform, false);
 
+        current_options = gameobj.GetComponent<Option>();
         current_options.options = options;
 
         return current_options;
@@ -73,9 +82,17 @@ public class LevelManager : MonoBehaviour
     public PersonInRoom create_person(Sprite sprite)
     {
         var gameobj = Instantiate(person_prefab);
+        gameobj.GetComponent<SpriteRenderer>().sprite = sprite;
+
         current_person_obj = gameobj.GetComponent<PersonInRoom>();
 
         return current_person_obj;
+    }
+
+    public void destroy_option()
+    {
+        current_options.destroy = true;
+        current_options = null;
     }
 }
 
