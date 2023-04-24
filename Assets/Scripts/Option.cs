@@ -4,19 +4,38 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-[Serializable]
-public struct OptionStruc
+//[Serializable]
+public class OptionValues
+{
+    public string text;
+
+    public OptionValues(string option)
+    {
+        text = option;
+    }
+}
+
+public class PersonalQuestionOption : OptionValues
+{
+    public string text;
+    public int question_index;
+
+    public PersonalQuestionOption(string option, int index) : base(option)
+    {
+        question_index = index;
+    }
+}
+
+public class TestCompetenceOption : OptionValues
 {
     public string text;
     public int competence_index;
-    public TestCompetence test_made;
+    public TestCompetence test;
 
-    public OptionStruc(string option, int index, TestCompetence test)
+    public TestCompetenceOption(string option, int index, TestCompetence this_test) : base(option)
     {
-        text = option;
-
         competence_index = index;
-        test_made = test;
+        test = this_test;
     }
 }
 
@@ -24,17 +43,17 @@ public class Option : MonoBehaviour
 {   
     [SerializeField] private GameObject question_template;
 
-    //Enter and exit animation
+    //Enter and exit stage
     private float yy;
     [SerializeField] private AnimCurveValue yy_enter_curve;
     [SerializeField] private AnimCurveValue yy_exit_curve;
-    private int animation = 0;//0 - intro     1 - idle     2 - exiting
+    private int stage = 0;//0 - intro     1 - idle     2 - exiting
 
     //Options list
-    public OptionStruc[] options;
+    public OptionValues[] options;
     private OptionImage[] option_objs; //objects
     public int choosen_option = -1;
-    public OptionStruc choosen_option_struc;
+    public OptionValues choosen_option_struc;
 
     public bool destroy = false;
 
@@ -48,6 +67,7 @@ public class Option : MonoBehaviour
             option_objs[i] = opt.GetComponent<OptionImage>();
 
             option_objs[i].text = options[i].text;
+            option_objs[i].my_canvas = transform.parent.GetComponent<Canvas>();
         }
         Destroy(question_template);
 
@@ -65,7 +85,7 @@ public class Option : MonoBehaviour
 
     void Update()
     {
-        switch (animation)
+        switch (stage)
         {
             case 0:
             {
@@ -76,7 +96,7 @@ public class Option : MonoBehaviour
                     option_objs[i].control = false;
                 }
 
-                if (yy_enter_curve.GetRawValue() == 1) animation++;
+                if (yy_enter_curve.GetRawValue() == 1) stage++;
             }
             break;
             case 1:
@@ -88,7 +108,7 @@ public class Option : MonoBehaviour
                     if (option_objs[i].selected)
                     {
                         choosen_option = i;
-                        animation++;
+                        stage++;
                         choosen_option_struc = options[choosen_option];
                         break;
                     }

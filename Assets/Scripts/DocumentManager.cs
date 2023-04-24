@@ -53,8 +53,7 @@ public class DocumentManager : MonoBehaviour
     void Update()
     {
         //Sets up mouse position in the world view
-        var mouse_pos = Input.mousePosition;
-        mouse_pos = cam.ScreenToWorldPoint(mouse_pos);
+        var mouse_pos = InGameCursor.get_position_in_world();
 
         //Sets up a "selected" variable
         Document selected = null;

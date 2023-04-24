@@ -76,13 +76,15 @@ public class Perspective : MonoBehaviour
     //Change polygon collider paths
     void adapt_collider(PolygonCollider2D collider, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
     {
-        collider.points = new[] { p1, p2, p3, p4};
+        collider.pathCount = 1;
+        collider.SetPath(0,new[] { p1, p2, p3, p4});
+        //collider.points = new[] { p1, p2, p3, p4};
     }
 
     //Calculates the middle of the documents and change the cursor position
     public void set_mouse_at_middle()
     {
-        CursorScript.cursor_pos = Singleton.Instance.cam.WorldToScreenPoint(transform.localPosition + new Vector3((xoffleft+xoffright)/2/2,0,0));
+        //InGameCursor.cursor_pos = Singleton.Instance.cam.WorldToScreenPoint(transform.localPosition + new Vector3((xoffleft+xoffright)/2/2,0,0));
     }
 
     //Components
@@ -100,6 +102,9 @@ public class Perspective : MonoBehaviour
     //Offset and initial position
     public float xoffleft, xoffright; 
     private Vector3 localpos;
+
+    //offset for the collision
+    public Vector2 collider_offset = Vector3.zero;
 
     void Start()
     {
@@ -136,7 +141,7 @@ public class Perspective : MonoBehaviour
         sprite_width = sprite_renderer.bounds.size.x * transform.lossyScale.x;
         
         //Store sprites edges position
-        Edge edges = SetupEdges(sprite_height, sprite_width, new Vector2(transform.position.x, transform.position.y), new Vector2(0.5f,0.5f));
+        Edge edges = SetupEdges(sprite_width, sprite_height, new Vector2(transform.position.x, transform.position.y), new Vector2(0.5f,0.5f));
         
         //Calculates tan
         tan_left = CalculateTan(edges).x;
@@ -209,7 +214,12 @@ public class Perspective : MonoBehaviour
         if (polygon_col != null)
         {
             Vector2 _pos = new Vector2(transform.position.x, transform.position.y);
-            adapt_collider(polygon_col, edges.upleft - _pos, edges.downleft - _pos, edges.downright - _pos, edges.upright - _pos);
+
+            adapt_collider(polygon_col, 
+            edges.upleft - _pos + collider_offset,
+            edges.upright - _pos + collider_offset,
+            edges.downright - _pos + collider_offset,
+            edges.downleft - _pos + collider_offset);
         }
 
         /*

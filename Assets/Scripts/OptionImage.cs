@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OptionImage : MonoBehaviour
 {
+    public Canvas my_canvas;
     //Image scale
     private float scale=1;
 
@@ -36,7 +37,7 @@ public class OptionImage : MonoBehaviour
 
         //Discovers mouse position in canvas
         Vector2 localMousePos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(uiImage.rectTransform, Input.mousePosition, null, out localMousePos);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(uiImage.rectTransform, InGameCursor.get_position_in_screen(), null, out localMousePos);
 
         float starget = scale_min; //Scale target
 
@@ -46,7 +47,7 @@ public class OptionImage : MonoBehaviour
             uiImage.color = new Color(1,1,1,1);
             starget = scale_max;
 
-            if (Input.GetMouseButtonDown(0))
+            if (InGameCursor.get_button_down(0))
             {
                 selected = true;
             }

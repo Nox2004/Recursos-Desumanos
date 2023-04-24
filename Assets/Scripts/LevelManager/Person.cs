@@ -15,6 +15,14 @@ public enum Jobs
 public class Person 
 {
     [Serializable]
+    public struct PersonalQuestion
+    {
+        public string option_text;
+        public bool asked;
+        public DialogueStruc[] output;
+    }
+
+    [Serializable]
     public struct individualCompetence
     {
         public Competence competence;
@@ -32,5 +40,10 @@ public class Person
     public Sprite document_sprite;
 
     public DialogueStruc[] initial_dialogue;
+    public DialogueStruc[] conclusion_dialogue;
     public individualCompetence[] competences;
+    public PersonalQuestion[] possible_personal_questions;
+
+    public DialogueCharacter dialogue_character;
+
 } 

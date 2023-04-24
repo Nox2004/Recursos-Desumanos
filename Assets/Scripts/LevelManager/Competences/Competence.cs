@@ -7,13 +7,12 @@ using System;
 public struct TestCompetence
 {
     public string option_text;
-    public string question;
-    public string[] true_answer;
-    public string[] false_answer;
+    public DialogueStruc[] true_output;
+    public DialogueStruc[] false_output;
 
-    public TestCompetence(string _option, string _question, string[] true_, string[] false_)
+    public TestCompetence(string _option, DialogueStruc[] true_, DialogueStruc[] false_)
     {
-        option_text = _option; question = _question; true_answer = true_; false_answer = false_;
+        option_text = _option; true_output = true_; false_output = false_;
     }
 }
 

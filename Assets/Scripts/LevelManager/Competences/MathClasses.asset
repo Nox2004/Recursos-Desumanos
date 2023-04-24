@@ -19,9 +19,24 @@ MonoBehaviour:
     points: 2
   possible_tests:
   - option_text: 32*(1+2)
-    question: "Por favor, responda, quanto \xE9 32*(1+2)?"
-    true_answer:
-    - 96
-    false_answer:
-    - ahmm...
-    - 34?
+    true_output:
+    - text: "Responda, quanto \xE9 32*(1+2)"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: 96
+      character: {fileID: 0}
+    false_output:
+    - text: "Responda, quanto \xE9 32*(1+2)"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "31... 32... \xE9 34, n\xE3o \xE9?"
+      character: {fileID: 0}
+  - option_text: "Fazer quest\xE3o de matematica."
+    true_output:
+    - text: "How to get a number 100 by using four sevens (7\u2019s) and a one (1)?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: '(7+7) * (7 + (1/7)) = 100 '
+      character: {fileID: 0}
+    false_output:
+    - text: "How to get a number 100 by using four sevens (7\u2019s) and a one (1)?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Fala portugu\xEAs cartoonizando mad\xE3f\xE3king"
+      character: {fileID: 0}

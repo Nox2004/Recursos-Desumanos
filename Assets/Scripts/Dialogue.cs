@@ -8,12 +8,12 @@ using System;
 public struct DialogueStruc
 {
     [SerializeField] public string text;
-    [SerializeField] public string name;
+    [SerializeField] public DialogueCharacter character;
 
-    public DialogueStruc(string txt, string char_name)
+    public DialogueStruc(string txt, DialogueCharacter this_char)
     {
         text = txt;
-        name = char_name;
+        character = this_char;
     }
 }
 
@@ -30,13 +30,16 @@ public class Dialogue : MonoBehaviour
     //Box and Text Objects
     [SerializeField] private GameObject dialogue_box_obj;
     [SerializeField] private GameObject text_obj;
+    [SerializeField] private GameObject name_obj;
 
     //Box and text transform components
     private RectTransform box_rect;
     private RectTransform text_rect;
+    private RectTransform name_text_rect;
     
     //Image and text components
     private TMPro.TextMeshProUGUI dialogue_text;
+    private TMPro.TextMeshProUGUI name_text;
     private Image dialogue_box;    
 
     //Text border
@@ -51,9 +54,11 @@ public class Dialogue : MonoBehaviour
     //Dialogue and index
     private int index = 0;
     public DialogueStruc[] text;
-    //private string currentCharacterName;
 
-    public bool hide_at_end = false;
+    public bool hide_at_end = true;
+    public bool destroy_at_hide = true;
+
+    private bool entering = true;
 
     private void Start()
     {
@@ -66,8 +71,10 @@ public class Dialogue : MonoBehaviour
         //Sets up components
         box_rect = dialogue_box_obj.GetComponent<RectTransform>();
         text_rect = text_obj.GetComponent<RectTransform>();
+        name_text_rect = name_obj.GetComponent<RectTransform>();
         
         dialogue_text = text_obj.GetComponent<TMPro.TextMeshProUGUI>();
+        name_text = name_obj.GetComponent<TMPro.TextMeshProUGUI>();
         dialogue_box = dialogue_box_obj.GetComponent<Image>();
 
         //Sets up procedural animation stuff
@@ -84,10 +91,10 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        var entering = true;
+        //var entering = true;
 
         //When button pressed
-        if (Input.GetMouseButtonDown(0))
+        if (InGameCursor.get_button_down(0))
         {
             //Changes spd if text is not over
             if (current_letters < text[index].text.Length)
@@ -110,22 +117,33 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        show_dialogue(text[index].name,text[index].text, letters_spd);
+        show_dialogue(text[index].character.name,text[index].text, letters_spd);
         
         if (entering) enter();
         else hide();
 
         //Changes box width
         box_rect.sizeDelta = new Vector2(box_width,box_rect.sizeDelta.y);
-        text_rect.sizeDelta = new Vector2(box_width-text_border*2,box_rect.sizeDelta.y-text_border*2); //Applies text border
+        name_text_rect.sizeDelta = new Vector2(box_width-text_border*2,name_text_rect.sizeDelta.y);
+        text_rect.sizeDelta = new Vector2(box_width-text_border*2,text_rect.sizeDelta.y); //Applies text border
 
         //Changes box y
         dialogue_box_obj.transform.localPosition = new Vector3(dialogue_box_obj.transform.localPosition.x,box_yy,dialogue_box_obj.transform.localPosition.z);
+
+        if (hiding_box() && destroy_at_hide)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public bool finished_text()
     {
-        return (current_letters < text[index].text.Length) && (index >= text.Length-1);
+        return (current_letters >= text[index].text.Length) && (index >= text.Length-1);
+    }
+
+    public bool hiding_box()
+    {
+        return width_close_curve.GetRawValue() >= 1;
     }
 
     public void set_text(DialogueStruc[] new_text)
@@ -142,6 +160,7 @@ public class Dialogue : MonoBehaviour
         current_letters = Mathf.Min(current_letters,txt.Length); //Clamps value so it wont surpass the text size
 
         dialogue_text.text = txt.Substring(0, (int) Mathf.Floor(current_letters)); //Gets current texts substring
+        name_text.text = name;
     }
 
     private void enter()

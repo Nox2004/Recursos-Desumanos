@@ -21,14 +21,24 @@ MonoBehaviour:
     points: -1
   possible_tests:
   - option_text: Questionar a cor tema do excel
-    question: "Qual \xE9 a cor tema do excel 2006?"
-    true_answer:
-    - Verde
-    false_answer:
-    - Azul!!!
-  - option_text: Questionar a cor tema do excel
-    question: "Qual \xE9 a cor tema do excel 2006?"
-    true_answer:
-    - Verde
-    false_answer:
-    - Azul!!!
+    true_output:
+    - text: "Qual \xE9 a cor tema do excel 2006?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Verde
+      character: {fileID: 0}
+    false_output:
+    - text: "Qual \xE9 a cor tema do excel 2006?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: eu seila poha
+      character: {fileID: 0}
+  - option_text: "Questionar sobre fun\xE7\xF5es no escel"
+    true_output:
+    - text: "Como faz fun\xE7\xE3o no excel?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Tu tem que clicar no F la
+      character: {fileID: 0}
+    false_output:
+    - text: "Como faz fun\xE7\xE3o no excel?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Aperta alt e F4
+      character: {fileID: 0}

@@ -21,8 +21,17 @@ MonoBehaviour:
     points: 2
   possible_tests:
   - option_text: Questao sobre topicos no powerpoint
-    question: "Como fa\xE7o pra adicionar t\xF3picos no powerpoint?"
-    true_answer:
-    - VERDADEIRO
-    false_answer:
-    - FALSO
+    true_output:
+    - text: "Como adiciona um t\xF3pico no powerpoint?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Tem que colocar tracinho
+      character: {fileID: 0}
+    false_output:
+    - text: "Como adiciona um t\xF3pico no powerpoint?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Coce tem que......
+      character: {fileID: 0}
+    - text: Hmmmmmmmmmm
+      character: {fileID: 0}
+    - text: Esqueci
+      character: {fileID: 0}

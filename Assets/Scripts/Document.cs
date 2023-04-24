@@ -6,6 +6,7 @@ public class Document : MonoBehaviour
 {
     //Table collider
     private PolygonCollider2D tablecollider;
+    private CompositeCollider2D composite_collider;
 
     //Mouse Stuff
     private Vector3 start_pos;
@@ -14,7 +15,7 @@ public class Document : MonoBehaviour
     private Camera cam; //Camera
     
     //Document movement variables
-    private float y_offset = 0;
+    [SerializeField] private float y_offset = 0;
     [SerializeField] private float y_offtarget = 1; private float y_offsmooth = 4.0f / 60;
     
     //Important components
@@ -39,7 +40,10 @@ public class Document : MonoBehaviour
         cam = Singleton.Instance.cam; //Sets up cam
         DocumentManager.DocManager.document_list.Add(this); //Add the document to the docmanager list
 
-        pos = transform.localPosition; //position
+        tablecollider = Singleton.Instance.table.GetComponent<PolygonCollider2D>();
+        composite_collider = gameObject.GetComponent<CompositeCollider2D>();
+
+        pos = transform.position; //position
         
         //Sets up component variables
         sprite_renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -73,8 +77,7 @@ public class Document : MonoBehaviour
     private void Update()
     {
         //Gets mouse position in the world view
-        mouse_pos = Input.mousePosition;
-        mouse_pos = cam.ScreenToWorldPoint(mouse_pos);
+        mouse_pos = InGameCursor.get_position_in_world();
 
         //Sets up childs sorting order
         foreach (Transform child in transform)
@@ -101,7 +104,7 @@ public class Document : MonoBehaviour
             //Highlights the document if being selected
             material.SetColor("blend_color",new Color(1f,1f,1f,1f));
 
-            if (Input.GetMouseButtonDown(0))
+            if (InGameCursor.get_button_down(1))
             {
                 start_pos = mouse_pos - pos; //Sets up start position
                 isDragging = true;
@@ -110,7 +113,7 @@ public class Document : MonoBehaviour
             }
 
             //Drop the document
-            if (Input.GetMouseButtonUp(0))
+            if (InGameCursor.get_button_up(1))
             {
                 isDragging = false;
                 DocumentManager.DocManager.drop_document();
@@ -127,7 +130,7 @@ public class Document : MonoBehaviour
             }
             else
             {
-                CursorScript.cursor_pos = transform.localPosition;
+                //CursorScript.cursor_pos = transform.position;
             }
 
             //Adds a smooth y offset to the document
@@ -140,12 +143,28 @@ public class Document : MonoBehaviour
         }
         
         //Applies offset
-        transform.localPosition = new Vector3(pos.x,pos.y+y_offset,pos.z);
+        
 
         //Sets shadow position
-        my_shadow.transform.localPosition = new Vector3(0, 0 - y_offset, 0);
-    }
+        my_shadow.transform.position = pos;
 
+         // Check if any of the object's collider points are outside the collider
+        foreach (var point in my_collider.points)
+        {
+            Vector2 pointWorldPosition = (Vector2) my_shadow.transform.TransformPoint(point);
+            Vector2 closestPoint = tablecollider.ClosestPoint(pointWorldPosition);
+
+            if (!tablecollider.OverlapPoint(closestPoint))
+            {
+                Vector2 moveDirection = closestPoint - pointWorldPosition;
+                my_shadow.transform.position += (Vector3) moveDirection;
+                pos = my_shadow.transform.position;
+            }
+        }
+
+        //Applies offset
+        transform.position = pos + Vector3.up*y_offset; 
+    }
     private void LateUpdate()
     {
         //shadow_rend.material.SetFloat("left_offset", persp_script.xoffleft);
@@ -156,5 +175,6 @@ public class Document : MonoBehaviour
     {
         //Follows the mouse
         pos = new Vector3(mouse_pos.x - start_pos.x, mouse_pos.y - start_pos.y, pos.z);
+        //transform.position = pos;
     }
 }

@@ -11,6 +11,9 @@ public class Singleton : MonoBehaviour
     public GameObject table;
     public Vector2 perspective_point;
     public Camera cam;
+    public DialogueCharacter player_character;
+
+    public Vector3 instantiate_document_pos;
     
 
     private void Awake()

@@ -22,7 +22,7 @@ public class AnimCurveValue
         value += (1/(animation_duration/60)) * time; 
         value = Mathf.Clamp(value,0,1);
 
-        return Mathf.Lerp(val_start,val_end,curve.Evaluate(value));
+        return Mathf.LerpUnclamped(val_start,val_end,curve.Evaluate(value));
     }
 
     public float GetValue()

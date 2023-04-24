@@ -16,6 +16,8 @@ public class PersonInRoom : MonoBehaviour
     {
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
+
+        transform.position = new Vector3(xx,transform.position.y,transform.position.z);
     }
 
     // Update is called once per frame
@@ -46,6 +48,12 @@ public class PersonInRoom : MonoBehaviour
     public bool HasEntered()
     {
         if ((!exiting) && (xx_enter_curve.GetRawValue()>=1)) return true;
+        return false;
+    }
+
+    public bool HasExited()
+    {
+        if ((exiting) && (xx_exit_curve.GetRawValue()>=1)) return true;
         return false;
     }
 }
