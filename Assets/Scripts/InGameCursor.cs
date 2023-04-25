@@ -52,6 +52,7 @@ public class InGameCursor : MonoBehaviour
         var mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         cursor_pos += mouseDelta * mouse_spd;
+        cursor_pos += new Vector2(Input.GetAxis("HORIZONTAL0"), Input.GetAxis("VERTICAL0"));
         cursor_pos = new Vector2(Mathf.Clamp(cursor_pos.x,0,Screen.width), Mathf.Clamp(cursor_pos.y,0,Screen.height));
     }
 
@@ -64,11 +65,20 @@ public class InGameCursor : MonoBehaviour
         DontDestroyOnLoad(transform.parent.gameObject);
     }
 
-    public static bool get_button(int button) { return Input.GetMouseButton(button); }
+    public static bool get_button(int button) 
+    { 
+        return ((Input.GetMouseButton(button)) || ((button==0) ? Input.GetButton("VERDE0") : Input.GetButton("VERMELHO0")));
+    }
 
-    public static bool get_button_down(int button) { return Input.GetMouseButtonDown(button); }
+    public static bool get_button_down(int button) 
+    { 
+        return ((Input.GetMouseButtonDown(button)) || ((button==0) ? Input.GetButtonDown("VERDE0") : Input.GetButtonDown("VERMELHO0")));
+    }
     
-    public static bool get_button_up(int button) { return Input.GetMouseButtonUp(button); }
+    public static bool get_button_up(int button) 
+    { 
+        return ((Input.GetMouseButtonUp(button)) || ((button==0) ? Input.GetButtonUp("VERDE0") : Input.GetButtonUp("VERMELHO0")));
+    }
 
     // Get the position of the image in world space
     public static Vector2 get_position_in_world()

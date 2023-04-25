@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
+  m_Name: ExperienciaSeguranca
+  m_EditorClassIdentifier: 
+  name: "Seguran\xE7a"
+  resume_description: "Experi\xEAncia passada como seguran\xE7a."
+  points:
+  - job: 3
+    points: 2
+  possible_tests:
+  - option_text: "Questionar experi\xEAncia em seguran\xE7a."
+    true_output:
+    - text: "Li aqui que voc\xEA teve experi\xEAncia passada na \xE1rea de seguran\xE7a.
+        Poderia descrever um pouco como foi sua atua\xE7\xE3o na \xE1rea?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Claro! Ja trabalhei no shopping Dom Predo.
+      character: {fileID: 0}
+    - text: Em algumas escolas da rede Anglo.
+      character: {fileID: 0}
+    - text: E em alguns eventos particulares, na boate Las Vegas.
+      character: {fileID: 0}
+    false_output:
+    - text: "Li aqui que voc\xEA teve experi\xEAncia passada na \xE1rea de seguran\xE7a.
+        Poderia descrever um pouco como foi sua atua\xE7\xE3o na \xE1rea?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sim, eu ja trabalhei por um ano na pra\xE7a do seu Z\xE9...."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}

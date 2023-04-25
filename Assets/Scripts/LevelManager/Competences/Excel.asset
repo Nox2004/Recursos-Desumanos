@@ -13,32 +13,37 @@ MonoBehaviour:
   m_Name: Excel
   m_EditorClassIdentifier: 
   name: Excel
-  resume_description: Curso de excel - 1 semestre.
+  resume_description: Curso de excel - 1 semestre
   points:
   - job: 0
+    points: 1
+  - job: 1
     points: 2
-  - job: 3
-    points: -1
   possible_tests:
-  - option_text: Questionar a cor tema do excel
+  - option_text: Questionr sobre atlhos no Excel
     true_output:
-    - text: "Qual \xE9 a cor tema do excel 2006?"
+    - text: "Quais s\xE3o os atalhos para copiar e colar uma c\xE9lula no excel 2007?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Verde
+    - text: Control + C e Control + V.
       character: {fileID: 0}
     false_output:
-    - text: "Qual \xE9 a cor tema do excel 2006?"
+    - text: "Quais s\xE3o os atalhos para copiar e colar uma c\xE9lula no excel 2007?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: eu seila poha
+    - text: Control + C e Shift + V.
       character: {fileID: 0}
-  - option_text: "Questionar sobre fun\xE7\xF5es no escel"
+  - option_text: "Questionar sobre f\xF3rmulas no excel"
     true_output:
-    - text: "Como faz fun\xE7\xE3o no excel?"
+    - text: "Como fa\xE7o para adicionar uma f\xF3rmula \xE1 uma c\xE9lula do excel?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Tu tem que clicar no F la
+    - text: "Voc\xEA precisa clicar no bot\xE3o Fx e escrever a f\xF3rmula que deseja
+        adicionar."
       character: {fileID: 0}
     false_output:
-    - text: "Como faz fun\xE7\xE3o no excel?"
+    - text: "Como fa\xE7o para adicionar uma f\xF3rmula \xE1 uma c\xE9lula do excel?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Aperta alt e F4
+    - text: 'Ahhm.... '
+      character: {fileID: 0}
+    - text: "errrg.... Voc\xEA precisa....... "
+      character: {fileID: 0}
+    - text: "ahm... Haha eu esqueci agora, podemos passar para a pr\xF3xima quest\xE3o?"
       character: {fileID: 0}

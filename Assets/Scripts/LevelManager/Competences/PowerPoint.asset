@@ -22,16 +22,24 @@ MonoBehaviour:
   possible_tests:
   - option_text: Questao sobre topicos no powerpoint
     true_output:
-    - text: "Como adiciona um t\xF3pico no powerpoint?"
+    - text: "Como fa\xE7o para adicionar um t\xF3pico no powerpoint?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Tem que colocar tracinho
+    - text: "Voc\xEA pode ir pela \xE1rea de ferramentas, clicando em \"T\xF3picos\",
+        ou voc\xEA pode adicionar um caractere especial como \"-\"."
       character: {fileID: 0}
     false_output:
-    - text: "Como adiciona um t\xF3pico no powerpoint?"
+    - text: "Como fa\xE7o para adicionar um t\xF3pico no powerpoint?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Coce tem que......
+    - text: "Voc\xEA tem que clicar no \"+\""
       character: {fileID: 0}
-    - text: Hmmmmmmmmmm
+  - option_text: "Quest\xE3o sobre transi\xE7\xF5es no powerpoint"
+    true_output:
+    - text: "Em que abas ficam as transi\xE7\xF5es no PowerPoint?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Na aba de anima\xE7\xE3o."
       character: {fileID: 0}
-    - text: Esqueci
+    false_output:
+    - text: "Em que abas ficam as transi\xE7\xF5es no PowerPoint?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Na aba de design.
       character: {fileID: 0}

@@ -63,7 +63,7 @@ public class MakeQuestion : IState
         }
         else
         {
-            me.change_state(me.interview_conclusion);
+            if (InGameCursor.get_button_down(0)) me.change_state(me.interview_conclusion);
         }
     }
 

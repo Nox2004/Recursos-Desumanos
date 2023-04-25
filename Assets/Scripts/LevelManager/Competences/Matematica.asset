@@ -10,33 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
-  m_Name: MathClasses
+  m_Name: Matematica
   m_EditorClassIdentifier: 
-  name: Math classes
-  resume_description: Studied math in Havard
+  name: Matematica
+  resume_description: "4 Semestres de matem\xE1tica em Havard."
   points:
   - job: 1
-    points: 2
+    points: 3
+  - job: 0
+    points: 1
   possible_tests:
   - option_text: 32*(1+2)
     true_output:
-    - text: "Responda, quanto \xE9 32*(1+2)"
+    - text: "Responda, quanto \xE9 32*(1+2):"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     - text: 96
       character: {fileID: 0}
     false_output:
-    - text: "Responda, quanto \xE9 32*(1+2)"
+    - text: "Responda, quanto \xE9 32*(1+2):"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     - text: "31... 32... \xE9 34, n\xE3o \xE9?"
       character: {fileID: 0}
-  - option_text: "Fazer quest\xE3o de matematica."
+  - option_text: "Fazer quest\xE3o de Geometria."
     true_output:
-    - text: "How to get a number 100 by using four sevens (7\u2019s) and a one (1)?"
+    - text: "Qual \xE9 a some dos angulos internos de um tri\xE2ngulo?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: '(7+7) * (7 + (1/7)) = 100 '
+    - text: 180 graus!
       character: {fileID: 0}
     false_output:
-    - text: "How to get a number 100 by using four sevens (7\u2019s) and a one (1)?"
+    - text: "Qual \xE9 a some dos angulos internos de um tri\xE2ngulo?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: "Fala portugu\xEAs cartoonizando mad\xE3f\xE3king"
+    - text: 360 graus!
       character: {fileID: 0}
