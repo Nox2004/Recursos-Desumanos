@@ -33,6 +33,10 @@ public class MakeQuestion : IState
                 {
                     //Instantiate all options
                     my_option = instantiate_options();
+                    if (my_option == null)
+                    {
+                        me.change_state(me.interview_conclusion);
+                    }
                     stage++;
                 }
                 break;
@@ -75,18 +79,40 @@ public class MakeQuestion : IState
 
     public Option instantiate_options()
     {
-        //create 3 option struts
-        OptionValues[] current_options = new OptionValues[me.options_per_question];
         //competence blacklist 
         List<string> selected_list = new List<string>();
 
-        for (int i = 0; i < me.options_per_question; i++)
+        //Gets number of questions
+        int personal_questions_remaining = 0, competence_questions_remaining = 0;        
+        foreach (var comp in me.current_person.competences)
+        {
+            if (!comp.tested) { competence_questions_remaining++; }
+        }
+
+        foreach (var question in me.current_person.possible_personal_questions)
+        {
+            if (!question.asked) { personal_questions_remaining++; }
+        }
+
+        int total = competence_questions_remaining + personal_questions_remaining;
+
+        if (total <= 0) return null;
+
+        //create 3 option struts
+        int number_of_options = Mathf.Min(me.options_per_question,total);
+
+        OptionValues[] current_options = new OptionValues[number_of_options];
+
+        for (int i = 0; i < number_of_options; i++)
         {
             while (true)
             {
+                var chance = Random.Range(0,100);
                 //Personal questions
-                if (i < me.personal_options_per_question)
+                if (chance < me.personal_option_chance)
                 {
+                    if (personal_questions_remaining <= 0) continue;
+
                     var list = me.current_person.possible_personal_questions;
                     var question_index = Random.Range(0, list.Length);
                     var question = list[question_index];
@@ -101,6 +127,8 @@ public class MakeQuestion : IState
                 }
                 else 
                 {
+                    if (competence_questions_remaining <= 0) continue;
+
                     //Choose a random individual competence
                     var list = me.current_person.competences;
                     int comp_index = Random.Range(0, list.Length);

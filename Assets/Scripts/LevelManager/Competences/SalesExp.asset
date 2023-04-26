@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
+  m_Name: SalesExp
+  m_EditorClassIdentifier: 
+  name: Vendas
+  resume_description: "Experi\xEAncia na \xE1rea de vendas."
+  points:
+  - job: 0
+    points: 4
+  possible_tests:
+  - option_text: "Questionar experi\xEAncia em vendas"
+    true_output:
+    - text: "Est\xE1 escrito aqui que voc\xEA possu\xED experi\xEAncia na \xE1rea
+        de vendas, se importaria em mencionar alguns clientes importantes?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sim, eu ja trabalhei fornecendo produtos para v\xE1rias pequenas empresas-m\xE9dias
+        de t\xE9cnologias, como a glooge, a microloft e a amaz-on."
+      character: {fileID: 0}
+    false_output:
+    - text: "Est\xE1 escrito aqui que voc\xEA possu\xED experi\xEAncia na \xE1rea
+        de vendas, se importaria em mencionar alguns clientes importantes?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Ah.... Claro, eu ja vendi v\xE1rios produtos pra membros importantes
+        da sociedade, como minha m\xE3e, minha sogra, meu tio... E etc, a lista \xE9
+        longa."
+      character: {fileID: 0}

@@ -32,14 +32,16 @@ public class InterviewConclusion : IState
                 if (me.person_index < me.people_in_list-1)
                 {
                     me.person_index++;
+                    me.set_current_person();
                     me.change_state(me.person_intro);
                 } 
                 else 
                 {
                     me.current_person = null;
-                    //change to ending interview stage
+                    me.change_state(me.post_interview);
+                    
+                    //change to post interview stage
                 }
-                
             }
         }
     }

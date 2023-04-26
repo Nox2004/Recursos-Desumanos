@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
-  m_Name: ExperienciaSeguranca
+  m_Name: SecurityExp
   m_EditorClassIdentifier: 
   name: "Seguran\xE7a"
-  resume_description: "Experi\xEAncia passada como seguran\xE7a."
+  resume_description: "Experi\xEAncia na \xE1rea de seguran\xE7a."
   points:
   - job: 3
     points: 2

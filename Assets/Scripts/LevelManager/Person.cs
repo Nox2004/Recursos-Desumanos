@@ -46,4 +46,22 @@ public class Person
 
     public DialogueCharacter dialogue_character;
 
+    public void create_dialogue_characterr()
+    {
+        dialogue_character= new DialogueCharacter(name, voice);
+    }
+
+    public float evaluate_in_job(Jobs job)
+    {
+        float value = 0;
+        foreach (individualCompetence comp in competences)
+        {
+            foreach (JobPoints point in comp.competence.points)
+            {
+                if (point.job == job) value+=point.points;
+            }
+        }
+
+        return value;
+    }
 } 

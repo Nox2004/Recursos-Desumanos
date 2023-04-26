@@ -20,7 +20,7 @@ MonoBehaviour:
   - job: 0
     points: 2
   possible_tests:
-  - option_text: Questao sobre topicos no powerpoint
+  - option_text: Questionar sobre topicos no powerpoint
     true_output:
     - text: "Como fa\xE7o para adicionar um t\xF3pico no powerpoint?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
@@ -30,9 +30,9 @@ MonoBehaviour:
     false_output:
     - text: "Como fa\xE7o para adicionar um t\xF3pico no powerpoint?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: "Voc\xEA tem que clicar no \"+\""
+    - text: "hm..... Voc\xEA tem que clicar no \"+\"... Se n\xE3o me engano..."
       character: {fileID: 0}
-  - option_text: "Quest\xE3o sobre transi\xE7\xF5es no powerpoint"
+  - option_text: "Questionar sobre transi\xE7\xF5es no powerpoint"
     true_output:
     - text: "Em que abas ficam as transi\xE7\xF5es no PowerPoint?"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}

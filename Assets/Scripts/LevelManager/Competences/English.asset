@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
-  m_Name: ExperienciaFaxina
+  m_Name: English
   m_EditorClassIdentifier: 
-  name: Experiencia em Faxina
-  resume_description: "Experi\xEAncia na \xE1rea de faxina."
+  name: "Ingl\xEAs"
+  resume_description: "N\xEDvel intermedi\xE1rio de ingl\xEAs."
   points:
-  - job: 2
-    points: 3
+  - job: 0
+    points: 2
   possible_tests:
-  - option_text: Questionar sobre produtos de limpeza
+  - option_text: "Testar o ingl\xEAs"
     true_output:
-    - text: "Que produto voc\xEA usaria para limpar uma janela suja de gordura?"
+    - text: "Traduza para ingl\xEAs a frase: \"Qual a sua profiss\xE3o? Eu sou um
+        advogado.\" "
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Um limpa virdros e um desengordurnte, provavelmente.
+    - text: What do you do for a living? I'am a lawyer.
       character: {fileID: 0}
     false_output:
-    - text: "Que produto voc\xEA usaria para limpar uma janela suja de gordura?"
+    - text: "Traduza para o ingl\xEAs a frase: \"Voc\xEA tem filhos?\""
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: ... Hmm, eu usaria um detergente.
-      character: {fileID: 0}
+    - text: I donkt haive cheldrengi.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}

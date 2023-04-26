@@ -17,7 +17,7 @@ public struct TestCompetence
 }
 
 [Serializable]
-public struct CompetencePoints
+public struct JobPoints
 {
     public Jobs job;
     public int points;
@@ -29,7 +29,7 @@ public class Competence : ScriptableObject
     public string name;
     public string resume_description;
 
-    public List<CompetencePoints> points = new List<CompetencePoints>();
+    public List<JobPoints> points = new List<JobPoints>();
     public List<TestCompetence> possible_tests = new List<TestCompetence>();
 
     /*

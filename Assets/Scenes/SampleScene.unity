@@ -215,6 +215,137 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371343952}
   m_CullTransparentMesh: 1
+--- !u!1 &464441105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464441106}
+  - component: {fileID: 464441109}
+  - component: {fileID: 464441108}
+  - component: {fileID: 464441107}
+  m_Layer: 0
+  m_Name: Drawer (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &464441106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464441105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.53, y: -1.47, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2011773184}
+  m_Father: {fileID: 1076867836}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464441107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464441105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01221bef6536a8247ba6c261f98e95c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yy_start: 0
+  yy_end: 1.3
+  yy: 0
+  smoothness: 10
+  initial_pos: {x: 0, y: 0, z: 0}
+  job: 2
+--- !u!61 &464441108
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464441105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.74, y: 3.68}
+    newSize: {x: 2.74, y: 3.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.74, y: 3.106299}
+  m_EdgeRadius: 0
+--- !u!212 &464441109
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464441105}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.74, y: 3.68}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +396,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.4
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -293,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -312,10 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403284824c720994288db0211141eb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: 0
-  yy_start: 0
-  cursor_y_move_threshold: 0
-  yy_end: 0
+  locked: 1
+  yy_start: 0.3
+  yy_end: -3.4
+  cursor_y_move_threshold: 0.2
+  cursor_y_move_spd: 0.025
 --- !u!1 &571869495
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 1076867834}
-  perspective_point: {x: 0, y: 8.3}
+  perspective_point: {x: 0, y: 8}
   cam: {fileID: 0}
   player_character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
   instantiate_document_pos: {x: 0, y: -1.7, z: 0}
@@ -365,6 +497,309 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586795601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586795602}
+  - component: {fileID: 586795605}
+  - component: {fileID: 586795604}
+  - component: {fileID: 586795603}
+  m_Layer: 0
+  m_Name: Drawer (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &586795602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586795601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.66, y: -1.47, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1926093985}
+  m_Father: {fileID: 1076867836}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &586795603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586795601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01221bef6536a8247ba6c261f98e95c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yy_start: 0
+  yy_end: 1.3
+  yy: 0
+  smoothness: 10
+  initial_pos: {x: 0, y: 0, z: 0}
+  job: 2
+--- !u!61 &586795604
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586795601}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.74, y: 3.68}
+    newSize: {x: 2.74, y: 3.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.74, y: 3.106299}
+  m_EdgeRadius: 0
+--- !u!212 &586795605
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586795601}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.74, y: 3.68}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &628716048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628716049}
+  - component: {fileID: 628716051}
+  - component: {fileID: 628716050}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &628716049
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628716048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809699321}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.64, y: -3.79}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &628716050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628716048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Seguran\xE7a"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_sharedMaterial: {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 3.88
+  m_fontSizeBase: 3.88
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 17.3641, w: 4.4682856}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 628716051}
+  m_maskType: 0
+--- !u!23 &628716051
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628716048}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &865909024
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +979,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1022836663}
   - component: {fileID: 1022836664}
+  - component: {fileID: 1022836666}
+  - component: {fileID: 1022836665}
   m_Layer: 0
   m_Name: Drawer
   m_TagString: Untagged
@@ -562,7 +999,8 @@ Transform:
   m_LocalPosition: {x: -1.554, y: -1.47, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1965676423}
   m_Father: {fileID: 1076867836}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,6 +1056,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1022836665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022836662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01221bef6536a8247ba6c261f98e95c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yy_start: 0
+  yy_end: 1.3
+  yy: 0
+  smoothness: 10
+  initial_pos: {x: 0, y: 0, z: 0}
+  job: 2
+--- !u!61 &1022836666
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022836662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.74, y: 3.68}
+    newSize: {x: 2.74, y: 3.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.74, y: 3.106299}
+  m_EdgeRadius: 0
 --- !u!1 &1045343304
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +1177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045343304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25049907, y: -2, z: 0}
+  m_LocalPosition: {x: 0.02, y: -1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -780,12 +1262,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076867834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -2.24, z: 1}
+  m_LocalPosition: {x: -0.02, y: -2.24, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1154030085}
   - {fileID: 1022836663}
+  - {fileID: 464441106}
+  - {fileID: 1809699321}
+  - {fileID: 586795602}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -991,6 +1476,7 @@ GameObject:
   - component: {fileID: 1369528490}
   - component: {fileID: 1369528491}
   - component: {fileID: 1369528492}
+  - component: {fileID: 1369528493}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -1026,10 +1512,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2002472331}
+  camera: {fileID: 519420033}
   person_index: 0
-  options_per_question: 3
-  personal_options_per_question: 1
-  number_of_questions: 2
+  options_per_question: 2
+  personal_option_chance: 40
+  number_of_questions: 3
   next_question_dialogue:
     text: "Okay, vamos para a pr\xF3xima pergunta."
     character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
@@ -1046,7 +1533,7 @@ MonoBehaviour:
     possible_personal_questions: []
     dialogue_character: {fileID: 0}
   people_list:
-  - name: "Jo\xE3o Bochechas"
+  - name: "Jo\xE3o B."
     age: 29
     id: 43425-1
     voice:
@@ -1060,11 +1547,9 @@ MonoBehaviour:
     - text: Entendo, vamos as perguntas.
       character: {fileID: 0}
     conclusion_dialogue:
-    - text: Podpa manin, tua entrevista acabou.
+    - text: "Muito bem, sua entrevista acabou. Est\xE1 dispensado"
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Vaza!
-      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Falou ae, ve se me contrata
+    - text: Desculpa qualquer coisa.
       character: {fileID: 0}
     competences:
     - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
@@ -1087,18 +1572,27 @@ MonoBehaviour:
       - text: "Pe\xE7o perd\xE3o de estiver sendo intrusivo, mas se importaria de
           falar sobre seu antigo emprego?"
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: Qual foi seu emprego passado?
+      - text: "Ind\xFAstria de produ\xE7\xE3o, mas acabei saindo porque n\xE3o era
+          o que tinha em mente como estilo de vida."
         character: {fileID: 0}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
       - text: Tem uma familia?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: "S\xF3 minhas tr\xEAs filhas, perdi minha esposa em um acidente infort\xFAnio"
+      - text: "S\xF3 minhas tr\xEAs filhas, perdi minha esposa em um acidente infort\xFAnio."
         character: {fileID: 0}
-      - text: "Vai afetar seu trabalho de alg\xFAm jeito?"
+      - text: Vai afetar seu trabalho de algum jeito?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
       - text: "N\xE3o senhor."
+        character: {fileID: 0}
+    - option_text: Perguntar sobre a pessoa
+      asked: 0
+      output:
+      - text: "Me conte um pouco sobre voc\xEA."
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Sou acima de tudo empenhado. As vezes perco a no\xE7\xE3o de quando
+          devo parar."
         character: {fileID: 0}
     dialogue_character: {fileID: 0}
   - name: Jessica Joes
@@ -1109,41 +1603,48 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 5e9e4ef3c50786f43a4e7dbbf4ee36b6, type: 3}
     document_sprite: {fileID: 21300000, guid: ea8d7387ebca7e844a0c9bbd7e0c2355, type: 3}
     initial_dialogue:
-    - text: SALVE
+    - text: Tudo bom?
       character: {fileID: 0}
-    - text: BOM DIA
-      character: {fileID: 0}
+    - text: Sente-se por favor.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     conclusion_dialogue:
-    - text: Podpa manin, tua entrevista acabou.
+    - text: Obrigado, sua entrevista acaba aqui.
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Vaza!
-      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Falou ae, ve se me contrata
+    - text: "Espero que d\xEA tudo certo."
       character: {fileID: 0}
     competences:
-    - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
+    - competence: {fileID: 11400000, guid: 1d9085086cfbd45418fccd0a44ec4d11, type: 2}
       is_true: 1
       tested: 0
-    - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
-      is_true: 1
-      tested: 0
-    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
+    - competence: {fileID: 11400000, guid: e74fe09b9cb90d9459ce2594e5d8bc94, type: 2}
       is_true: 0
+      tested: 0
+    - competence: {fileID: 11400000, guid: 799f56c57fec5da43a3a28feb748c437, type: 2}
+      is_true: 1
       tested: 0
     possible_personal_questions:
     - option_text: Perguntar sobre os hobbies
       asked: 0
       output:
-      - text: Liste seus hobbies
+      - text: Por favor liste seus hobbies
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: "Andar de bicicleta, dancar zumba e tric\xF4"
+      - text: "Fa\xE7o alguns bicos nas casas de mulheres ricas."
+        character: {fileID: 0}
+      - text: Que tipo de trabalho extra?
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Maioria das vezes faxina, mas quando o outro empregado falta, cozinho
+          tamb\xE9m."
         character: {fileID: 0}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
-      - text: Tem uma familia
+      - text: Tem uma familia?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: Tenho 10 maridos, e todos tem 2 empregos
+      - text: Dois filhos na escolinha, Luiz e Gian.
+        character: {fileID: 0}
+      - text: Importa-se em comentar sobre o pai?
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Desculpa, n\xE3o quero falar sobre isso."
         character: {fileID: 0}
     dialogue_character: {fileID: 0}
   - name: Paulo
@@ -1154,44 +1655,51 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: e091e164570b8f94cbecd0c82038be1c, type: 3}
     document_sprite: {fileID: 21300000, guid: ea8d7387ebca7e844a0c9bbd7e0c2355, type: 3}
     initial_dialogue:
-    - text: SALVE
+    - text: "Bom dia. Parece cansado, est\xE1 tudo bem com o senhor?"
       character: {fileID: 0}
-    - text: BOM DIA
-      character: {fileID: 0}
+    - text: "Estou \xF3timo, sente-se."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     conclusion_dialogue:
-    - text: Podpa manin, tua entrevista acabou.
+    - text: "J\xE1 pode ir. est\xE1 dispensado."
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Vaza!
-      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Falou ae, ve se me contrata
+    - text: Obrigado pelo seu tempo.
       character: {fileID: 0}
     competences:
-    - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
+    - competence: {fileID: 11400000, guid: 5c548db741c336a4ea64aac4cc79b4d7, type: 2}
       is_true: 1
       tested: 0
-    - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
+    - competence: {fileID: 11400000, guid: 4aa64f534b9b38a49b31cc574d35e629, type: 2}
       is_true: 1
-      tested: 0
-    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
-      is_true: 0
       tested: 0
     possible_personal_questions:
     - option_text: Perguntar sobre os hobbies
       asked: 0
       output:
-      - text: Liste seus hobbies
+      - text: Faz algum tipo de hobby?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: "Andar de bicicleta, dancar zumba e tric\xF4"
+      - text: "Sou professor de kung-fu. Preciso ter um segundo emprego para mater
+          meu doj\xF4."
+        character: {fileID: 0}
+      - text: "E possui que \xE1rea de nossa empresa em mente?"
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Disseram que a \xE1rea de vendas paga bem."
+        character: {fileID: 0}
+      - text: "Depende muito da sua comiss\xE3o."
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Foi o que falaram tamb\xE9m."
         character: {fileID: 0}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
-      - text: Tem uma familia
+      - text: Tem uma familia?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: Tenho 10 maridos, e todos tem 2 empregos
+      - text: "Meu pai morreu recentemente, passou o doj\xF4 da fam\xEDlia para eu
+          tomar conta."
         character: {fileID: 0}
+      - text: Sinto muito.
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     dialogue_character: {fileID: 0}
-  - name: Robaro Miamoto
+  - name: Sakamoto san
     age: 45
     id: 35531-9
     voice:
@@ -1199,86 +1707,93 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 48a2b4c92b2f233469a129651d282e1e, type: 3}
     document_sprite: {fileID: 21300000, guid: ea8d7387ebca7e844a0c9bbd7e0c2355, type: 3}
     initial_dialogue:
-    - text: SALVE
+    - text: Salve.
       character: {fileID: 0}
-    - text: BOM DIA
-      character: {fileID: 0}
+    - text: '"Salve"'
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     conclusion_dialogue:
-    - text: Podpa manin, tua entrevista acabou.
+    - text: Nosso tempo acabou, pode ir.
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Vaza!
-      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Falou ae, ve se me contrata
+    - text: Falou ae, ve se me contrata.
       character: {fileID: 0}
     competences:
+    - competence: {fileID: 11400000, guid: 5567c768692244c4f8725190279738b5, type: 2}
+      is_true: 0
+      tested: 0
     - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
-      is_true: 1
-      tested: 0
-    - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
-      is_true: 1
-      tested: 0
-    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
       is_true: 0
       tested: 0
     possible_personal_questions:
-    - option_text: Perguntar sobre os hobbies
+    - option_text: Perguntar se ele treina
       asked: 0
       output:
-      - text: Liste seus hobbies
+      - text: "Sim... Mas esses m\xFAsculos aqui est\xE3o somente ara exibi\xE7\xE3o."
+        character: {fileID: 0}
+      - text: "Digo... voc\xEA deve ter experi\xEAncia em uma \xE1rea de seguran\xE7a
+          por exemplo."
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: "Andar de bicicleta, dancar zumba e tric\xF4"
+      - text: "Voc\xEA n\xE3o leu meu curr\xEDculo n\xE3o?"
         character: {fileID: 0}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
-      - text: Tem uma familia
+      - text: Tem uma familia?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: Tenho 10 maridos, e todos tem 2 empregos
+      - text: "S\xF3 essas belezuras que eu chamo de tr\xEDceps!!!! *beija beija*"
         character: {fileID: 0}
+      - text: ...
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     dialogue_character: {fileID: 0}
-  - name: Robaro Miamoto
+  - name: Julia Maria
     age: 19
     id: 43561-0
     voice:
     - {fileID: 0}
-    sprite: {fileID: 21300000, guid: 48a2b4c92b2f233469a129651d282e1e, type: 3}
+    sprite: {fileID: 21300000, guid: 8f676ae8df812934eb25ad7fb3a3c854, type: 3}
     document_sprite: {fileID: 21300000, guid: 8f676ae8df812934eb25ad7fb3a3c854, type: 3}
     initial_dialogue:
-    - text: SALVE
+    - text: "Oi... bom dia. Voc\xEA \xE9 o entrevistador?"
       character: {fileID: 0}
-    - text: BOM DIA
-      character: {fileID: 0}
+    - text: Sou eu mesmo, por favor sente-se.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     conclusion_dialogue:
-    - text: Podpa manin, tua entrevista acabou.
+    - text: "Pois bem, acabamos, n\xE3o esque\xE7a de avaliar o atendimento."
       character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Vaza!
-      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-    - text: Falou ae, ve se me contrata
+    - text: Obrigada, espero que dessa vez eu consiga.
       character: {fileID: 0}
     competences:
-    - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
-      is_true: 1
-      tested: 0
     - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
       is_true: 1
       tested: 0
-    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
-      is_true: 0
+    - competence: {fileID: 11400000, guid: 4b59399e816b2fb498975735186d6f70, type: 2}
+      is_true: 1
       tested: 0
     possible_personal_questions:
     - option_text: Perguntar sobre os hobbies
       asked: 0
       output:
-      - text: Liste seus hobbies
+      - text: Liste seus hobbies.
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: "Andar de bicicleta, dancar zumba e tric\xF4"
+      - text: "Desculpa, n\xE3o tenho nenhum, ja tentei costurar e cozinhar, mas
+          n\xE3o consegui ser boa em nada em especifico."
+        character: {fileID: 0}
+      - text: "Ah mas isso n\xE3o significa que eu n\xE3o posso me esfor\xE7ar hahaha!"
         character: {fileID: 0}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
-      - text: Tem uma familia
+      - text: Tem uma familia?
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
-      - text: Tenho 10 maridos, e todos tem 2 empregos
+      - text: "S\xF3 meus pais, eles se mudaram para outro pa\xEDs alguns anos atr\xE1s."
+        character: {fileID: 0}
+      - text: "E abandonaram voc\xEA?"
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Disseram que eu n\xE3o trazia dinheiro pra casa. Mas tenho certeza
+          que consigo viver sem eles, se eu arranjar um emprego \xE9 claro, haha."
+        character: {fileID: 0}
+      - text: "Costuma ter boas rela\xE7\xF5es com as pessoas?"
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Meus amigos sempre dizem que sou agrad\xE1vel!"
         character: {fileID: 0}
     dialogue_character: {fileID: 0}
   people_in_list: 0
@@ -1302,6 +1817,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb2dd92e1c87e740933abc66c1e4074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1369528493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369528488}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a415d9d6c09f348a27980f483516a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 2002472331}
+  camera: {fileID: 519420033}
+  person_index: 0
+  options_per_question: 2
+  personal_option_chance: 40
+  number_of_questions: 1
+  next_question_dialogue:
+    text: "Okay, vamos para a pr\xF3xima pergunta."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  current_person:
+    name: 
+    age: 0
+    id: 
+    voice: []
+    sprite: {fileID: 0}
+    document_sprite: {fileID: 0}
+    initial_dialogue: []
+    conclusion_dialogue: []
+    competences: []
+    possible_personal_questions: []
+    dialogue_character: {fileID: 0}
+  people_list:
+  - name: "Jo\xE3o B."
+    age: 29
+    id: 43425-1
+    voice:
+    - {fileID: 0}
+    sprite: {fileID: 21300000, guid: ec379dd01d94cb44eacf564ebb0bb4d1, type: 3}
+    document_sprite: {fileID: 21300000, guid: ea8d7387ebca7e844a0c9bbd7e0c2355, type: 3}
+    initial_dialogue:
+    - text: "Bom dia, tudo bem? Estou meio nervoso, faz tempo que n\xE3o realizo
+        uma entrevista."
+      character: {fileID: 0}
+    - text: Entendo, vamos as perguntas.
+      character: {fileID: 0}
+    conclusion_dialogue:
+    - text: "Muito bem, sua entrevista acabou. Est\xE1 dispensado"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Desculpa qualquer coisa.
+      character: {fileID: 0}
+    competences:
+    - competence: {fileID: 11400000, guid: e9d6c6f9fba4ed445840b05a0cdf78d9, type: 2}
+      is_true: 1
+      tested: 0
+    - competence: {fileID: 11400000, guid: c25a2dfdc3944a844acd58523d24fdab, type: 2}
+      is_true: 1
+      tested: 0
+    - competence: {fileID: 11400000, guid: 9f5d3d388b864034d8d5ad45010c491a, type: 2}
+      is_true: 0
+      tested: 0
+    possible_personal_questions:
+    - option_text: 'Perguntar sobre os hobbies '
+      asked: 0
+      output:
+      - text: Liste seus hobbies
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "N\xE2o fa\xE7o muitas, trabalho consome grande parte do tempo."
+        character: {fileID: 0}
+      - text: "Pe\xE7o perd\xE3o de estiver sendo intrusivo, mas se importaria de
+          falar sobre seu antigo emprego?"
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Ind\xFAstria de produ\xE7\xE3o, mas acabei saindo porque n\xE3o era
+          o que tinha em mente como estilo de vida."
+        character: {fileID: 0}
+    - option_text: Perguntar sobre a familia
+      asked: 0
+      output:
+      - text: Tem uma familia?
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "S\xF3 minhas tr\xEAs filhas, perdi minha esposa em um acidente infort\xFAnio."
+        character: {fileID: 0}
+      - text: Vai afetar seu trabalho de algum jeito?
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "N\xE3o senhor."
+        character: {fileID: 0}
+    - option_text: Perguntar sobre a pessoa
+      asked: 0
+      output:
+      - text: "Me conte um pouco sobre voc\xEA."
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Sou acima de tudo empenhado. As vezes perco a no\xE7\xE3o de quando
+          devo parar."
+        character: {fileID: 0}
+    dialogue_character: {fileID: 0}
+  people_in_list: 0
+  dialogue_prefab: {fileID: 7425290437036527904, guid: ff485081ed9a063438a8c56967aec533, type: 3}
+  option_prefab: {fileID: 5532639139266292795, guid: 8a8523a999f3872429f51472261239a0, type: 3}
+  person_prefab: {fileID: 8379286322824686732, guid: 965ccc4e7c8bd5b4abd6f4290bb7f155, type: 3}
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  document_prefab: {fileID: 9169260372811999910, guid: 278750e82556edb4eb9faf45aeb70045, type: 3}
+  current_person_obj: {fileID: 0}
+  current_dialogue: {fileID: 0}
+  current_options: {fileID: 0}
 --- !u!1 &1750536973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1968,137 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1809699320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809699321}
+  - component: {fileID: 1809699324}
+  - component: {fileID: 1809699323}
+  - component: {fileID: 1809699322}
+  m_Layer: 0
+  m_Name: Drawer (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1809699321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809699320}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.63, y: -1.47, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 628716049}
+  m_Father: {fileID: 1076867836}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809699322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809699320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01221bef6536a8247ba6c261f98e95c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yy_start: 0
+  yy_end: 1.3
+  yy: 0
+  smoothness: 10
+  initial_pos: {x: 0, y: 0, z: 0}
+  job: 2
+--- !u!61 &1809699323
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809699320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.74, y: 3.68}
+    newSize: {x: 2.74, y: 3.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.74, y: 3.106299}
+  m_EdgeRadius: 0
+--- !u!212 &1809699324
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809699320}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.74, y: 3.68}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1904224652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +2200,350 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1926093984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926093985}
+  - component: {fileID: 1926093987}
+  - component: {fileID: 1926093986}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1926093985
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926093984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 586795602}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.64, y: -3.79}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1926093986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926093984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Vendas
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_sharedMaterial: {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 3.88
+  m_fontSizeBase: 3.88
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 17.3641, w: 4.4682856}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1926093987}
+  m_maskType: 0
+--- !u!23 &1926093987
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926093984}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1965676422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965676423}
+  - component: {fileID: 1965676425}
+  - component: {fileID: 1965676424}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1965676423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965676422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1022836663}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.64, y: -3.79}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1965676424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965676422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Faxina
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_sharedMaterial: {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 3.88
+  m_fontSizeBase: 3.88
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 17.3641, w: 4.4682856}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1965676425}
+  m_maskType: 0
+--- !u!23 &1965676425
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965676422}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2002472331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,3 +2644,175 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2011773183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011773184}
+  - component: {fileID: 2011773186}
+  - component: {fileID: 2011773185}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2011773184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011773183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 464441106}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.64, y: -3.79}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2011773185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011773183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Contabilidade
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_sharedMaterial: {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 3.88
+  m_fontSizeBase: 3.88
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 17.3641, w: 4.4682856}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 2011773186}
+  m_maskType: 0
+--- !u!23 &2011773186
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011773183}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4930955018166008468, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -471141829
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_AdditionalVertexStreams: {fileID: 0}

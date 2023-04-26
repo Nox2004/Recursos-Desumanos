@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8551f18cf7884ce4594a155288739434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  my_canvas: {fileID: 0}
   scale_min: 1
   scale_max: 1.1
   smoothness: 5
@@ -313,7 +314,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 470.3745, y: 29}
-  m_SizeDelta: {x: 369.7987, y: 302.8993}
+  m_SizeDelta: {x: 369.7987, y: 244.4}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8984962955704484809
 MonoBehaviour:

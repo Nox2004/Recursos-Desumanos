@@ -8,8 +8,14 @@ public class PersonInRoom : MonoBehaviour
 
     public float start_x;
     private float xx;
+    private float initial_y;
     [SerializeField] private AnimCurveValue xx_enter_curve;
     [SerializeField] private AnimCurveValue xx_exit_curve;
+
+    void Awake()
+    {
+        transform.position = new Vector3(xx,transform.position.y,transform.position.z);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +24,13 @@ public class PersonInRoom : MonoBehaviour
         xx_exit_curve.val_end = xx_enter_curve.val_start;
 
         transform.position = new Vector3(xx,transform.position.y,transform.position.z);
+        initial_y = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        float yy = Mathf.Sin(Time.realtimeSinceStartup*7)*0.04f;
         if (exiting)
         {
             Exit();
@@ -32,7 +40,7 @@ public class PersonInRoom : MonoBehaviour
             Enter();
         }
 
-        transform.position = new Vector3(xx,transform.position.y,transform.position.z);
+        transform.position = new Vector3(xx,initial_y+yy,transform.position.z);
     }
 
     void Enter()

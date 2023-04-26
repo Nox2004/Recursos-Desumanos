@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5323a669bce930346b5a28d99523a7ff, type: 3}
+  m_Name: Spanish
+  m_EditorClassIdentifier: 
+  name: Espanhol
+  resume_description: "N\xEDvel intermedi\xE1rio de espanhol."
+  points:
+  - job: 0
+    points: 2
+  possible_tests:
+  - option_text: Testar espanhol.
+    true_output:
+    - text: Traduza para espanhol a frase:"Bom dia".
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Buenos dias.
+      character: {fileID: 0}
+    false_output:
+    - text: Traduza para espanhol a frase:"Bom dia".
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Buengos Bingus
+      character: {fileID: 0}
