@@ -1729,11 +1729,13 @@ MonoBehaviour:
       output:
       - text: "Sim... Mas esses m\xFAsculos aqui est\xE3o somente ara exibi\xE7\xE3o."
         character: {fileID: 0}
-      - text: "Digo... voc\xEA deve ter experi\xEAncia em uma \xE1rea de seguran\xE7a
+      - text: "Digo... voc\xEA talvez tenha experi\xEAncia em alguma arte marcial,
           por exemplo."
         character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
       - text: "Voc\xEA n\xE3o leu meu curr\xEDculo n\xE3o?"
         character: {fileID: 0}
+      - text: ..........
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
     - option_text: Perguntar sobre a familia
       asked: 0
       output:
