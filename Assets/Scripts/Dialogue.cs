@@ -7,6 +7,7 @@ using System;
 [Serializable]
 public struct DialogueStruc
 {
+    [TextArea(2,20)]
     [SerializeField] public string text;
     [SerializeField] public DialogueCharacter character;
 

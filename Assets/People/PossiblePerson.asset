@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: PossiblePerson
+  m_EditorClassIdentifier: 
+  possible_names: []
+  age_min: 0
+  age_max: 0
+  possible_ids: []
+  voice: []
+  sprite: {fileID: 0}
+  document_sprite: {fileID: 0}
+  resume_sprite: {fileID: 0}
+  resume_font: {fileID: 0}
+  dialogue_color: {r: 0, g: 0, b: 0, a: 0}
+  resume_competences: []
+  initial_dialogue: []
+  conclusion_dialogue: []
+  possible_questions:
+  - option_text: 
+    output_action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: PossiblePerson, Assembly-CSharp
+          m_MethodName: do_stuff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    output: []
+    asked: 0
+    follow_up_questions: []
+  dialogue_character: {fileID: 0}

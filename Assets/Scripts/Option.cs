@@ -8,34 +8,14 @@ using System;
 public class OptionValues
 {
     public string text;
-
-    public OptionValues(string option)
-    {
-        text = option;
-    }
-}
-
-public class PersonalQuestionOption : OptionValues
-{
-    public string text;
+    public Person.Question question;
     public int question_index;
 
-    public PersonalQuestionOption(string option, int index) : base(option)
+    public OptionValues(string option, Person.Question c_question, int index = -1)
     {
+        text = option;
+        question = c_question;
         question_index = index;
-    }
-}
-
-public class TestCompetenceOption : OptionValues
-{
-    public string text;
-    public int competence_index;
-    public TestCompetence test;
-
-    public TestCompetenceOption(string option, int index, TestCompetence this_test) : base(option)
-    {
-        competence_index = index;
-        test = this_test;
     }
 }
 
@@ -131,7 +111,6 @@ public class Option : MonoBehaviour
             }
             break;
         }
-        
 
         transform.localPosition = new Vector3(transform.localPosition.x,yy,transform.localPosition.z);
     }
