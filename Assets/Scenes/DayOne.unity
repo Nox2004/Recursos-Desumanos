@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 196360399}
   - component: {fileID: 196360400}
   m_Layer: 0
-  m_Name: WholeTableCol
+  m_Name: DocumentArena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,12 +264,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.367159, y: -1.6353607}
-      - {x: -6.3783407, y: -3.3660426}
+    - - {x: -6.3797255, y: -1.6856256}
+      - {x: -6.379725, y: -3.319799}
       - {x: 6.385577, y: -3.3197987}
-      - {x: 6.336452, y: -1.6652439}
-      - {x: 4.881102, y: 0.9705702}
-      - {x: -4.9009094, y: 0.9502671}
+      - {x: 6.385577, y: -1.685626}
+      - {x: 5.1, y: 0.63}
+      - {x: -5.11, y: 0.63}
 --- !u!1 &464441105
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   yy_start: 0.3
   yy_end: -3.4
   cursor_y_move_threshold: 0.2
-  cursor_y_move_spd: 0.025
+  cursor_y_move_spd: 0.1
 --- !u!1 &586795601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,10 +1147,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.367159, y: -1.6353607}
-      - {x: 6.336452, y: -1.6652439}
-      - {x: 4.881102, y: 0.9705702}
-      - {x: -4.9009094, y: 0.9502671}
+    - - {x: -6.3797255, y: -1.6856256}
+      - {x: 6.385577, y: -1.685626}
+      - {x: 4.931623, y: 0.9958308}
+      - {x: -4.926949, y: 0.9958308}
 --- !u!1 &1154030084
 GameObject:
   m_ObjectHideFlags: 0

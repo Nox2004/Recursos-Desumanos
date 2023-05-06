@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Paper : DragInTable
 {
-    private Perspective persp_script;
+    protected Perspective persp_script;
 
     //Document layer
     public int order = 0;
@@ -22,7 +22,7 @@ public class Paper : DragInTable
     protected override bool picking()
     {
         //If the mouse is over the document and the left mouse button is pressed
-        if (mouse_over() && InGameCursor.get_button_up(1))
+        if (mouse_over() && InGameCursor.get_button_down(1))
         {
             PaperManager.DocManager.get_document(this); //Docmanager selects this document
 
@@ -35,7 +35,7 @@ public class Paper : DragInTable
     protected override bool drop()
     {
         //If the mouse is over the document and the left mouse button is released
-        if (mouse_over() && InGameCursor.get_button_up(1))
+        if (is_dragging && InGameCursor.get_button_up(1))
         {
             PaperManager.DocManager.drop_document(); //Docmanager drops this document
             is_dragging = false;
@@ -84,22 +84,4 @@ public class Paper : DragInTable
 
         base.Update();
     }
-
-    protected void collide(PolygonCollider2D col)
-    {
-        foreach (var point in pol_collider.points)
-        {
-            Vector2 pointWorldPosition = (Vector2) my_shadow.transform.TransformPoint(point);
-            Vector2 closestPoint = col.ClosestPoint(pointWorldPosition);
-
-            if (!col.OverlapPoint(closestPoint))
-            {
-                Vector2 moveDirection = closestPoint - pointWorldPosition;
-                my_shadow.transform.position += (Vector3) moveDirection;
-                pos = my_shadow.transform.position;
-            }
-        }
-    }
-
-    
 }

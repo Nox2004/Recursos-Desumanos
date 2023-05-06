@@ -47,7 +47,7 @@ public class Perspective : MonoBehaviour
     }
 
     //Stuff I will need to use from the sprite childs
-    struct SpriteChild 
+    public struct SpriteChild 
     {
         public Transform transform;
         public Vector3 localpos;
@@ -60,7 +60,7 @@ public class Perspective : MonoBehaviour
     }
     
     //Stuff I will need to use from the text childs
-    struct TextChild 
+    public struct TextChild 
     {
         public Transform transform;
         public Vector3 localpos;
@@ -93,8 +93,8 @@ public class Perspective : MonoBehaviour
     private PolygonCollider2D polygon_col;
 
     //List of childs
-    private List<SpriteChild> sprite_childs = new List<SpriteChild>();
-    private List<TextChild> text_childs = new List<TextChild>();
+    public List<SpriteChild> sprite_childs = new List<SpriteChild>();
+    public List<TextChild> text_childs = new List<TextChild>();
     
     //Tan and sprite size
     private float tan_left, tan_right, sprite_width, sprite_height;

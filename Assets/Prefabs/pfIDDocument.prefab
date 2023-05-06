@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 3914046035621454605}
   - component: {fileID: 3842119021462771103}
   - component: {fileID: 8872448377165845394}
+  - component: {fileID: 9035302963430247023}
   m_Layer: 0
   m_Name: pfIDDocument
   m_TagString: Document
@@ -775,7 +776,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9169260372811999910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccf079ffc1051804b8cd4fa66d0887de, type: 3}
   m_Name: 
@@ -783,3 +784,18 @@ MonoBehaviour:
   y_offtarget: 1
   order: 0
   selected: 1
+--- !u!114 &9035302963430247023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169260372811999910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f50baeb5194b0a4691a8644362759b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  y_offtarget: 0.4
+  order: 0
+  selected: 0
