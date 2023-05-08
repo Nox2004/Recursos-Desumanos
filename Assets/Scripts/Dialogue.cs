@@ -104,11 +104,12 @@ public class Dialogue : MonoBehaviour
             }
             else 
             {
+                letters_spd = letters_spd_min;
+                
                 //Changes text if dialogue is not over
                 if (index < text.Length-1)
                 {
                     index++;
-                    letters_spd = letters_spd_min;
                     current_letters = 0;
                 }
                 else //If is over then

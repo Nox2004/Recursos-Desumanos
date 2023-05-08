@@ -8,6 +8,7 @@ TagManager:
   - Document
   - BlackCanvas
   - Table
+  - Drawer
   layers:
   - Default
   - TransparentFX
@@ -51,8 +52,14 @@ TagManager:
   - name: People
     uniqueID: 1184033739
     locked: 0
-  - name: Table
+  - name: TableBelowDrawer
+    uniqueID: 3118812075
+    locked: 0
+  - name: TableDrawer
     uniqueID: 3823825467
+    locked: 0
+  - name: TableAboveDrawer
+    uniqueID: 2525561057
     locked: 0
   - name: Documents
     uniqueID: 3457033331

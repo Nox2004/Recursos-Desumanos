@@ -10,6 +10,12 @@ public class Drawer : MonoBehaviour
     [SerializeField] private float yy;
     [SerializeField] private float smoothness;
 
+    public Vector3 documents_offset;
+    public Vector3 documents_spacing;
+    public int document_number = 0;
+
+    public List<Person> people_hired;
+
     [SerializeField] private Vector3 initial_pos;
     [SerializeField] private Jobs job;
 
@@ -18,6 +24,8 @@ public class Drawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        people_hired = new List<Person>();
+
         collider = gameObject.GetComponent<Collider2D>();
         yy = yy_start;
         initial_pos = transform.position;
@@ -46,3 +54,4 @@ public class Drawer : MonoBehaviour
         collider.offset = Vector3.up * (yy - 2);
     }
 }
+

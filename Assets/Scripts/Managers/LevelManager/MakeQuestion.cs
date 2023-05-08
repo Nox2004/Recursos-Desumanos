@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MakeQuestion : IState
 {
+    private bool jump_to_conclusion = false;
     private LevelManager me;
     private Option my_option;
     private Person.Question current_question;
@@ -26,7 +27,7 @@ public class MakeQuestion : IState
 
     public void UpdateState()
     {
-        if (question_index < me.number_of_questions)// (int i = 0; i < me.number_of_questions; i++)
+        if ((question_index < me.number_of_questions) && (!jump_to_conclusion))// (int i = 0; i < me.number_of_questions; i++)
         {
             switch (stage)
             {
@@ -36,7 +37,7 @@ public class MakeQuestion : IState
                     my_option = instantiate_options();
                     if (my_option == null)
                     {
-                        me.change_state(me.interview_conclusion);
+                        jump_to_conclusion = true;
                     }
                     stage++;
                 }
@@ -47,7 +48,12 @@ public class MakeQuestion : IState
                     if (my_option.choosen_option!=-1)
                     {
                         current_question = my_option.choosen_option_struc.question;
-                        set_text_from_option(my_option.choosen_option_struc);
+
+                        //if (question_index < me.number_of_questions)
+                        //{
+                            
+                        //}
+                        set_text_from_option(my_option.choosen_option_struc,false);
 
                         me.destroy_option();
 
@@ -91,7 +97,7 @@ public class MakeQuestion : IState
 
     public void ExitState()
     {
-        me.current_dialogue.hide_at_end = true;
+        
     }
 
     public Option instantiate_options()
@@ -149,7 +155,7 @@ public class MakeQuestion : IState
         return me.create_options(current_options);
     }
 
-    private void set_text_from_option(OptionValues selected_option)
+    private void set_text_from_option(OptionValues selected_option, bool add_next_dialogue = true)
     {
         //Gets current competence and test from option
         DialogueStruc[] dialogue;
@@ -165,7 +171,7 @@ public class MakeQuestion : IState
         dialogue = current_question.output; //Sets question output
 
         //Adds "Next question!" dialogue
-        if (question_index < me.number_of_questions-1) 
+        if (add_next_dialogue) 
         {
             System.Array.Resize(ref dialogue,dialogue.Length+1);
             dialogue[dialogue.Length-1] = me.next_question_dialogue;

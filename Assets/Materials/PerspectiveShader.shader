@@ -62,13 +62,19 @@ Shader "MyShaders/SpritePerspective"
             bool color_overlay_on;
             float4 color_overlay;
 
+            //Color mix settings
+            bool color_mix_on;
+            float4 color_mix;
+            float color_mix_strength;
+
             //Outline settings
             int outline_on = 0;
             float outline_size;
             
             //Color blend settings
-            int blend_color_on = 1;
+            int blend_color_on = 0;
             float4 blend_color = float4(1,1,1,1);
+            float blend_color_strength = 1;
 
 	        
             v2f vert(appdata_t IN)
@@ -128,6 +134,11 @@ Shader "MyShaders/SpritePerspective"
                 if (color_overlay_on == 1)
                 {
                     c = color_overlay;
+                }
+
+                if (color_mix_on == 1)
+                {
+                    c = lerp(c,color_mix,color_mix_strength);
                 }
 
                 //Blends the pixel color with another

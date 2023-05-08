@@ -84,4 +84,9 @@ public class Paper : DragInTable
 
         base.Update();
     }
+
+    protected void OnDestroy() 
+    {
+        PaperManager.DocManager.document_list.Remove(this);
+    }
 }

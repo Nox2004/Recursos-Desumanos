@@ -178,9 +178,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2101543441
+  m_SortingLayerID: -1769406239
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5ca57bb565e746246b9449c2664675c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -237,7 +237,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1076867836}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &196360400
 PolygonCollider2D:
@@ -283,8 +283,8 @@ GameObject:
   - component: {fileID: 464441108}
   - component: {fileID: 464441107}
   m_Layer: 0
-  m_Name: Drawer (1)
-  m_TagString: Untagged
+  m_Name: Accounting
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2011773184}
-  m_Father: {fileID: 1076867836}
+  m_Father: {fileID: 1451462661}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &464441107
@@ -321,6 +321,10 @@ MonoBehaviour:
   yy_end: 1.3
   yy: 0
   smoothness: 10
+  documents_offset: {x: 0, y: 0, z: 0}
+  documents_spacing: {x: 0, y: 0, z: 0}
+  document_number: 0
+  people_hired: []
   initial_pos: {x: 0, y: 0, z: 0}
   job: 2
 --- !u!61 &464441108
@@ -388,7 +392,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -501,8 +505,8 @@ MonoBehaviour:
   locked: 0
   yy_start: 0.3
   yy_end: -3.4
-  cursor_y_move_threshold: 0.2
-  cursor_y_move_spd: 0.1
+  cursor_y_move_threshold: 0.25
+  cursor_y_move_spd: 0.13
 --- !u!1 &586795601
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,8 +520,8 @@ GameObject:
   - component: {fileID: 586795604}
   - component: {fileID: 586795603}
   m_Layer: 0
-  m_Name: Drawer (3)
-  m_TagString: Untagged
+  m_Name: Sales
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -538,6 +542,10 @@ MonoBehaviour:
   yy_end: 1.3
   yy: 0
   smoothness: 10
+  documents_offset: {x: 0, y: -0.1, z: 0}
+  documents_spacing: {x: 0, y: 0.09, z: 0}
+  document_number: 0
+  people_hired: []
   initial_pos: {x: 0, y: 0, z: 0}
   job: 2
 --- !u!61 &586795604
@@ -605,7 +613,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -631,8 +639,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1926093985}
-  m_Father: {fileID: 1076867836}
-  m_RootOrder: 4
+  m_Father: {fileID: 1451462661}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -808,7 +816,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1022836662
@@ -824,8 +832,8 @@ GameObject:
   - component: {fileID: 1022836666}
   - component: {fileID: 1022836665}
   m_Layer: 0
-  m_Name: Drawer
-  m_TagString: Untagged
+  m_Name: Cleaning
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -869,7 +877,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -898,6 +906,10 @@ MonoBehaviour:
   yy_end: 1.3
   yy: 0
   smoothness: 10
+  documents_offset: {x: 0, y: 0, z: 0}
+  documents_spacing: {x: 0, y: 0, z: 0}
+  document_number: 0
+  people_hired: []
   initial_pos: {x: 0, y: 0, z: 0}
   job: 2
 --- !u!61 &1022836666
@@ -939,7 +951,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1965676423}
-  m_Father: {fileID: 1076867836}
+  m_Father: {fileID: 1451462661}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1087,8 +1099,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayerID: -1769406239
+  m_SortingLayer: 5
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1e10d2cf03c68964a99ce3257025c547, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1114,11 +1126,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1154030085}
-  - {fileID: 1022836667}
-  - {fileID: 464441106}
-  - {fileID: 1809699321}
-  - {fileID: 586795606}
   - {fileID: 196360399}
+  - {fileID: 1451462661}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1221,7 +1230,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -471141829
+  m_SortingLayerID: -1176155221
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c2eae6e5f9de4a4280bcc18136881e7, type: 3}
@@ -1616,6 +1625,41 @@ MonoBehaviour:
   current_person_obj: {fileID: 0}
   current_dialogue: {fileID: 0}
   current_options: {fileID: 0}
+--- !u!1 &1451462660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451462661}
+  m_Layer: 0
+  m_Name: Drawers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451462661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451462660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 586795606}
+  - {fileID: 1022836667}
+  - {fileID: 464441106}
+  - {fileID: 1809699321}
+  m_Father: {fileID: 1076867836}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750536973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,8 +1719,8 @@ GameObject:
   - component: {fileID: 1809699323}
   - component: {fileID: 1809699322}
   m_Layer: 0
-  m_Name: Drawer (2)
-  m_TagString: Untagged
+  m_Name: Security
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1694,7 +1738,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 628716049}
-  m_Father: {fileID: 1076867836}
+  m_Father: {fileID: 1451462661}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809699322
@@ -1713,6 +1757,10 @@ MonoBehaviour:
   yy_end: 1.3
   yy: 0
   smoothness: 10
+  documents_offset: {x: 0, y: 0, z: 0}
+  documents_spacing: {x: 0, y: 0, z: 0}
+  document_number: 0
+  people_hired: []
   initial_pos: {x: 0, y: 0, z: 0}
   job: 2
 --- !u!61 &1809699323
@@ -1780,7 +1828,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b2beb4547e06199439d12ec41b92fb45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2063,7 +2111,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1965676422
@@ -2235,7 +2283,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2002472331
@@ -2507,6 +2555,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471141829
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}

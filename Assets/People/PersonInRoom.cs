@@ -4,27 +4,45 @@ using UnityEngine;
 
 public class PersonInRoom : MonoBehaviour
 {
+    private SpriteRenderer sprite_renderer;
+
     public bool exiting = false;
 
     public float start_x;
     private float xx;
+
     private float initial_y;
     [SerializeField] private AnimCurveValue xx_enter_curve;
     [SerializeField] private AnimCurveValue xx_exit_curve;
 
-    void Awake()
-    {
-        transform.position = new Vector3(xx,transform.position.y,transform.position.z);
-    }
+    
+    [SerializeField] private float y_offset_animation_ratio;
+    
+    [SerializeField] private Color initial_color;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float y_initial_offset;
+    private float y_offset_start, y_offset_end, y_offset;
+
+    void Awake()
     {
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
 
         transform.position = new Vector3(xx,transform.position.y,transform.position.z);
         initial_y = transform.position.y;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        sprite_renderer = GetComponent<SpriteRenderer>();
+
+        sprite_renderer.material.SetInt("color_mix_on",1);
+        sprite_renderer.material.SetColor("color_mix",initial_color);
+
+        y_offset_end = 0;
+        y_offset_start = y_initial_offset;
+        y_offset = y_offset_start;
     }
 
     // Update is called once per frame
@@ -40,22 +58,37 @@ public class PersonInRoom : MonoBehaviour
             Enter();
         }
 
-        transform.position = new Vector3(xx,initial_y+yy,transform.position.z);
+        transform.position = new Vector3(xx,initial_y+yy+y_offset,transform.position.z);
     }
 
     void Enter()
     {
         xx = xx_enter_curve.Update(Time.deltaTime);
+        
+        var ratio = xx_enter_curve.GetRawValue();
+        if (ratio < y_offset_animation_ratio) ratio = ratio / y_offset_animation_ratio;
+        else ratio = 1;
+
+        sprite_renderer.material.SetFloat("color_mix_strength",1-ratio);
+        y_offset = Mathf.Lerp(y_offset_start,y_offset_end,ratio);
     }
 
     void Exit()
     {
         xx = xx_exit_curve.Update(Time.deltaTime);
+        
+        var ratio = (1-xx_exit_curve.GetRawValue());
+        if (ratio < y_offset_animation_ratio) ratio = ratio / y_offset_animation_ratio;
+        else ratio = 1;
+
+        sprite_renderer.material.SetFloat("color_mix_strength",1-ratio);
+        y_offset = Mathf.Lerp(y_offset_start,y_offset_end,ratio);
     }
 
     public bool HasEntered()
     {
         if ((!exiting) && (xx_enter_curve.GetRawValue()>=1)) return true;
+
         return false;
     }
 

@@ -19,7 +19,7 @@ public class PaperManager : MonoBehaviour
         var index = document_list.IndexOf(doc); //Gets the document index
 
         if (index == -1) return; //Returns if the document is not in the list
-
+        
         //Every document in the list goes one position up, and the document on top goes to index 0
         for (int i = index; i > 0; i--)
         {

@@ -9,6 +9,7 @@ public class InterviewConclusion : IState
 
     public void EnterState()
     {
+        me.current_dialogue.hide_at_end = true;
         me.set_current_dialogue(me.current_person.conclusion_dialogue);
     }
 
