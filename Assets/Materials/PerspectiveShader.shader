@@ -133,7 +133,11 @@ Shader "MyShaders/SpritePerspective"
                 //Applies a overlay to the pixel color
                 if (color_overlay_on == 1)
                 {
+                    float alpha = c.a;
                     c = color_overlay;
+                    
+                    c.a*=alpha;
+                    
                 }
 
                 if (color_mix_on == 1)

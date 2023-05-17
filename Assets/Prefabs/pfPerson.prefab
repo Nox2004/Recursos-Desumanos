@@ -160,3 +160,7 @@ MonoBehaviour:
   y_offset_animation_ratio: 0.75
   initial_color: {r: 0.25142398, g: 0.3344258, b: 0.4716981, a: 1}
   y_initial_offset: -3
+  talking: 0
+  idle_sprite: {fileID: 0}
+  talking_animation: []
+  frame_duration: 10

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   name: Eu
+  speech_color: {r: 0.14150941, g: 0.14118314, b: 0.13550194, a: 1}
   voice: []

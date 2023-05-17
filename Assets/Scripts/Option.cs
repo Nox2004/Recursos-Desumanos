@@ -65,6 +65,8 @@ public class Option : MonoBehaviour
 
     void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+        
         switch (stage)
         {
             case 0:

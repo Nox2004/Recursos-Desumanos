@@ -9,7 +9,11 @@ public class ImageButton
     {
         Vector2 localMousePos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(image.rectTransform, InGameCursor.get_position_in_screen(), null, out localMousePos);
-        if (image.rectTransform.rect.Contains(localMousePos)) return true;
+        if (image.rectTransform.rect.Contains(localMousePos)) 
+        {
+            InGameCursor.over_ui = true;
+            return true;
+        }
 
         return false;
     }

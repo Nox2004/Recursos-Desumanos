@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Document : Paper
 {
-    protected Person my_person; 
+    public Person my_person; 
     protected PolygonCollider2D table_collider;
-    protected bool locked = true; //if false, can go inside drawer
+    //protected bool locked = true; //if false, can go inside drawer
 
     protected bool last_in_table = true;
     protected bool out_of_table = false;
@@ -52,41 +52,9 @@ public class Document : Paper
                 //Check if document is colliding with a drawer
                 foreach (GameObject drawer in drawers)
                 {
-                    if (drawer.GetComponent<Collider2D>().OverlapPoint(InGameCursor.get_position_in_world()))
+                    if (drawer.GetComponent<Collider2D>().OverlapPoint(InGameCursor.get_position_in_world()) && !drawer.GetComponent<Drawer>().locked)
                     {
-                        Drawer drawer_script = drawer.GetComponent<Drawer>();
-
-                        transform.SetParent(drawer.transform); // Sets parent as drawer
-                        transform.localPosition = drawer_script.documents_offset + (drawer_script.document_number*drawer_script.documents_spacing); // Sets position as the next document position
-                        
-                        SpriteRenderer drawer_sr = drawer.GetComponent<SpriteRenderer>();
-                        var layer_name = drawer_sr.sortingLayerName;
-                        int layer_order = drawer_sr.sortingOrder + 1 + drawer_script.document_number*2;
-
-                        sprite_renderer.sortingLayerName = layer_name;
-                        sprite_renderer.sortingOrder = layer_order;
-
-                        foreach (Transform child in transform)
-                        {
-                            if (child.GetComponent<SpriteRenderer>() != null)
-                            {
-                                child.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = layer_name;
-                                child.gameObject.GetComponent<SpriteRenderer>().sortingOrder = layer_order+1;
-                            }
-                            else
-                            {
-                                child.gameObject.GetComponent<MeshRenderer>().sortingLayerName = layer_name;
-                                child.gameObject.GetComponent<MeshRenderer>().sortingOrder = layer_order+1;
-                            }
-                        }
-                        
-                        drawer_script.document_number++;
-                        drawer_script.people_hired.Add(my_person);
-
-                        //Destroy document drag, shadow and perspective behaviours
-                        Destroy(my_shadow);
-                        Destroy(persp_script);
-                        Destroy(this);
+                        go_inside_drawer(drawer);
 
                         return;
                     }
@@ -135,5 +103,42 @@ public class Document : Paper
         //activates perspective (or just change offset values in laterUpdate)
         my_shadow.SetActive(true);
         persp_script.enabled = true;
+    }
+
+    protected void go_inside_drawer(GameObject drawer)
+    {
+        Drawer drawer_script = drawer.GetComponent<Drawer>();
+
+        transform.SetParent(drawer.transform); // Sets parent as drawer
+        transform.localPosition = drawer_script.documents_offset + (drawer_script.document_number*drawer_script.documents_spacing); // Sets position as the next document position
+        
+        SpriteRenderer drawer_sr = drawer.GetComponent<SpriteRenderer>();
+        var layer_name = drawer_sr.sortingLayerName;
+        int layer_order = drawer_sr.sortingOrder + 1 + drawer_script.document_number*2;
+
+        sprite_renderer.sortingLayerName = layer_name;
+        sprite_renderer.sortingOrder = layer_order;
+
+        foreach (Transform child in transform)
+        {
+            if (child.GetComponent<SpriteRenderer>() != null)
+            {
+                child.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = layer_name;
+                child.gameObject.GetComponent<SpriteRenderer>().sortingOrder = layer_order+1;
+            }
+            else
+            {
+                child.gameObject.GetComponent<MeshRenderer>().sortingLayerName = layer_name;
+                child.gameObject.GetComponent<MeshRenderer>().sortingOrder = layer_order+1;
+            }
+        }
+        
+        drawer_script.document_number++;
+        drawer_script.people_hired.Add(my_person);
+
+        //Destroy document drag, shadow and perspective behaviours
+        Destroy(my_shadow);
+        Destroy(persp_script);
+        Destroy(this);
     }
 }

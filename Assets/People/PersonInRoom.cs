@@ -23,32 +23,46 @@ public class PersonInRoom : MonoBehaviour
     [SerializeField] private float y_initial_offset;
     private float y_offset_start, y_offset_end, y_offset;
 
+    public bool talking = false;
+    public Sprite idle_sprite;
+    public Sprite[] talking_animation;
+    [SerializeField] private float frame_duration;
+
     void Awake()
     {
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
 
-        transform.position = new Vector3(xx,transform.position.y,transform.position.z);
+        y_offset_end = 0;
+        y_offset_start = y_initial_offset;
+        y_offset = y_offset_start;
+        
         initial_y = transform.position.y;
+        xx = xx_enter_curve.val_start;
+        transform.position = new Vector3(xx,initial_y+y_offset,transform.position.z);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         sprite_renderer = GetComponent<SpriteRenderer>();
+        sprite_renderer.sprite = idle_sprite;
 
         sprite_renderer.material.SetInt("color_mix_on",1);
         sprite_renderer.material.SetColor("color_mix",initial_color);
 
-        y_offset_end = 0;
-        y_offset_start = y_initial_offset;
-        y_offset = y_offset_start;
+        frame_duration/=60;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+
+        //Adds a wavey effect to the person
+        //height - 0.04  duration 7/pi per second
         float yy = Mathf.Sin(Time.realtimeSinceStartup*7)*0.04f;
+
         if (exiting)
         {
             Exit();
@@ -59,6 +73,24 @@ public class PersonInRoom : MonoBehaviour
         }
 
         transform.position = new Vector3(xx,initial_y+yy+y_offset,transform.position.z);
+    }
+
+    private void LateUpdate()
+    {
+        if (Singleton.Instance.game_paused) return;
+
+        if (talking)
+        {
+            int frame = Mathf.FloorToInt((Time.realtimeSinceStartup/frame_duration) % talking_animation.Length);
+            sprite_renderer.sprite = talking_animation[frame];
+            //Debug.Log(frame);
+        }
+        else
+        {
+            sprite_renderer.sprite = idle_sprite;
+        }
+
+        talking = false;
     }
 
     void Enter()

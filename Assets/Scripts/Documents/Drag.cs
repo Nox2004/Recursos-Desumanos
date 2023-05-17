@@ -26,6 +26,8 @@ public class Drag : MonoBehaviour
 
     protected void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+        
         //Gets mouse position in the world view
         mouse_pos = InGameCursor.get_position_in_world();
 

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Joao
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 1
+    points: 8
+  moral_points: 0
+  possible_names:
+  - Jorge
+  - Jaozin
+  age_min: 20
+  age_max: 25
+  possible_ids:
+  - 32421-A
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 8f84b066cb04c3f4ebbafcf55dc15518, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 8f84b066cb04c3f4ebbafcf55dc15518, type: 3}
+  - {fileID: 21300000, guid: 2a310a5ba35304b4484c8caae71df1a9, type: 3}
+  - {fileID: 21300000, guid: 6ec7144ef17b58b469c5510f2786bd8b, type: 3}
+  document_sprite: {fileID: 21300000, guid: 217412bf278089e418d6db12f6bcb8b4, type: 3}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: 2199568ed8daa864781c17ed946fe9ea, type: 2}
+  resume_competences: []
+  dialogue_color: {r: 0.07969453, g: 0.044143822, b: 0.3018868, a: 1}
+  initial_dialogue:
+  - text: Salve, bom dia Teste Teste Teste Teste Teste Teste Teste
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: Falou ae, seu paia
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Raluca
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que tu acha do caso do Raluca?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      character: {fileID: 0}
+    asked: 1
+    follow_up_questions:
+    - option_text: Ta certo
+      output_action:
+        m_PersistentCalls:
+          m_Calls: []
+      output:
+      - text: Ta certo
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      asked: 0
+      follow_up_questions: []

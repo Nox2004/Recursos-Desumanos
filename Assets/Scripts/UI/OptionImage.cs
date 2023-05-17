@@ -36,6 +36,8 @@ public class OptionImage : MonoBehaviour
 
     void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+        
         //Time variable (in 60fps frames)
         time+=Time.deltaTime*60;
 

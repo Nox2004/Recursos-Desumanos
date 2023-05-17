@@ -29,19 +29,20 @@ public class Cutscene : MonoBehaviour
     //Text border
     [SerializeField] private float text_border;
     [SerializeField] private TMPro.TMP_FontAsset font;
+    [SerializeField] private int font_size;
     
     //Typewriter effect properties
     [SerializeField] private float letters_spd_min = 0.1f;
     [SerializeField] private float letters_spd_max = 0.5f;
     private float letters_spd;
     private float current_letters = 0;
-    private float previous_letters = 0;
 
     //Dialogue and index
     private int index = 0;
     public SceneStruc[] scenes;
 
     //Audio
+    private float previous_letters = 0;
     [SerializeField] private AudioClip[] audio_clips;
     private List<AudioSource> audio_sources;// = new List<AudioSource>();
 
@@ -87,6 +88,7 @@ public class Cutscene : MonoBehaviour
 
         text = text_obj.AddComponent<TMPro.TextMeshProUGUI>();
         text.font = font;
+        text.fontSize = font_size;
         
         RectTransform text_rt = text_obj.GetComponent<RectTransform>();
         text_rt.anchorMin = new Vector2(0.5f, 0.5f); text_rt.anchorMax = new Vector2(0.5f, 0.5f);

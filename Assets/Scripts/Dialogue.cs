@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -52,6 +53,11 @@ public class Dialogue : MonoBehaviour
     private float letters_spd;
     private float current_letters = 0;
 
+    //Audio
+    private float previous_letters = 0;
+    [SerializeField] private AudioClip[] audio_clips;
+    private List<AudioSource> audio_sources;
+
     //Dialogue and index
     private int index = 0;
     public DialogueStruc[] text;
@@ -68,6 +74,9 @@ public class Dialogue : MonoBehaviour
         letters_spd_max*=60;
 
         letters_spd = letters_spd_min;
+
+        //Sets up audio source list
+        audio_sources = new List<AudioSource>();
 
         //Sets up components
         box_rect = dialogue_box_obj.GetComponent<RectTransform>();
@@ -92,6 +101,8 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+        
         //var entering = true;
 
         //When button pressed
@@ -119,8 +130,51 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        show_dialogue(text[index].character.name,text[index].text, letters_spd);
+        show_dialogue(text[index].character.name,text[index].text, text[index].character.speech_color, letters_spd);
         
+        if (current_letters < text[index].text.Length) //If text is not over
+        {
+            if (text[index].character.person_in_room != null)
+            {
+                //animate character
+                text[index].character.person_in_room.talking = true;
+            }
+            if ((text[index].character.voice != null) && (text[index].character.voice.Length > 0))
+            {
+                //If new letter is added, play a random voice clip
+                if ((int) current_letters != (int) previous_letters)
+                {
+                    //choose random clip
+                    var list_of_clips = text[index].character.voice;
+                    var audio_index = (int) UnityEngine.Random.Range(0,list_of_clips.Length);
+
+                    if (audio_clips[audio_index] != null)
+                    {
+                        //Adds audio source
+                        AudioSource audio_source = gameObject.AddComponent<AudioSource>();
+                        audio_source.clip = list_of_clips[audio_index];
+                        audio_source.Play();
+                        audio_source.pitch = UnityEngine.Random.Range(0.8f,1.1f);
+                        audio_sources.Add(audio_source);
+                    }
+                }
+            }
+        }
+
+        //Removes audio sources that are not playing anymore from list
+        for (int i = 0; i < audio_sources.Count; i++)
+        {
+            if (!audio_sources[i].isPlaying)
+            {
+                Destroy(audio_sources[i]);
+                audio_sources.RemoveAt(i);
+                i--;
+            }
+        }
+        
+        previous_letters = current_letters;
+
+        //Animation stuff
         if (entering) enter();
         else hide();
 
@@ -155,13 +209,14 @@ public class Dialogue : MonoBehaviour
         text = new_text;
     }
 
-    private void show_dialogue(string name, string txt, float spd)
+    private void show_dialogue(string name, string txt, Color color, float spd)
     {
         //Adds to the letter count
         current_letters += spd*Time.deltaTime;
         current_letters = Mathf.Min(current_letters,txt.Length); //Clamps value so it wont surpass the text size
 
         dialogue_text.text = txt.Substring(0, (int) Mathf.Floor(current_letters)); //Gets current texts substring
+        name_text.color = color;
         name_text.text = name;
     }
 

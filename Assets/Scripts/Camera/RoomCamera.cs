@@ -18,6 +18,8 @@ public class RoomCamera : MonoBehaviour
 
     void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+
         if (!locked)
         {
             float yy_increase = 0;

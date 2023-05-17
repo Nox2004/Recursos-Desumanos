@@ -21,8 +21,11 @@ public class MakeQuestion : IState
 
     public void EnterState()
     {  
+        Debug.Log("Entered MakeQuestion");
         question_index = 0;
         stage = 0;
+
+        jump_to_conclusion = false;
     }
 
     public void UpdateState()
@@ -39,6 +42,7 @@ public class MakeQuestion : IState
                     {
                         jump_to_conclusion = true;
                     }
+                    Debug.Log("Question " + question_index);
                     stage++;
                 }
                 break;
@@ -111,7 +115,7 @@ public class MakeQuestion : IState
         }
 
         if (remaining_options <= 0) return null;
-
+        
         //Creates a question blacklist
         List<string> selected_list = new List<string>();
 

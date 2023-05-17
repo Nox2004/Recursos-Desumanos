@@ -12,37 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
   m_Name: PossiblePerson
   m_EditorClassIdentifier: 
-  possible_names: []
-  age_min: 0
-  age_max: 0
-  possible_ids: []
+  job_points:
+  - job: 2
+    points: 6
+  possible_names:
+  - Joana
+  age_min: 200
+  age_max: 231
+  possible_ids:
+  - 32245-D
   voice: []
-  sprite: {fileID: 0}
+  in_room_sprite: {fileID: 21300000, guid: c3746deaa7e29594b971fb06a41278e3, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: c3746deaa7e29594b971fb06a41278e3, type: 3}
+  - {fileID: 21300000, guid: 97bc8cf14f3c03146b52233967318688, type: 3}
+  - {fileID: 21300000, guid: 5a36d9b5c98aab642b710fbe4f283196, type: 3}
   document_sprite: {fileID: 0}
-  resume_sprite: {fileID: 0}
-  resume_font: {fileID: 0}
-  dialogue_color: {r: 0, g: 0, b: 0, a: 0}
-  resume_competences: []
-  initial_dialogue: []
-  conclusion_dialogue: []
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  resume_font: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  resume_competences:
+  - aaaaaaa
+  - bbbbbbb
+  dialogue_color: {r: 0.3048805, g: 0.31132078, b: 0.1013261, a: 1}
+  initial_dialogue:
+  - text: Opa
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: Falou
+    character: {fileID: 0}
   possible_questions:
-  - option_text: 
+  - option_text: Mario
     output_action:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000}
-          m_TargetAssemblyTypeName: PossiblePerson, Assembly-CSharp
-          m_MethodName: do_stuff
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    output: []
+        m_Calls: []
+    output:
+    - text: Conhece o Mario?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Que Mario???
+      character: {fileID: 0}
     asked: 0
-    follow_up_questions: []
-  dialogue_character: {fileID: 0}
+    follow_up_questions:
+    - option_text: Aquele
+      output_action:
+        m_PersistentCalls:
+          m_Calls: []
+      output:
+      - text: ...............
+        character: {fileID: 0}
+      asked: 0
+      follow_up_questions: []

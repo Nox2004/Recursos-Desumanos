@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Paper : DragInTable
 {
+    //Perspective
     protected Perspective persp_script;
 
     //Document layer
     public int order = 0;
     public bool selected = false;
+
+    //Sound
+    [SerializeField] protected AudioClip pick_sound;
+    [SerializeField] protected AudioClip drop_sound;
+
+    protected AudioSource audio_source;
+    protected bool is_dragging_last_frame = false;
 
     protected override bool mouse_over()
     {
@@ -62,6 +70,10 @@ public class Paper : DragInTable
             my_shadow.AddComponent<Perspective>();
             my_shadow.tag = "NoPerspective"; //So it wont be added to the "perspective child" list
         }
+
+        //Sets up audio
+        audio_source = gameObject.AddComponent<AudioSource>();
+        audio_source.loop = false;
     }
     
     protected void Update()
@@ -83,6 +95,19 @@ public class Paper : DragInTable
         shadow_rend.sortingOrder = order - 2; //So the shadow is behind the document
 
         base.Update();
+
+        if (is_dragging && !is_dragging_last_frame)
+        {
+            audio_source.clip = pick_sound;
+            audio_source.Play();
+        }
+        else if (!is_dragging && is_dragging_last_frame)
+        {
+            audio_source.clip = drop_sound;
+            audio_source.Play();
+        }
+
+        is_dragging_last_frame = is_dragging;
     }
 
     protected void OnDestroy() 

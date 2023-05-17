@@ -65,7 +65,7 @@ public class MenuButtons : MonoBehaviour
 
     public void start_game()
     {
-        Singleton.Instance.create_transition(TransitionMode.Scene,"DayOne");
+        Singleton.Instance.go_to_first_day();
     }
 
     public void end_game()

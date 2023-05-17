@@ -15,6 +15,7 @@ public class DragWithShadow : Drag
     //Shadow stuff
     protected GameObject my_shadow;
     protected SpriteRenderer shadow_rend;
+    [SerializeField] protected Sprite shadow_sprite; 
 
     protected void Start()
     {
@@ -30,6 +31,8 @@ public class DragWithShadow : Drag
 
     protected void Update()
     {
+        if (Singleton.Instance.game_paused) return;
+        
         base.Update();
 
         //Highlights the document if being selected
@@ -69,7 +72,7 @@ public class DragWithShadow : Drag
 
         //Add a sprite renderer and sets its sprite and mat
         shadow_rend = my_shadow.AddComponent<SpriteRenderer>();
-        shadow_rend.sprite = sprite_renderer.sprite;
+        shadow_rend.sprite = (shadow_sprite==null) ? sprite_renderer.sprite : shadow_sprite;
         shadow_rend.material = sprite_renderer.material;
 
         //Applies a low opacity grey overlay to the shadow shader

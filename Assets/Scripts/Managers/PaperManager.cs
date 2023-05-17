@@ -12,6 +12,7 @@ public class PaperManager : MonoBehaviour
 
     public Camera cam; //Game camera, obviously
     private int holding = -1; //Index of the document being selected. -1 if null
+    public bool selecting_obj;
 
     //Puts a document above the others
     private void put_on_top(Paper doc)
@@ -73,5 +74,16 @@ public class PaperManager : MonoBehaviour
 
         //Informs the selected document that he was selected
         if (selected != null) selected.selected = true;
+
+        if (selecting_obj)
+        {
+            Debug.Log("Selecting");
+            if (selected != null)
+            {
+                selected.selected = false;
+                selected = null;
+            }
+            selecting_obj = false;
+        }
     }
 }

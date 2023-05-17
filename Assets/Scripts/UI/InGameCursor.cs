@@ -13,14 +13,41 @@ public class InGameCursor : MonoBehaviour
     public static Vector2 cursor_pos;
 
     //Sprite to being applied when the mouse is idle, and when its clicking
-    [SerializeField] private Sprite mouse;
-    [SerializeField] private Sprite mouse_clicking;
+    [SerializeField] private Sprite cursor_normal;
+    [SerializeField] private Sprite cursor_holding;
+    [SerializeField] private Sprite cursor_over_ui;
+    [SerializeField] private Sprite cursor_clicking;
+
+    [SerializeField] private AudioClip in_sound;
+    [SerializeField] private AudioClip out_sound;
+    [SerializeField] private AudioClip click_sound;
+
+    private AudioSource in_source, out_source, click_source;
+
+    public static bool over_ui;
+    private bool over_ui_last_frame;
+
     private Image render; //Renderer
 
     private RectTransform rect_transform;
 
     private void Start()
     {
+        #region //Audio sources
+        in_source = gameObject.AddComponent<AudioSource>();
+        in_source.clip = in_sound;
+        in_source.loop = false;
+
+        out_source = gameObject.AddComponent<AudioSource>();
+        out_source.clip = out_sound;
+        out_source.loop = false;
+
+        click_source = gameObject.AddComponent<AudioSource>();
+        click_source.clip = click_sound;
+        click_source.loop = false;
+        #endregion
+
+        over_ui = false;
         render = gameObject.GetComponent<Image>();
         rect_transform = gameObject.GetComponent<RectTransform>();
 
@@ -40,21 +67,47 @@ public class InGameCursor : MonoBehaviour
         var mouse_pos = Input.mousePosition;
         //mouse_pos = cam.ScreenToWorldPoint(mouse_pos);
 
-        //Changes sprite if mouse is clicking
-        if (get_button(1))
-        {
-            render.sprite = mouse_clicking;
-        }
-        else
-        {
-            render.sprite = mouse;
-        }
-
         var mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         cursor_pos += mouseDelta * mouse_spd;
         cursor_pos += new Vector2(Input.GetAxis("HORIZONTAL0"), Input.GetAxis("VERTICAL0")) * Time.deltaTime * mouse_spd_arcade;
         cursor_pos = new Vector2(Mathf.Clamp(cursor_pos.x,0,Screen.width), Mathf.Clamp(cursor_pos.y,0,Screen.height));
+    }
+
+    void LateUpdate()
+    {
+        if (over_ui && !over_ui_last_frame)
+        {
+            in_source.Play();
+        }
+        if (!over_ui && over_ui_last_frame)
+        {
+            out_source.Play();
+        }
+        if (get_button(0))
+        {
+            click_source.Play();
+        }
+
+        over_ui_last_frame = over_ui;
+
+        //Set sprites
+        render.sprite = cursor_normal;
+
+        if (over_ui)
+        {
+            render.sprite = cursor_over_ui;
+        }
+        if (Input.GetMouseButton(0))
+        {
+            render.sprite = cursor_clicking;
+        }
+        if (Input.GetMouseButton(1))
+        {
+            render.sprite = cursor_holding;
+        }
+
+        over_ui = false;
     }
 
     private void Awake()

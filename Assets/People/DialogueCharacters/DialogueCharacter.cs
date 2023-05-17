@@ -7,7 +7,10 @@ using System;
 public class DialogueCharacter : ScriptableObject
 {
     public string name;
+    public Color speech_color;
     public AudioClip[] voice;
+
+    public PersonInRoom person_in_room; // will be used by Dialogue to animate the person that is talking
 
     public DialogueCharacter(string char_name, AudioClip[] char_voice)
     {
