@@ -36,6 +36,15 @@ public class DragObject : DragInTable
         //Sets up audio
         audio_source = gameObject.AddComponent<AudioSource>();
         audio_source.loop = false;
+
+        Material material = sprite_renderer.material;
+        
+        //Debug.Log("out " + material.GetValue("outline_on"));
+        //Debug.Log("blend " + material.GetValue("blend_color_on"));
+        //Debug.Log("color_overlay_on " + material.GetValue("color_overlay_on"));
+        //Debug.Log("color_mix_on " + material.GetValue("color_mix_on"));
+
+        material.SetInt("blend_color_on", 0);
     }
     
     protected void Update()

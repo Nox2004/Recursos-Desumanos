@@ -766,7 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f50baeb5194b0a4691a8644362759b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  y_offtarget: 0.4
+  y_offtarget: 0.2
+  shadow_sprite: {fileID: 0}
   order: 0
   selected: 0
   pick_sound: {fileID: 8300000, guid: 8ebee02461e20d44db10a79b2483b7f2, type: 3}
