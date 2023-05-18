@@ -596,6 +596,7 @@ MonoBehaviour:
   scale: 1.7
   uncompleted: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
   completed: {r: 0.50288934, g: 0.990566, b: 0.2009167, a: 1}
+  over_limit: {r: 0.9528302, g: 0.28315237, b: 0.28315237, a: 1}
   yy_start: 450
   yy_end: 210
   smooth: 30

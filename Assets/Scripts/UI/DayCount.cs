@@ -92,11 +92,11 @@ public class DayCount : MonoBehaviour
             //Gets distance from middle
             float y_distance_from_middle = Mathf.Abs(tmp.y - day_yy);
             
-            float value = 1 - (y_distance_from_middle / (days_distance * 1.5f));
+            float value = 1 - (y_distance_from_middle / (days_distance * 2.5f));
             value = Mathf.Clamp(value, 0, 1);
 
             //Sets size and alpha to be smaller the further away from the middle
-            day_objs[i].transform.localScale = Vector3.one * Mathf.Lerp(0.5f, 1, value);
+            day_objs[i].transform.localScale = Vector3.one * Mathf.Lerp(0.2f, 1, value);
             
             Color tmp_color = day_objs[i].GetComponent<TMPro.TextMeshProUGUI>().color;
             tmp_color.a = value; day_objs[i].GetComponent<TMPro.TextMeshProUGUI>().color = tmp_color;

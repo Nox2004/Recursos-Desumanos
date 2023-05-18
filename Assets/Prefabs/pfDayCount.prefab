@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previous_day_obj: {fileID: 3624651903452715167}
   days_distance: 100
-  days_to_show: 5
+  days_to_show: 7
   curve:
     serializedVersion: 2
     m_Curve:

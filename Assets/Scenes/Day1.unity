@@ -1336,6 +1336,7 @@ MonoBehaviour:
   resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
   document_prefab: {fileID: 9169260372811999910, guid: 278750e82556edb4eb9faf45aeb70045, type: 3}
   hire_count_prefab: {fileID: 5570310077574225027, guid: ca31bab723ceec844830a77007d07674, type: 3}
+  finish_button_prefab: {fileID: 5570310077574225027, guid: 793bc4d3ded372e499c6c8b6fa0e4333, type: 3}
   current_person_obj: {fileID: 0}
   current_dialogue: {fileID: 0}
   current_options: {fileID: 0}

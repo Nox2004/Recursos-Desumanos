@@ -8,6 +8,7 @@ public class HireCount : MonoBehaviour
 
     [SerializeField] private Color uncompleted;
     [SerializeField] private Color completed;
+    [SerializeField] private Color over_limit;
 
 
     [SerializeField] private float yy_start;
@@ -48,6 +49,11 @@ public class HireCount : MonoBehaviour
         {
             count_text.color = completed;
             limit_text.color = completed;
+        }
+        else if (count > limit)
+        {
+            count_text.color = over_limit;
+            limit_text.color = over_limit;
         }
         else
         {

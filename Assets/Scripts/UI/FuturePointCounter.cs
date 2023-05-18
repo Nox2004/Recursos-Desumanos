@@ -28,7 +28,7 @@ public class FuturePointCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        points += ((Singleton.Instance.future_points - points) / 60) * Time.deltaTime;
+        points += ((Singleton.Instance.future_points - points) / 0.3f) * Time.deltaTime;
         
         int rounded_points = (int) Mathf.Floor(points);
         text.text = rounded_points.ToString() + " FP";

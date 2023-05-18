@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
     [Space(10)]
 
     public GameObject dialogue_prefab;
-    public GameObject option_prefab, person_prefab, resume_prefab, document_prefab, hire_count_prefab;
+    public GameObject option_prefab, person_prefab, resume_prefab, document_prefab, hire_count_prefab, finish_button_prefab;
 
     //Instances that are currently in screen
     [HideInInspector] public PersonInRoom current_person_obj = null;
@@ -235,20 +235,8 @@ public class LevelManager : MonoBehaviour
         Destroy(obj);
     }
 
-    public void finish_day(float points_result)
+    public void finish_day()
     {
-        var points = calculate_future_points(points_result);
-
-        //Add points
-        Singleton.Instance.future_points += points;
-
-        //Spawn bonus points effect
-        GameObject obj = Instantiate(Singleton.Instance.bonus_points_prefab);
-        obj.transform.SetParent(future_points_ui.transform, false);
-        obj.transform.localPosition = Vector3.up * 60;
-
-        obj.GetComponent<BonusPoints>().points = points;
-
         Singleton.Instance.go_to_next_day();
     }
 
