@@ -9,6 +9,7 @@ public class PreInterview : ScriptableObject, IState
     public UnityEvent method; 
 
     private bool finish;
+    private int stage = 0;
 
     public PreInterview(LevelManager level_manager)
     {
@@ -17,7 +18,14 @@ public class PreInterview : ScriptableObject, IState
 
     public void EnterState()
     {
-        
+        /*
+        switch (Singleton.Instance.current_day)
+        {
+            case 1:
+                method = new UnityEvent();
+                method.AddListener(Level1);
+                break;
+        }*/
     }
 
     public void UpdateState()

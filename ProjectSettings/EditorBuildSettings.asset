@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Day1.unity
+    path: Assets/Scenes/Days/DayTemplate.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Introduction.unity
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 381a5a4b7b58d0244935934bab30e851
+  - enabled: 1
+    path: Assets/Scenes/Days/Day1.unity
+    guid: 25b899714d6bce641accc1a3e46a796a
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 7e7b7f114f13dc0409fb88ff3a12d9bf
   m_configObjects: {}

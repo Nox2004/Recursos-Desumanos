@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Singleton : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class Singleton : MonoBehaviour
     public int moral_points = 0; //Points gained by doing good things
 
     [HideInInspector] public int current_day = 1; //current_day
+    public int first_day;
+    public int last_day;
+
 
     //Possible people to be interviewed
     [Header("Possible People")]
@@ -50,7 +54,8 @@ public class Singleton : MonoBehaviour
         corporate_points = 0;
         moral_points = 0;
 
-        current_day = 1;
+        current_day = first_day;
+        Debug.Log(initial_random_people[0].possible_names[0]);
         random_people = new List<PossiblePerson>(initial_random_people);
     } 
 
@@ -76,6 +81,8 @@ public class Singleton : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+        
+        reset();
     }
 
     public void create_transition(TransitionMode mode, string target = null)
@@ -88,18 +95,30 @@ public class Singleton : MonoBehaviour
 
     public void go_to_first_day()
     {
-        current_day = 1;
+        current_day = first_day;
         go_to_day(current_day);
     }
 
     public void go_to_next_day()
     {
         current_day++;
+
+        if (current_day > last_day)
+        {
+            create_transition(TransitionMode.Scene, "End"); return;
+        }
+
         go_to_day(current_day);
+    }
+
+    public void go_to_menu()
+    {
+        create_transition(TransitionMode.Scene, "Menu");
     }
 
     public void go_to_day(int d)
     {
-        create_transition(TransitionMode.Scene, "Day"+d.ToString());
+        string scene_name = "Day" + d.ToString();
+        create_transition(TransitionMode.Scene, scene_name);
     }
 }

@@ -105,6 +105,11 @@ public class Person
         //7-9: good
         //10: great
 
+        //moral
+        //0 Riquinho nao tem habilidade e e filho do dono da empresa
+        //1 Caba normal
+        //2 Pessoa mega fudida coitada de um emprego pra ela
+
         if (value <= 0) return -2;
         if (value <= 3) return -1;
         if (value <= 6) return 1;

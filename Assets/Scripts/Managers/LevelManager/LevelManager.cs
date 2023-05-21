@@ -5,7 +5,7 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject future_points_ui;
+    [HideInInspector] public GameObject future_points_ui;
 
     public GameObject canvas;
     public RoomCamera camera;
