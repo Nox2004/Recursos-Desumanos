@@ -44,20 +44,20 @@ public class OptionImage : MonoBehaviour
         float starget = scale_min; //Scale target
 
         //Changes color and target scale
-        if ((button.cursor_over(uiImage)) && (control==true)) //Checks if mouse is inside image's bounds
+        uiImage.color = new Color(0.9f,0.9f,0.9f,1);
+        starget = scale_min;
+        if (control) 
         {
-            uiImage.color = new Color(1,1,1,1);
-            starget = scale_max;
-
-            if (InGameCursor.get_button_down(0))
+            if (button.cursor_over(uiImage)) //Checks if mouse is inside image's bounds
             {
-                selected = true;
+                uiImage.color = new Color(1,1,1,1);
+                starget = scale_max;
+
+                if (InGameCursor.get_button_down(0))
+                {
+                    selected = true;
+                }
             }
-        }
-        else
-        {
-            uiImage.color = new Color(0.9f,0.9f,0.9f,1);
-            starget = scale_min;
         }
 
         //Smooth transition from current scale to target scale

@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Jessica
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 3
+  - job: 2
+    points: 8
+  moral_points: 0
+  possible_names:
+  - Jessica Trindade
+  - Carol Correia
+  age_min: 25
+  age_max: 32
+  possible_ids:
+  - 65659-X
+  - 43560-L
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 09e18094654968040a898d6602f96b84, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 09e18094654968040a898d6602f96b84, type: 3}
+  - {fileID: 21300000, guid: bf075bc9dd7346e45b7462d94f841804, type: 3}
+  - {fileID: 21300000, guid: d26294e8fb5c38a4e949c9506c706436, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - "Comunica\xE7\xE3o"
+  - Bom ouvinte
+  - "Experi\xEAnte com limpeza"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Oiiii, bom dia.
+    character: {fileID: 0}
+  - text: "Nossa\u2026 essa sala aqui \xE9 meio\u2026 bad vibes, n\xE9?"
+    character: {fileID: 0}
+  - text: "Pode se sentar, come\xE7aremos imediatamente."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "Obrigado pela colabora\xE7\xE3o, n\xE3o esque\xE7a de checar\u2026"
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Ta ta mo\xE7o, obrigada viu\u2026"
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Como voc\xEA auxilia o cliente em busca do produto que ele deseja?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Ai\u2026 voc\xEA pergunta para o cliente o que ele deseja, tem que ver
+        e ouvir cara quer."
+      character: {fileID: 0}
+    - text: "Como s\xE3o seus m\xE9todos de entender o cliente?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Ahh\u2026 sei l\xE1, n\xE9. N\xE3o \xE9 s\xF3 ficar fazendo umas perguntas
+        para eles?"
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Faxina
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que se utiliza para a limpeza de microorganismos?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Pode se usar \xE1gua sanit\xE1ria. Mas toma cuidado que estraga as unhas,
+        n\xE3o gosto de usar ela."
+      character: {fileID: 0}
+    - text: "Aproveitando, qual a diferen\xE7a entre \xE1gua sanit\xE1ria e candida?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Ai mo\xE7o, s\xE3o a mesma coisa\u2026 derrrr, se liga."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que pode me dizer de sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Uma porcaria, papai cancelou o cart\xE3o de cr\xE9dito, n\xE3o sei mais
+        o que eu fa\xE7o."
+      character: {fileID: 0}
+    - text: E como isso mudou sua vida?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Passei meses at\xE9 limpando banheiros de shopping."
+      character: {fileID: 0}
+    - text: "Ent\xE3o se enquadra mais em faxina."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Experi\xEAncia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Aqui mostra que j\xE1 teve experi\xEAncia com faxina, onde trabalhou?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Papai me mandou em um emprego de limpar as lattrinas de banheiros de
+        shoppings, um horor.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

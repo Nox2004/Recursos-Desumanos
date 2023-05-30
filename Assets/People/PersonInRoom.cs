@@ -28,8 +28,17 @@ public class PersonInRoom : MonoBehaviour
     public Sprite[] talking_animation;
     [SerializeField] private float frame_duration;
 
+    //Sound
+    [SerializeField] protected AudioClip moving_sound;
+    protected AudioSource audio_source;
+    protected bool is_exiting_last_frame = false;
+
     void Awake()
     {
+        audio_source = gameObject.AddComponent<AudioSource>();
+        audio_source.pitch = 1.2f;
+        audio_source.PlayOneShot(moving_sound);
+
         xx_exit_curve.val_start = xx_enter_curve.val_end;
         xx_exit_curve.val_end = xx_enter_curve.val_start;
 
@@ -62,6 +71,14 @@ public class PersonInRoom : MonoBehaviour
         //Adds a wavey effect to the person
         //height - 0.04  duration 7/pi per second
         float yy = Mathf.Sin(Time.realtimeSinceStartup*7)*0.04f;
+
+        if (exiting && !is_exiting_last_frame)
+        {
+            audio_source.pitch = 0.8f;
+            audio_source.PlayOneShot(moving_sound);
+        }
+
+        is_exiting_last_frame = exiting;
 
         if (exiting)
         {

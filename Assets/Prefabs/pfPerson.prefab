@@ -164,3 +164,4 @@ MonoBehaviour:
   idle_sprite: {fileID: 0}
   talking_animation: []
   frame_duration: 10
+  moving_sound: {fileID: 8300000, guid: 13f4a74dda4d80a46a2e330173c5143f, type: 3}

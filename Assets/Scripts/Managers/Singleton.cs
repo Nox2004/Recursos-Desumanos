@@ -8,6 +8,7 @@ public class Singleton : MonoBehaviour
     public static Singleton Instance { get; private set; }
 
     //Some important global stuff
+    public string player_name;
     public bool debug_game;
     public bool game_paused = false;
     public Vector2 perspective_point;
@@ -15,6 +16,10 @@ public class Singleton : MonoBehaviour
 
     //Player Dialogue Character
     public DialogueCharacter player_character;
+
+    public DialogueCharacter manager_character;
+    public Sprite manager_sprite;
+    public Sprite[] manager_animation;
 
     //Where people will instantiate documents
     public Vector3 instantiate_document_pos;
@@ -47,6 +52,8 @@ public class Singleton : MonoBehaviour
     public GameObject day_count_prefab;
     public GameObject future_points_prefab;
     public GameObject bonus_points_prefab;
+    public GameObject player_name_form_prefab;
+    public GameObject tutorial_folder_prefab;
 
     public void reset()
     {
@@ -65,6 +72,7 @@ public class Singleton : MonoBehaviour
         if (debug_game)
         {
             go_to_first_day();
+            //create_transition(TransitionMode.Scene, "Day1");
         }
 
         //Finds the camera every room and sets up the static var "cam"

@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Lucia Maromba
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 3
+  - job: 2
+    points: 6
+  - job: 3
+    points: 9
+  moral_points: 2
+  possible_names:
+  - "L\xFAcia Campos"
+  - Joana Siqueira
+  age_min: 32
+  age_max: 37
+  possible_ids:
+  - 11124-G
+  - 45268-Z
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 9fdf78c3a1c344b4cbf7e9b6f6fa3852, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 9fdf78c3a1c344b4cbf7e9b6f6fa3852, type: 3}
+  - {fileID: 21300000, guid: 107bd5786d5cce447a9558cabe8ba2d5, type: 3}
+  - {fileID: 21300000, guid: 6cd7e7771697e664588897c14cb57258, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - "Comunica\xE7\xE3o"
+  - Criativa
+  - "Ex Seguran\xE7a"
+  - Limpeza
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Bom dia.
+    character: {fileID: 0}
+  - text: "Est\xE1 bem senhor?"
+    character: {fileID: 0}
+  - text: Parece preocupado.
+    character: {fileID: 0}
+  - text: Apenas extresse do trabalho.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Conhe\xE7o algumas pessoas que podem aliviar sua tens\xE3o."
+    character: {fileID: 0}
+  - text: "Se \xE9 que me entende."
+    character: {fileID: 0}
+  - text: "N\xE3o me interessa, vamos prosseguir com as perguntas.."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "Obrigado pela colabora\xE7\xE3o, a entrevista se encerra aqui."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Sei que n\xE3o fui bem na parte de faxina, mas por favor, qualquer coisa
+      do que voltar a correr perigo."
+    character: {fileID: 0}
+  - text: "N\xE3o prometo nada."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Se considera uma pessoa criativa?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Em certas ocasi\xF5es, prefiro me manter ao padr\xE3o."
+      character: {fileID: 0}
+    - text: "Ent\xE3o, quando se h\xE1 uma situa\xE7\xE3o que exija criatividade
+        voc\xEA n\xE3o consegue inovar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o foi isso que quis dizer."
+      character: {fileID: 0}
+    - text: "Voc\xEA gosta de ajudar os clientes."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Gosto, mas \xE0s vezes fico de saco cheio."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Seguran\xE7a"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Vejo aqui que tem experi\xEAncia com seguran\xE7a."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: 6 anos, mas acabei saindo por conta do maternidade.
+      character: {fileID: 0}
+    - text: Mas antes disso eu trabalhava com escolta pessoal de pessoas ricas.
+      character: {fileID: 0}
+    - text: "Conte uma situa\xE7\xE3o em que esteve me perigo mas conseguiu manter
+        a calma."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Foi no dia 12 de Agosto de 1991.
+      character: {fileID: 0}
+    - text: "Esteve l\xE1, seis anos atr\xE1s?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Podemos mudar de assunto?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Faxina
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Interesse em faxina, quais produtos podem ser prejudiciais a sa\xFAde."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Alvejantes, am\xF4nia, soda c\xE1ustica e outros."
+      character: {fileID: 0}
+    - text: Que produtos devemos evitar a mistura?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o sei\u2026 ainda sou nova nessa parte de faxina."
+      character: {fileID: 0}
+    - text: "Aqui na empresa, o refeit\xF3rio est\xE1 lotado de gordura, o que se
+        utiliza para a limpeza."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Desengordurante.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Diga algo de sua vida pessoal.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Tenho dois meninos g\xEAmeos, s\xE3o uns amores."
+      character: {fileID: 0}
+    - text: Costuma passar muito tempo com seus filhos?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Gosto de perder o dia todo com eles.
+      character: {fileID: 0}
+    - text: "Ent\xE3o como pretende trabalhar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []

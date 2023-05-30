@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Justino Biba
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 1
+    points: 1
+  - job: 0
+    points: 1
+  moral_points: 2
+  possible_names:
+  - Justino Caravalho
+  - "Andr\xE9 Caravalho"
+  age_min: 18
+  age_max: 25
+  possible_ids:
+  - 00987-E
+  - 54900-S
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: b8e213b69d7295c4ebaa30b7a118d44b, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: b8e213b69d7295c4ebaa30b7a118d44b, type: 3}
+  - {fileID: 21300000, guid: d64523852d091f14181be795def85886, type: 3}
+  - {fileID: 21300000, guid: 56f7d47e835d2454fb2d4ca0084eea2e, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: 277acd62eaf307b4086ff69f19a1ea37, type: 2}
+  resume_competences:
+  - Criatividade
+  - "Matem\xE1tica"
+  - Contabilidade
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Bo\u2026 bom dia."
+    character: {fileID: 0}
+  - text: "Est\xE1 tudo certo com o senhor?"
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Uhum\u2026"
+    character: {fileID: 0}
+  - text: "Ent\xE3o pe\xE7o que se sente."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "FUTURE inc agradece sua colabora\xE7\xE3o, a entrevista terminou."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Eu fui bem?
+    character: {fileID: 0}
+  - text: "Fique atento a e-mails ou correspond\xEAncia."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Voc\xEA se julga uma pessoa criativa a ponto de convencer o cliente?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: ...
+      character: {fileID: 0}
+    - text: "Eu\u2026 acho que sim."
+      character: {fileID: 0}
+    - text: "Fale um pouco dessa empresa e o porqu\xEA est\xE1 interessado."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: ...
+      character: {fileID: 0}
+    - text: "Porque a empresa \xE9 boa."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "O que \xE9 contabilidade?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "U\u2026 um tipo de ci\xEAncia que estuda\u2026 patrim\xF4nios."
+      character: {fileID: 0}
+    - text: "Uma equa\xE7\xE3o b\xE1sica de contabilidade?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Patrim\xF4nio l\xEDquido = Lucro? "
+      character: {fileID: 0}
+    - text: "Est\xE1 em d\xFAvida?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\u2026 n\xE3o?"
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que pode me dizer de sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Normal.
+      character: {fileID: 0}
+    - text: Preciso que elabore mais.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Tempos dif\xEDceis, FUTURE inc pode ajudar me contratando."
+      character: {fileID: 0}
+    - text: "Mas como voc\xEA pode ajudar a FUTURE inc?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: ...
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Matem\xE1tica"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Me diga quanto \xE9 756 dividido por 6."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: 126
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

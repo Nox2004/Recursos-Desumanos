@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Marcelo Calvo
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 8
+  - job: 1
+    points: 10
+  moral_points: 1
+  possible_names:
+  - Marcelo Cal'vado
+  - "Jo\xE3o Car'eca"
+  age_min: 40
+  age_max: 48
+  possible_ids:
+  - 94756-H
+  - 88721-C
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: d624be5cca7e8384fb9d89d9c78afaa0, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: d624be5cca7e8384fb9d89d9c78afaa0, type: 3}
+  - {fileID: 21300000, guid: 90e2c0503dc1aa242afddaf635bd1274, type: 3}
+  - {fileID: 21300000, guid: e0d3c4de945a0ee4da1f0a022c40351c, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  resume_font: {fileID: 11400000, guid: fb4634d2343bea74ab8234c90a9b9406, type: 2}
+  resume_competences:
+  - "Comunica\xE7\xE3o"
+  - "Experi\xEAncia Contabilidade"
+  - Excel
+  - Vendas
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Bom dia.
+    character: {fileID: 0}
+  - text: "Pode se sentar vamos come\xE7ar imediatamente."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Agrade\xE7o a empresa pela oportunidade."
+    character: {fileID: 0}
+  - text: "Muitas pessoas n\xE3o t\xEAm visto da mesma forma."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "S\xE3o ignorantes."
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "Isso \xE9 tudo, a empresa agradece sua colabora\xE7\xE3o, imagino que
+      j\xE1 saiba como ser\xE1 informado."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Sim\u2026"
+    character: {fileID: 0}
+  - text: "Gl\xF3ria a FUTURE inc."
+    character: {fileID: 0}
+  - text: ...
+    character: {fileID: 0}
+  - text: Verme
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Por que voc\xEA decidiu ser vendedor?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Confesso que \xE9 minha primeira vez na \xE1rea, mas vendas se mostra
+        uma \xE1rea em que voc\xEA \xE9 capaz de entender as pessoas."
+      character: {fileID: 0}
+    - text: Gosta de ajudar os clientes?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Definitivamente \xE9 algo a ser da minha parte, a manipula\xE7\xE3o
+        do cliente se mostra algo fascinante."
+      character: {fileID: 0}
+    - text: Interessante.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Diga alguns fundamentos da contabilidade.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Entidade, continuidade, oportunidade e entre v\xE1rios outros."
+      character: {fileID: 0}
+    - text: "Caracter\xEDstica de patrim\xF4nio?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Dispor de autonomia em rela\xE7\xE3o aos outros patrim\xF4nios."
+      character: {fileID: 0}
+    asked: 1
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Experi\xEAncia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Aqui diz experi\xEAncia em contabilidade."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Correto.
+      character: {fileID: 0}
+    - text: Por que abandonou seu antigo trabalho?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "FUTURE inc comprou a empresa, tive que ser despedido em seguida, substitu\xEDdo
+        por outro em minha \xE1rea."
+      character: {fileID: 0}
+    asked: 1
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que pode me dizer de sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sempre me conheci como uma pessoa empenhada, disposto a aprender coisas
+        novas se necess\xE1rio."
+      character: {fileID: 0}
+    - text: "Possui fam\xEDlia?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Garanto que n\xE3o ir\xE1 atrapalhar."
+      character: {fileID: 0}
+    - text: Bom.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 1
+    follow_up_questions: []

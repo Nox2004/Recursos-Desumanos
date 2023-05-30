@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Kleiton
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 3
+    points: 10
+  - job: 0
+    points: 2
+  moral_points: 1
+  possible_names:
+  - Kleiton Silva
+  - "Krat\xE3o Silva"
+  age_min: 40
+  age_max: 48
+  possible_ids:
+  - 77689-W
+  - 98987-D
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 2b933da170984b64b82a919f1ff01f26, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 2b933da170984b64b82a919f1ff01f26, type: 3}
+  - {fileID: 21300000, guid: b6322b16649c633479146c3e62715086, type: 3}
+  - {fileID: 21300000, guid: 912880300082aab49a8424d7767b34ad, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - Treinamento Miliatar
+  - "Seguran\xE7a do governo"
+  - "Ex Seguran\xE7a"
+  - "Comunica\xE7\xE3o"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia, pode-se sentar.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Hm....
+    character: {fileID: 0}
+  - text: Senhor Silva, correto?
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Hm...Sim...
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "... Acredito que isto \xE9 tudo, est\xE1 liberado."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Hmm...
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: "Perguntar sobre Seguran\xE7a"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Quanto tempo tem de experi\xEAncia?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "22 anos de experi\xEAncia."
+      character: {fileID: 0}
+    - text: Recebeu que tipo de treinamento?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Militar do alto escal\xE3o."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Me fale sobre sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: ...
+      character: {fileID: 0}
+    - text: Senhor, por favor responda a pergunta.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o tenho mais uma fam\xEDlia."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que pode nos falar sobre seu antigo emprego?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Hmm\u2026 Eu era seguran\xE7a do governo."
+      character: {fileID: 0}
+    - text: Um trabalho de respeito, por que deixou seu antigo emprego?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Por minha culpa um dos senadores acabou morrendo.
+      character: {fileID: 0}
+    - text: "E por que dever\xEDamos o contratar depois dessa informa\xE7\xE3o?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Porque eu nunca cometo o mesmo erro duas vezes.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Qual \xE9 seu interesse em vendas?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Uma vida mais tranquila.
+      character: {fileID: 0}
+    - text: Longe do perigo.
+      character: {fileID: 0}
+    - text: "Voc\xEA n\xE3o parece ser uma pessoa muito comunicativa."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Hm...
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []

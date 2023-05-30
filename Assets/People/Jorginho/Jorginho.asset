@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Jorginho
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 0
+  - job: 1
+    points: 0
+  - job: 2
+    points: 0
+  - job: 3
+    points: 0
+  moral_points: 2
+  possible_names:
+  - Flavin do Pneu
+  - Jorginho Matador de Gatinho
+  age_min: 6
+  age_max: 10
+  possible_ids:
+  - 00000-O
+  - 12345-G
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: e335ebefab52ed848ac5102278eb1323, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: e335ebefab52ed848ac5102278eb1323, type: 3}
+  - {fileID: 21300000, guid: 8c1422303e2282a4c91a0eaf0581b0a7, type: 3}
+  - {fileID: 21300000, guid: fec1a9b82357a314d8324ff8d0bd0946, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: fb8f4b19184571f46937c24c994d9c81, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - Desenhar
+  - Comer Pirulito
+  - Fazer Bolo
+  - "Ver V\xEDdeo"
+  dialogue_color: {r: 0, g: 0, b: 0.34901962, a: 1}
+  initial_dialogue:
+  - text: Bom dia?
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Bom dia, tio.
+    character: {fileID: 0}
+  - text: "Como uma crian\xE7a como voc\xEA est\xE1 para uma entrevista?"
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "N\xE3o sou crian\xE7a, minha m\xE3e falou que j\xE1 sou grandinho."
+    character: {fileID: 0}
+  - text: "Aham... Olha, vamos facilitar as coisas, n\xE3o vou chamar a seguran\xE7a,
+      apenas saia do escrit\xF3rio."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "N\xC3O VOU SAIR SEM ENTREVIIISTA!"
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "\xC9.... por isso \xE9 tudo, est\xE1 liberado para sair."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "\xC9 isso? Esperava mais."
+    character: {fileID: 0}
+  - text: Vambora...kkkk
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Desenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "O que voc\xEA tem sobre desenho?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Gosto de fazer carrinho, mas acabei n\xE3o trucendo, deixei em casa."
+      character: {fileID: 0}
+    asked: 1
+    follow_up_questions: []
+  - option_text: Perguntar sobre Pirulito?
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Acha que comer pirulito \xE9 uma compet\xEAncia?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Sim.
+      character: {fileID: 0}
+    - text: "(Suspiro)... Est\xE1 bem."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 1
+    follow_up_questions: []
+  - option_text: Perguntar sobre Bolo
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Que tipo de bolo voc\xEA faz?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Como assim?
+      character: {fileID: 0}
+    - text: "Est\xE1 escrito aqui, voc\xEA faz bolo."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Ata, eu menti.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 1
+    follow_up_questions: []

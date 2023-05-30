@@ -6,18 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Days/DayTemplate.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Introduction.unity
     guid: ff4034f43420dd941bca7e81dffb4744
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 381a5a4b7b58d0244935934bab30e851
   - enabled: 1
-    path: Assets/Scenes/Days/Day1.unity
-    guid: 25b899714d6bce641accc1a3e46a796a
-  - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 7e7b7f114f13dc0409fb88ff3a12d9bf
+  - enabled: 1
+    path: Assets/Scenes/Days/Day1.unity
+    guid: c45abfd9fcb881240b1a414393dc14ca
+  - enabled: 1
+    path: Assets/Scenes/Days/Day2.unity
+    guid: 2ded35a268af69940a76497273411f12
+  - enabled: 1
+    path: Assets/Scenes/Days/Day3.unity
+    guid: 9a8b292bb122a094b82f26e63c1ba414
   m_configObjects: {}

@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Mario Punk
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 10
+  - job: 1
+    points: 5
+  - job: 3
+    points: 5
+  moral_points: 0
+  possible_names:
+  - Mario Pinheiro
+  - Jorge Macedo
+  age_min: 30
+  age_max: 38
+  possible_ids:
+  - 54638-F
+  - 87003-I
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: e85e67ff849814a4c9a0788dd72e2c04, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: e85e67ff849814a4c9a0788dd72e2c04, type: 3}
+  - {fileID: 21300000, guid: 033115fb196c59f4eac57b2223f888c0, type: 3}
+  - {fileID: 21300000, guid: c9b0b7b227100b74c8e9551e9d124914, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - Excel
+  - "Comunica\xE7\xE3o"
+  - "Persuas\xE3o"
+  - "Seguran\xE7a Tempor\xE1rio"
+  dialogue_color: {r: 0.3018868, g: 0.055535786, b: 0.2264769, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Agrad\xE1vel dia, sim."
+    character: {fileID: 0}
+  - text: Espero que esteja pronto.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Sim, mas antes.
+    character: {fileID: 0}
+  - text: Uma pergunta.
+    character: {fileID: 0}
+  - text: Se sente satisfeito com a empresa?
+    character: {fileID: 0}
+  - text: "Na verdade, esque\xE7a, claro que se sente satisfeito. Afinal esta \xE9
+      a FUTURE inc!"
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "Por enquanto isso \xE9 tudo, n\xE3o esque\xE7a de checar seu e-mail ou
+      caixa de correio."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Gl\xF3ria a FUTURE inc!"
+    character: {fileID: 0}
+  - text: "A gest\xE3o ficar\xE1 feliz com o seu trabalho."
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Fale um pouco desta empresa e por que quer trabalhar aqui.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Com certeza essa empresa \xE9 a melhor do mercado."
+      character: {fileID: 0}
+    - text: "Fazendo com que as pessoas que trabalhem nela sejam apenas as melhores
+        deste pa\xEDs."
+      character: {fileID: 0}
+    - text: "Conte um grande obst\xE1culo que teve de superar nesse ramo."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Certo dia convenci o cliente a estourar o limite do cart\xE3o dele,
+        apenas para que comprasse de nossa marca."
+      character: {fileID: 0}
+    - text: Tenho certeza de que ele se arrepende, hahaha.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Seguran\xE7a"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Algum trabalho passado na \xE1rea de seguran\xE7a?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Ja tive tempo como guarda de shopping.
+      character: {fileID: 0}
+    - text: "Qual foi o tipo de treinamento que teve antes de trabalhar nessa \xE1rea."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Quem \xE9 que precisa de treinamento para essa \xE1rea?"
+      character: {fileID: 0}
+    - text: "J\xE1 se deparou em uma situa\xE7\xE3o em que congelou?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Essa \xE9 a parte do trabalho que mais tenho dificuldade."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Na contabilidade, quem s\xE3o os usu\xE1rios internos?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Os administradores de todos os n\xEDveis."
+      character: {fileID: 0}
+    - text: Para esse ramo de trabalho, requeremos que tenha conhecimento com Excel.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Ah\u2026 sim, aquele programa que se faz edi\xE7\xE3o de imagem."
+      character: {fileID: 0}
+    - text: "Quem s\xE3o os usu\xE1rios externos?"
+      character: {fileID: 0}
+    - text: "Aqueles com menos relev\xE2ncia dentro do sistema."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Diga algo de sua vida pessoal.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Tendo a passar muito tempo no trabalho.
+      character: {fileID: 0}
+    - text: Como se eu fosse dependente das empresas.
+      character: {fileID: 0}
+    - text: "N\xE3o \xE9 isso que a FUTURE inc quer? Hahaha."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

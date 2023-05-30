@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Sergio
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 1
+    points: 0
+  moral_points: 0
+  possible_names:
+  - "Sergio Pregui\xE7a"
+  - Samuel Pardo
+  age_min: 40
+  age_max: 43
+  possible_ids:
+  - 22123-A
+  - 22212-A
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 9b7aaf5156c0f144c9ab69ca0d26ab99, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 9b7aaf5156c0f144c9ab69ca0d26ab99, type: 3}
+  - {fileID: 21300000, guid: bbe43601efa991a478640be2dbd75c2c, type: 3}
+  - {fileID: 21300000, guid: 340cfb92df50eed419db8c05b711e15a, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - "Matem\xE1tica"
+  - Excel
+  - "Diploma Acad\xEAmico"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia, meu.
+    character: {fileID: 0}
+  - text: Sente-se, por favor.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Tomara que valha a pena, m\xF4 tr\xE2nsito meu."
+    character: {fileID: 0}
+  - text: "Senhor, pe\xE7o que se atenha ao formal."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Que seja, meu.
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "Est\xE1 liberado, tenha certeza que confirmar seu e-mail ou correio para
+      mais informa\xE7\xF5es."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Nem ouse...
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: ' Qual o objetivo da contabilidade?'
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Pegar uns n\xFAmeros da conta e fazer uma previs\xF5es."
+      character: {fileID: 0}
+    - text: "Voc\xEA diria que existe uma racionalidade por tr\xE1s?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Racionalidade? S\xF3 fazer dinheiro f\xE1cil."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Me fale sobre sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Que isso tem haver?
+      character: {fileID: 0}
+    - text: Por favor, responda a pergunta.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "\xC9 s\xE9rio que me tiraram do meu conforto para isso?"
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Por que dever\xEDamos te contratar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sinceramente meu, s\xF3 deixa eu sair daqui."
+      character: {fileID: 0}
+    - text: "Depois n\xE3o precisamos mais se ver."
+      character: {fileID: 0}
+    - text: Pois bem.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Diploma
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Aqui diz que possui um diploma acad\xEAmico na \xE1rea."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Onde voc\xEA se formou?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "P\xF4 meu, em uma universidade qualquer , meu."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

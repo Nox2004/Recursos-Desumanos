@@ -97,9 +97,9 @@ public class LevelManager : MonoBehaviour
     {
         set_current_person();
         
-        person_intro = new PersonIntroduction(this); initial_dialogue = new InitialDialogue(this); make_questions = new MakeQuestion(this); interview_conclusion = new InterviewConclusion(this); post_interview = new PostInterview(this);
-
-        change_state(person_intro); //Enters the initial state
+        pre_interview = new PreInterview(this); person_intro = new PersonIntroduction(this); initial_dialogue = new InitialDialogue(this); make_questions = new MakeQuestion(this); interview_conclusion = new InterviewConclusion(this); post_interview = new PostInterview(this);
+        //person_intro
+        change_state(pre_interview); //Enters the initial state
     }
 
     public void change_state(IState newState)

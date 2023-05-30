@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Luigi
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 2
+    points: 8
+  - job: 1
+    points: 4
+  - job: 3
+    points: 2
+  moral_points: 1
+  possible_names:
+  - Flavio Cutuca
+  - Marcelo Costa
+  age_min: 30
+  age_max: 35
+  possible_ids:
+  - 21239-J
+  - 54546-B
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 51a9065c021e34d458ed7b84029f8486, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 51a9065c021e34d458ed7b84029f8486, type: 3}
+  - {fileID: 21300000, guid: 82b6350a754c1cb44a496aa73cdb7150, type: 3}
+  - {fileID: 21300000, guid: 307ed652e3cdf204e95d149551e5b8d3, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: b91a7712e91e68c4bb5e909f44912c1a, type: 2}
+  resume_competences:
+  - Encanamento
+  - Contabilidade
+  - "Experi\xEAncia de anos em faxina"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Ahhh\u2026 Bom diia."
+    character: {fileID: 0}
+  - text: "Sente-se, vamos come\xE7ar."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Perfecto.
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "Muito obrigado pela colabora\xE7\xE3o."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Perfecto, eu que agrade\xE7o."
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Faxina
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Que tipo de experi\xEAncia tem com faxina?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Estar sujo \xE9 algo comum do meu cotidiano."
+      character: {fileID: 0}
+    - text: "Por isso estou sempre acompanhado com sab\xE3o em p\xF3 neutro e desengordurante."
+      character: {fileID: 0}
+    - text: Qual o objetivo da faxina?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o apenas para deixar o ambiente limpo, mas tamb\xE9m para nos livrarmos
+        de bact\xE9rias."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Vida
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: O que pode me dizer de sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Trabalhei com meu irm\xE3o em nossa empresa por muitos anos."
+      character: {fileID: 0}
+    - text: Que tipo de empresa?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Encanamento.
+      character: {fileID: 0}
+    - text: "Espero que saiba que faxina e encanamento s\xE3o coisas diferentes."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o deve ser t\xE3o diferente assim."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions:
+    - option_text: Perguntar sobre Encanamento
+      output_action:
+        m_PersistentCalls:
+          m_Calls: []
+      output:
+      - text: Por que saiu do ramo de encanamento.
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: "Meu irm\xE3o tornava mais perigoso do que o necess\xE1rio."
+        character: {fileID: 0}
+      - text: "Ent\xE3o tem experi\xEAncia com seguran\xE7a?"
+        character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+      - text: Nunca tinha parado para pensar nisso.
+        character: {fileID: 0}
+      asked: 0
+      follow_up_questions: []
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Qual a principal caracter\xEDstica de um patrim\xF4nio?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Autonomia aos demais patrim\xF4nios existentes."
+      character: {fileID: 0}
+    - text: "A contabilidade \xE9 uma ci\xEAncia exata"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Erg\u2026 eu acho que sim."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Diga algo de sua vida pessoal.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3os gosto de dizer isso, mas comi muitos cogumelos na minha vida."
+      character: {fileID: 0}
+    - text: "Como \xE9?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Sim... cogumelos que sempre aumentavam meu desempenho de trabalho.
+      character: {fileID: 0}
+    - text: "Est\xE1 bem...."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []

@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: "M\xF4nica"
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 2
+    points: 8
+  moral_points: 1
+  possible_names:
+  - "M\xF4nica Ribeiro"
+  - Juliana Filati
+  age_min: 30
+  age_max: 45
+  possible_ids:
+  - 33321-L
+  - 33232-M
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 70e4fcacda945a74fa787f8809e4019b, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 70e4fcacda945a74fa787f8809e4019b, type: 3}
+  - {fileID: 21300000, guid: 690e48d58fb30f84cbf4e1eb591f5993, type: 3}
+  - {fileID: 21300000, guid: a8fd1986c4fb7024e88e653c9d957bb9, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - Limpeza
+  - "Experi\xEAncia em outras empresas"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: "Bom dia mo\xE7o."
+    character: {fileID: 0}
+  - text: Sente-se, por favor.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "O lugar \xE9 mais morto do que falam."
+    character: {fileID: 0}
+  - text: "Pe\xE7o que preste aten\xE7\xE3o."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "Muito obrigado pela colabora\xE7\xE3o, n\xE3o esque\xE7a de checar o e-mail,
+      ou as caixas de correspond\xEAncia."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Tenha um \xF3timo dia mo\xE7o."
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Faxina
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Aqui na empresa temos diversas janelas, como pretende limp\xE1-las?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Com o produto de limpa-vidros, \xE9 claro."
+      character: {fileID: 0}
+    - text: "Que produtos n\xE3o podem faltar na faxina?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sab\xE3o em p\xF3 neutro, desengordurante, limpador multiuso e muitos
+        outros."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Sua rela\xE7\xE3o com a fam\xEDlia?\r\n"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Dif\xEDcil, criar tr\xEAs filhos nesse pa\xEDs se mostra mais do que
+        qualquer desafio."
+      character: {fileID: 0}
+    - text: Vai atrapalhar o trabalho?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: ....
+      character: {fileID: 0}
+    - text: "N\xE3o"
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Por que dever\xEDamos te contratar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: A melhor das empresas precisam de um ambiente limpo.
+      character: {fileID: 0}
+    - text: "A FUTURE inc, precisa de manter as apar\xEAncias."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Experi\xEAncia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Qual foi seu \xFAltimo trabalho?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Eu sempre fui migrando de trabalho para trabalho.
+      character: {fileID: 0}
+    - text: Assim que percebia que a empresa poderia ir melhor sem mim.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Marcia
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 0
+    points: 10
+  moral_points: 1
+  possible_names:
+  - Marcia Carvalho
+  - Ana Caravalho
+  age_min: 26
+  age_max: 29
+  possible_ids:
+  - 54673-P
+  - 65789-P
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: f318e0900ce3cd94e97d9a29d5e69c70, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: f318e0900ce3cd94e97d9a29d5e69c70, type: 3}
+  - {fileID: 21300000, guid: 43676eb5eb7d74f4182ec93ef9e23c89, type: 3}
+  - {fileID: 21300000, guid: da3709caa4b4cc448bcc2637fb951550, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: 2ae554345a98ca443b1fb6d3455bad66, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - "Comunica\xE7\xE3o"
+  - Criatividade
+  - "Ingl\xEAs"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: "Ol\xE1."
+    character: {fileID: 0}
+  - text: Sente-se, por favor.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Aqui \xE9 para a entrevista de vendas?"
+    character: {fileID: 0}
+  - text: Aqui mesmo.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Perfeito.
+    character: {fileID: 0}
+  conclusion_dialogue:
+  - text: "Muito bem, isto \xE9 tudo, muito obrigado pela presen\xE7a.\r\n"
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Antes de ir, gostaria de falar uma coisa.
+    character: {fileID: 0}
+  - text: "Seja breve, meu tempo \xE9 curto."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Eu gostaria que levasse em considera\xE7\xE3o meu irm\xE3o."
+    character: {fileID: 0}
+  - text: "Amanh\xE3 \xE9 a entrevista dele e gostaria que fosse menos cr\xEDtico
+      com ele."
+    character: {fileID: 0}
+  - text: Infelizmente isso depende dele.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Por favor, posso levar voc\xEA at\xE9 meu apartamento, pagar o favor."
+    character: {fileID: 0}
+  - text: "Qualquer reclama\xE7\xE3o por favor direcionar a nossa caixa de correio."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: "Entendo\u2026 Obrigada pelo menos, gl\xF3ria a FUTURE inc."
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Vendas
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Por que escolheu ser vendedora?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Lidar com pessoas se mostra algo que estou sempre empenhada e dedicada.
+      character: {fileID: 0}
+    - text: Gosta de ajudar os clientes?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Em qualquer ocasi\xE3o, estarei a disposi\xE7\xE3o deles."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Me fale sobre sua vida pessoal?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: A vida adulta se mostra desafiadora, ainda mais quando se tem contas
+        para pagar hahaha.
+      character: {fileID: 0}
+    - text: "\xC9 por isso que est\xE1 aqui?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Estou aqui para certificar que nunca haja um cliente insatisfeito.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Por que dever\xEDamos te contratar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Esta empresa se mostra uma das melhores do mercado.
+      character: {fileID: 0}
+    - text: Apenas acho que os melhores deve, estar nela.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Ingl\xEAs"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Aqui diz que voc\xEA possui um certo n\xEDvel de ingl\xEAs."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Correto.
+      character: {fileID: 0}
+    - text: "Traduza a express\xE3o: Don't cry wolf again."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o d\xEA alarme falso de novo."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

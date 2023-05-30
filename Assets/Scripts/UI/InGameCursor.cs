@@ -84,7 +84,7 @@ public class InGameCursor : MonoBehaviour
         {
             out_source.Play();
         }
-        if (get_button(0))
+        if (get_button_down(0))
         {
             click_source.Play();
         }

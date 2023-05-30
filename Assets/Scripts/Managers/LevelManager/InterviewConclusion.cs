@@ -17,12 +17,12 @@ public class InterviewConclusion : IState
     {
         if (me.current_dialogue != null)
         {
-            if (me.current_dialogue.hiding_box())
-            {
-                me.destroy_dialogue();
-                me.current_dialogue = null;
-                me.current_person_obj.exiting = true;
-            }
+                if (me.current_dialogue.hiding_box())
+                {
+                    me.destroy_dialogue();
+                    me.current_dialogue = null;
+                    me.current_person_obj.exiting = true;
+                }
         }
         else 
         {

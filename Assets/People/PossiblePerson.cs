@@ -55,7 +55,7 @@ public class PossiblePerson : ScriptableObject
     {
         Person person = new Person();
 
-        Debug.Log(possible_names[0]);
+        
         person.name = possible_names[UnityEngine.Random.Range(0,possible_names.Length)];
         person.age = UnityEngine.Random.Range(age_min,age_max);
         person.id = possible_ids[UnityEngine.Random.Range(0,possible_ids.Length)];

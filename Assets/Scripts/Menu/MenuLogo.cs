@@ -9,11 +9,13 @@ public class MenuLogo : MonoBehaviour
     [SerializeField] private float y_variation;
 
     private float initial_y;
+    private Vector3 initial_scale;
 
     // Start is called before the first frame update
     void Start()
     {
         initial_y = transform.position.y;
+        initial_scale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -22,6 +24,6 @@ public class MenuLogo : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.realtimeSinceStartup/(angle_spd/60)) * (angle_variation));
 
         var scale = 1 + (Mathf.Sin(Time.realtimeSinceStartup/((angle_spd/2)/60)) * (y_variation));
-        transform.localScale = Vector3.one * scale;
+        transform.localScale = initial_scale * scale;
     }
 }

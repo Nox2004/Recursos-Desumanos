@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Xing Lee
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 3
+    points: 7
+  - job: 1
+    points: 9
+  moral_points: 0
+  possible_names:
+  - Fujiko Oro
+  - Takafuro Nokoko
+  age_min: 34
+  age_max: 38
+  possible_ids:
+  - 22123-Y
+  - 55555-C
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: 84e6af11982c68b4ba29e87b8c402969, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: 84e6af11982c68b4ba29e87b8c402969, type: 3}
+  - {fileID: 21300000, guid: 67b2932429a77a844916642f54dc5eaf, type: 3}
+  - {fileID: 21300000, guid: e0aa216eecee222479bf736daeb11c1b, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: aef0aec4e68280744b0d4d7fc4d97628, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - "Apresenta\xE7\xF5es"
+  - Excel
+  - "Lideran\xE7a"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Obrigado.
+    character: {fileID: 0}
+  - text: "Meu tempo \xE9 curto, podemos seguir com as perguntas?"
+    character: {fileID: 0}
+  - text: "\xC9 claro."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "Por enquanto isso \xE9 tudo, por favor checar seu e-mail ou corresepond\xEAncia."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Isso tomou mais tempo do que imaginava.
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Perguntar sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Voc\xEA julga a apresenta\xE7\xE3o de informa\xE7\xF5es estar presente
+        com cada m\xEDnimo detalhe?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Sempre, em contabilidade devemos julgar e analisar todo n\xFAmero presente,
+        mesmo os menos import\xE2ntes."
+      character: {fileID: 0}
+    - text: "\xC9 poss\xEDvel saber quanto vale uma empresa?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: " N\xE3o. O valor venal de uma empresa n\xE3o consta nos registros cont\xE1beis
+        dela."
+      character: {fileID: 0}
+    - text: "Como escrever v\xE1rias linhas de texto, ou valores em uma \xFAnica
+        c\xE9lula?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Depois de digitar a primeira linha de texto, pressione a combina\xE7\xE3o
+        de teclado ALT + ENTER e comece a digitar novamente."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Seguran\xE7a"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Voc\xEA possui alguma experi\xEAncia com seguran\xE7a."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Algumas pessoas esuqecem que for\xE7a bruta n\xE3o \xE9 o \xFAnico jeito
+        de se defender."
+      character: {fileID: 0}
+    - text: "As vezes \xE9 muito melhor liderar atr\xE1s das linhas, do que estar
+        em contato direto."
+      character: {fileID: 0}
+    - text: Teve algum trabalho anterior?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o, mas tenho certeza que posso gerir um time sem treinamento."
+      character: {fileID: 0}
+    - text: "Senhor, \xE9 necess\xE1rio treinamento para isso."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Perguntar sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Me fale algo sobre sua vida pessoal.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o que importe muito para voc\xEA."
+      character: {fileID: 0}
+    - text: "Meu tio \xE9 seu superior, e temo o pior \xE0 voc\xEA se n\xE3o me contratar."
+      character: {fileID: 0}
+    - text: "S\xF3 estou fazendo meu trabalho."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "N\xE3o \xE9 isso que meu tio vai ouvir."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Perguntar sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Se considera uma pessoa empenhada?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: A ponto dessa empresa precisar de mim.
+      character: {fileID: 0}
+    - text: Sim... sou extremamente empenhado.
+      character: {fileID: 0}
+    - text: E posso colocar meus subordinados no limite para conluir o trabalho.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []

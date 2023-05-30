@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b152c78645b25e45bf2f2eff0760fef, type: 3}
+  m_Name: Xiquinha
+  m_EditorClassIdentifier: 
+  job_points:
+  - job: 1
+    points: 0
+  moral_points: 3
+  possible_names:
+  - Xiquinha Leite
+  - "Ana Magalh\xE3es"
+  age_min: 20
+  age_max: 27
+  possible_ids:
+  - 88897-B
+  - 53452-F
+  voice: []
+  in_room_sprite: {fileID: 21300000, guid: f4cd4e498ae57a8449d952c3303858fa, type: 3}
+  talking_animation:
+  - {fileID: 21300000, guid: f4cd4e498ae57a8449d952c3303858fa, type: 3}
+  - {fileID: 21300000, guid: 2f205986b63ee384a9052ad397ebcd66, type: 3}
+  - {fileID: 21300000, guid: af60f83531a5713448eda5e0a1d65957, type: 3}
+  document_sprite: {fileID: 0}
+  resume_prefab: {fileID: 7444759135718558186, guid: fb8f4b19184571f46937c24c994d9c81, type: 3}
+  resume_font: {fileID: 11400000, guid: ba6420ff07e78d842ae589fe73edeb03, type: 2}
+  resume_competences:
+  - Publicidade
+  - Excel
+  - "Matem\xE1tica"
+  dialogue_color: {r: 0, g: 0, b: 0, a: 1}
+  initial_dialogue:
+  - text: Bom dia.
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Oi, bom dia, tudo bem com o senhor?
+    character: {fileID: 0}
+  - text: Sim....
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Vamos seguir com a entrevista
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  conclusion_dialogue:
+  - text: "A FUTURE inc agradece sua colabora\xE7\xE3o, fique atenta a qualquer e-mail
+      ou correspond\xEAncia relacionada a n\xF3s, tenha um bom dia."
+    character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+  - text: Tchau Tchau.
+    character: {fileID: 0}
+  possible_questions:
+  - option_text: Pergunta sobre Publicidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Devo dizer que a \xE1rea de publicidade foi completamente preenchida
+        semana retrasada, voc\xEA est\xE1 atrasada."
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Fui desatenta, perd\xE3o."
+      character: {fileID: 0}
+    - text: "N\xE3o gostamos de desaten\xE7\xE3o."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Pergunta sobre Contabilidade
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Como escrever v\xE1rias linhas de texto, ou valores em uma \xFAnica
+        c\xE9lula?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Depois de digitar a primeira linha de texto, pressione a combina\xE7\xE3o
+        de teclado Ctrl C + Ctrl V e comece a digitar novamente."
+      character: {fileID: 0}
+    - text: "Receitas asseguram a obten\xE7\xE3o de lucro cont\xE1bil para uma empresa?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: Sim.
+      character: {fileID: 0}
+    - text: '"Sim" o que?'
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: A resposta.
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: "Pergunta sobre Fam\xEDlia"
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: Diga alguma de sua vida pessoal.
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Estou come\xE7ando a trabalhar recentemente."
+      character: {fileID: 0}
+    - text: "Com que int\xFAito?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Meus pais sa\xEDram desse pa\xEDs em busca de um melhor para morar,
+        me deixarama aqui j\xE1 que eu n\xE3o era \xFAtil em nada."
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
+  - option_text: Pergunta sobre Desempenho
+    output_action:
+      m_PersistentCalls:
+        m_Calls: []
+    output:
+    - text: "Por que dever\xEDamos te contratar?"
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "Por que eu preciso viajar para o pa\xEDs em que meus pais se mudaram."
+      character: {fileID: 0}
+    - text: Se considera uma pessoa empenhada?
+      character: {fileID: 11400000, guid: 5823e6d32bbfdfb46b383d52c7878f1e, type: 2}
+    - text: "As pessoas falam que eu n\xE3o sou bom em nada."
+      character: {fileID: 0}
+    - text: Por isso meus pais me deixaram. Hahaha
+      character: {fileID: 0}
+    asked: 0
+    follow_up_questions: []
